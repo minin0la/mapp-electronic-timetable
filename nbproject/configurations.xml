@@ -6,6 +6,7 @@
                    projectFiles="true">
       <itemPath>delays.h</itemPath>
       <itemPath>lcd.h</itemPath>
+      <itemPath>keypad.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -15,8 +16,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>lcd_utilities.c</itemPath>
-      <itemPath>LCD2Lines.c</itemPath>
       <itemPath>delays_utilities.c</itemPath>
+      <itemPath>keypad_utilities.c</itemPath>
+      <itemPath>Timer.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

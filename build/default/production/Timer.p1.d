@@ -1,4 +1,6 @@
  build/default/production/Timer.d  \
  build/default/production/Timer.p1:  \
  Timer.c  \
-delays.h 
+lcd.h  \
+delays.h  \
+keypad.h 
