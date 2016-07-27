@@ -1,11 +1,11 @@
-//***************************************************************************//
-//    This is a simple alarm clock program.                                  //
-//    Attached the LCD to PORTD and keypad to PORTB.                         //
-//    Fill in the five statements in the main program.                       //
-//    Next build, download and execute the program.                          //
-//    For example, set the time at 12:34:56.                                 //
-//    Set the alarm time at 12:35.                                           //
-//***************************************************************************//
+/*
+ * File:   Main_Program.c
+ * Author: Natawat "Minin0la" Hebnak
+ *
+ * Created on 27 July, 2016, 9:31 AM
+ */
+
+
 
 #include <xc.h>
 #include "lcd.h"
@@ -14,7 +14,7 @@
 
 unsigned char hour, minute, second, hourA, minuteA;
 
-char int_2_char (unsigned char int1)
+char int_2_char (unsigned char int1) //Character Convertor
 {
 	char char1;
 	switch (int1)
@@ -34,7 +34,7 @@ char int_2_char (unsigned char int1)
 	return(char1);
 }
 
-unsigned char char_2_int (char char1)
+unsigned char char_2_int (char char1) //Character Convertor
 {
 	unsigned char int1;
 	switch (char1)
@@ -204,7 +204,7 @@ void SetupTimerInterruptRegisters()
 				// 1 Enable all high priority interrupts
 				// 0 Disable all high priority interrupts 
 
-	T0CON = 0b00000000;	// bit7:0 Stop Timer0
+	T0CON = 0b00000111;	// bit7:0 Stop Timer0
 				// bit6:0 Timer0 as 16 bit timer
 				// bit5:0 Clock source is internal 
 				// bit4:0 Increment on lo to hi transition on TOCKI pin

@@ -1,5 +1,5 @@
 
-# 1 "Timer.c"
+# 1 "Main_Program.c"
 
 # 26 "C:\Program Files (x86)\Microchip\xc8\v1.35\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -5410,7 +5410,7 @@ extern void delay_us(unsigned int i);
 # 3 "keypad.h"
 extern char getkey(void);
 
-# 15 "Timer.c"
+# 15 "Main_Program.c"
 unsigned char hour, minute, second, hourA, minuteA;
 
 char int_2_char (unsigned char int1)
@@ -5557,7 +5557,7 @@ void SetupAlarmTime()
 {
 unsigned char msgindex, outchar, ctemp;
 unsigned char hour10, hour1, minute10, minute1;
-char Message[ ] = "Time for Subject A:";
+char Message[ ] = "Set alarm time hhmm:";
 
 lcd_write_cmd(0x80);
 
@@ -5592,6 +5592,7 @@ delay_ms(500);
 lcd_write_cmd(0x01);
 }
 
+
 void SetupTimerInterruptRegisters()
 {
 RCONbits.IPEN =1;
@@ -5603,9 +5604,9 @@ INTCONbits.GIEH =1;
 
 
 
-T0CON = 0b00000000;
+T0CON = 0b00000111;
 
-# 215
+# 216
 INTCON2 = 0b10000100;
 
 
