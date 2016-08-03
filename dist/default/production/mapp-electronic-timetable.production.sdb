@@ -42,62 +42,26 @@
 [v i2_lcd_strobe lcd_strobe `(v  1 e 0 0 ]
 "83
 [v _lcd_init lcd_init `(v  1 e 0 0 ]
-"17 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\Main.c
+"15 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\Main.c
 [v _int_2_char int_2_char `(uc  1 e 1 0 ]
-"37
+"35
 [v _char_2_int char_2_int `(uc  1 e 1 0 ]
-"57
+"55
 [v _ISR_Timer0_Int ISR_Timer0_Int `II(v  1 e 0 0 ]
-"109
+"107
 [v _SetupTime SetupTime `(v  1 e 0 0 ]
-"157
+"155
 [v _SetupAlarmTimeA SetupAlarmTimeA `(v  1 e 0 0 ]
-"195
+"193
 [v _SetupAlarmTimeB SetupAlarmTimeB `(v  1 e 0 0 ]
-"233
+"231
 [v _SetupAlarmTimeC SetupAlarmTimeC `(v  1 e 0 0 ]
-"271
+"269
 [v _SetupTimerInterruptRegisters SetupTimerInterruptRegisters `(v  1 e 0 0 ]
-"339
+"304
 [v _main main `(v  1 e 0 0 ]
 "2571 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4550.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
-[s S364 . 1 `uc 1 RA0 1 0 :1:0 
-`uc 1 RA1 1 0 :1:1 
-`uc 1 RA2 1 0 :1:2 
-`uc 1 RA3 1 0 :1:3 
-`uc 1 RA4 1 0 :1:4 
-`uc 1 RA5 1 0 :1:5 
-`uc 1 RA6 1 0 :1:6 
-]
-"2618
-[s S372 . 1 `uc 1 AN0 1 0 :1:0 
-`uc 1 AN1 1 0 :1:1 
-`uc 1 AN2 1 0 :1:2 
-`uc 1 AN3 1 0 :1:3 
-`uc 1 T0CKI 1 0 :1:4 
-`uc 1 AN4 1 0 :1:5 
-`uc 1 OSC2 1 0 :1:6 
-]
-[s S380 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 VREFM 1 0 :1:2 
-`uc 1 VREFP 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 LVDIN 1 0 :1:5 
-]
-[s S386 . 1 `uc 1 . 1 0 :5:0 
-`uc 1 HLVDIN 1 0 :1:5 
-]
-[s S389 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 RA7 1 0 :1:7 
-]
-[s S392 . 1 `uc 1 . 1 0 :7:0 
-`uc 1 RJPU 1 0 :1:7 
-]
-[s S395 . 1 `uc 1 ULPWUIN 1 0 :1:0 
-]
-[u S397 . 1 `S364 1 . 1 0 `S372 1 . 1 0 `S380 1 . 1 0 `S386 1 . 1 0 `S389 1 . 1 0 `S392 1 . 1 0 `S395 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES397  1 e 1 @3968 ]
 "2727
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
 [s S98 . 1 `uc 1 RB0 1 0 :1:0 
@@ -259,7 +223,7 @@
 ]
 [u S196 . 1 `S156 1 . 1 0 `S165 1 . 1 0 `S174 1 . 1 0 `S183 1 . 1 0 `S192 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES196  1 e 1 @4082 ]
-"15 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\Main.c
+"13 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\Main.c
 [v _hour hour `uc  1 e 1 0 ]
 [v _minute minute `uc  1 e 1 0 ]
 [v _second second `uc  1 e 1 0 ]
@@ -269,12 +233,10 @@
 [v _minuteB minuteB `uc  1 e 1 0 ]
 [v _hourC hourC `uc  1 e 1 0 ]
 [v _minuteC minuteC `uc  1 e 1 0 ]
-"339
+"304
 [v _main main `(v  1 e 0 0 ]
 {
-"341
-[v main@displayUpdated displayUpdated `uc  1 a 1 47 ]
-"377
+"336
 } 0
 "83 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\lcd_utilities.c
 [v _lcd_init lcd_init `(v  1 e 0 0 ]
@@ -283,88 +245,88 @@
 [v lcd_init@i i `i  1 a 2 33 ]
 "123
 } 0
-"271 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\Main.c
+"269 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\Main.c
 [v _SetupTimerInterruptRegisters SetupTimerInterruptRegisters `(v  1 e 0 0 ]
 {
-"305
+"303
 } 0
-"109
+"107
 [v _SetupTime SetupTime `(v  1 e 0 0 ]
 {
-"113
-[v SetupTime@Message Message `[21]uc  1 a 21 0 ]
 "111
+[v SetupTime@Message Message `[21]uc  1 a 21 0 ]
+"109
 [v SetupTime@ctemp ctemp `uc  1 a 1 29 ]
 [v SetupTime@msgindex msgindex `uc  1 a 1 28 ]
-"112
+"110
 [v SetupTime@second1 second1 `uc  1 a 1 27 ]
 [v SetupTime@second10 second10 `uc  1 a 1 26 ]
 [v SetupTime@minute1 minute1 `uc  1 a 1 25 ]
 [v SetupTime@minute10 minute10 `uc  1 a 1 24 ]
 [v SetupTime@hour1 hour1 `uc  1 a 1 23 ]
 [v SetupTime@hour10 hour10 `uc  1 a 1 22 ]
-"111
+"109
 [v SetupTime@outchar outchar `uc  1 a 1 21 ]
-"112
+"110
 [v SetupTime@F4486 F4486 `[21]uc  1 s 21 F4486 ]
-"155
+"153
 } 0
-"233
+"231
 [v _SetupAlarmTimeC SetupAlarmTimeC `(v  1 e 0 0 ]
 {
-"237
-[v SetupAlarmTimeC@Message Message `[21]uc  1 a 21 0 ]
 "235
+[v SetupAlarmTimeC@Message Message `[21]uc  1 a 21 0 ]
+"233
 [v SetupAlarmTimeC@ctemp ctemp `uc  1 a 1 27 ]
 [v SetupAlarmTimeC@msgindex msgindex `uc  1 a 1 26 ]
-"236
+"234
 [v SetupAlarmTimeC@minute1 minute1 `uc  1 a 1 25 ]
 [v SetupAlarmTimeC@minute10 minute10 `uc  1 a 1 24 ]
 [v SetupAlarmTimeC@hour1 hour1 `uc  1 a 1 23 ]
 [v SetupAlarmTimeC@hour10 hour10 `uc  1 a 1 22 ]
-"235
+"233
 [v SetupAlarmTimeC@outchar outchar `uc  1 a 1 21 ]
-"236
+"234
 [v SetupAlarmTimeC@F4516 F4516 `[21]uc  1 s 21 F4516 ]
-"270
+"268
 } 0
-"195
+"193
 [v _SetupAlarmTimeB SetupAlarmTimeB `(v  1 e 0 0 ]
 {
-"199
-[v SetupAlarmTimeB@Message Message `[21]uc  1 a 21 0 ]
 "197
+[v SetupAlarmTimeB@Message Message `[21]uc  1 a 21 0 ]
+"195
 [v SetupAlarmTimeB@ctemp ctemp `uc  1 a 1 27 ]
 [v SetupAlarmTimeB@msgindex msgindex `uc  1 a 1 26 ]
-"198
+"196
 [v SetupAlarmTimeB@minute1 minute1 `uc  1 a 1 25 ]
 [v SetupAlarmTimeB@minute10 minute10 `uc  1 a 1 24 ]
 [v SetupAlarmTimeB@hour1 hour1 `uc  1 a 1 23 ]
 [v SetupAlarmTimeB@hour10 hour10 `uc  1 a 1 22 ]
-"197
+"195
 [v SetupAlarmTimeB@outchar outchar `uc  1 a 1 21 ]
-"198
+"196
 [v SetupAlarmTimeB@F4506 F4506 `[21]uc  1 s 21 F4506 ]
-"232
+"230
 } 0
-"157
+"155
 [v _SetupAlarmTimeA SetupAlarmTimeA `(v  1 e 0 0 ]
 {
-"161
-[v SetupAlarmTimeA@Message Message `[21]uc  1 a 21 0 ]
 "159
+[v SetupAlarmTimeA@Message Message `[21]uc  1 a 21 0 ]
+"157
 [v SetupAlarmTimeA@ctemp ctemp `uc  1 a 1 27 ]
 [v SetupAlarmTimeA@msgindex msgindex `uc  1 a 1 26 ]
-"160
+"158
 [v SetupAlarmTimeA@minute1 minute1 `uc  1 a 1 25 ]
 [v SetupAlarmTimeA@minute10 minute10 `uc  1 a 1 24 ]
 [v SetupAlarmTimeA@hour1 hour1 `uc  1 a 1 23 ]
 [v SetupAlarmTimeA@hour10 hour10 `uc  1 a 1 22 ]
-"159
+"157
 [v SetupAlarmTimeA@outchar outchar `uc  1 a 1 21 ]
-"160
+"158
 [v SetupAlarmTimeA@F4496 F4496 `[21]uc  1 s 21 F4496 ]
-"194
+"192
 } 0
 "43 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\lcd_utilities.c
 [v _lcd_write_data lcd_write_data `(v  1 e 0 0 ]
@@ -414,28 +376,28 @@
 [v delay_ms@i i `ui  1 p 2 28 ]
 "14
 } 0
-"37 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\Main.c
+"35 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\Main.c
 [v _char_2_int char_2_int `(uc  1 e 1 0 ]
 {
 [v char_2_int@char1 char1 `uc  1 a 1 wreg ]
-"39
-[v char_2_int@int1 int1 `uc  1 a 1 29 ]
 "37
+[v char_2_int@int1 int1 `uc  1 a 1 29 ]
+"35
 [v char_2_int@char1 char1 `uc  1 a 1 wreg ]
 [v char_2_int@char1 char1 `uc  1 a 1 28 ]
-"55
+"53
 } 0
-"57
+"55
 [v _ISR_Timer0_Int ISR_Timer0_Int `II(v  1 e 0 0 ]
 {
-"59
+"57
 [v ISR_Timer0_Int@second10 second10 `uc  1 a 1 27 ]
 [v ISR_Timer0_Int@minute10 minute10 `uc  1 a 1 26 ]
 [v ISR_Timer0_Int@hour10 hour10 `uc  1 a 1 25 ]
 [v ISR_Timer0_Int@second1 second1 `uc  1 a 1 24 ]
 [v ISR_Timer0_Int@minute1 minute1 `uc  1 a 1 23 ]
 [v ISR_Timer0_Int@hour1 hour1 `uc  1 a 1 22 ]
-"107
+"105
 } 0
 "43 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\lcd_utilities.c
 [v i2_lcd_write_data lcd_write_data `(v  1 e 0 0 ]
@@ -462,16 +424,16 @@
 {
 "79
 } 0
-"17 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\Main.c
+"15 C:\Users\Minin0la\Documents\GitHub\mapp-electronic-timetable\Main.c
 [v _int_2_char int_2_char `(uc  1 e 1 0 ]
 {
 [v int_2_char@int1 int1 `uc  1 a 1 wreg ]
-"19
-[v int_2_char@char1 char1 `uc  1 a 1 1 ]
 "17
+[v int_2_char@char1 char1 `uc  1 a 1 1 ]
+"15
 [v int_2_char@int1 int1 `uc  1 a 1 wreg ]
 [v int_2_char@int1 int1 `uc  1 a 1 0 ]
-"35
+"33
 } 0
 "8 C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]

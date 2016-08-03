@@ -1,11 +1,9 @@
-//***************************************************************************//
-//    This is a simple alarm clock program.                                  //
-//    Attached the LCD to PORTD and keypad to PORTB.                         //
-//    Fill in the five statements in the main program.                       //
-//    Next build, download and execute the program.                          //
-//    For example, set the time at 12:34:56.                                 //
-//    Set the alarm time at 12:35.                                           //
-//***************************************************************************//
+/*
+ * File:   Main_Program.c
+ * Author: Natawat "Minin0la" Hebnak
+ *
+ * Created on 27 July, 2016, 9:31 AM
+ */
 
 #include <xc.h>
 #include "lcd.h"
@@ -106,7 +104,7 @@ void interrupt ISR_Timer0_Int()
 	}
 }
 
-void SetupTime()
+void SetupTime() //Program to get current Time
 {
 	unsigned char msgindex, outchar, ctemp;
 	unsigned char hour10, hour1, minute10, minute1, second10, second1;
@@ -154,7 +152,7 @@ void SetupTime()
 	lcd_write_cmd(0x01);
 }
 
-void SetupAlarmTimeA()
+void SetupAlarmTimeA() //Program to get Alarm Time for Subject A
 {
 	unsigned char msgindex, outchar, ctemp;
 	unsigned char hour10, hour1, minute10, minute1;    
@@ -192,7 +190,7 @@ void SetupAlarmTimeA()
 	delay_ms(500);
 	lcd_write_cmd(0x01);
 }
-void SetupAlarmTimeB()
+void SetupAlarmTimeB() //Program to get Alarm Time for Subject B
 {
 	unsigned char msgindex, outchar, ctemp;
 	unsigned char hour10, hour1, minute10, minute1;    
@@ -230,7 +228,7 @@ void SetupAlarmTimeB()
 	delay_ms(500);
 	lcd_write_cmd(0x01);
 }
-void SetupAlarmTimeC()
+void SetupAlarmTimeC() //Program to get Alarm Time for Subject C
 {
 	unsigned char msgindex, outchar, ctemp;
 	unsigned char hour10, hour1, minute10, minute1;    
@@ -303,75 +301,36 @@ void SetupTimerInterruptRegisters()
 				// 0 TMR0 register did not overflow
 
 }
-/*
-void displayAlarmAOn()
-{   
-    PORTAbits.RA1 = 1; 
-}
-void displayAlarmBOn()
-{   
-    PORTAbits.RA2 = 1; 
-}
-void displayAlarmCOn()
-{   
-    PORTAbits.RA3 = 1; 
-}
-void displayAlarmAOff()
-{ 
-    PORTAbits.RA1 = 0; 
-}
-void displayAlarmBOff()
-{  
-    PORTAbits.RA2 = 0; 
-}
-void displayAlarmCOff()
-{  
-    PORTAbits.RA3 = 0; 
-}
-void BuzzerOff()
-{
-    PORTAbits.RA0 = 0;
-}
-void BuzzerOn()
-{
-    PORTAbits.RA0 = 1;
-} */
 void main(void)   //------------ Main Program  ---------------------------------------------------------------
 {
-	unsigned char displayUpdated;
-	displayUpdated = 1;
-
 	ADCON1 = 0x0F;
 	CMCON = 0x07;
     
 	lcd_init();
 
-	SetupTime();
-	SetupAlarmTimeA();
-	SetupAlarmTimeB();
-    SetupAlarmTimeC();
+	SetupTime(); //Get Time
+	SetupAlarmTimeA(); //Get Alarm Time for Subject A
+	SetupAlarmTimeB(); //Get Alarm Time for Subject B
+    SetupAlarmTimeC(); //Get Alarm Time for Subject C
 	SetupTimerInterruptRegisters();
-    TRISA = 0b00000000;
+    TRISA = 0b00000000; //Set PORTAs as outputs
     
 	while(1)
 	{
 		if(hour==hourA && minute==minuteA)
 		{
-                PORTA = 0b00000011;
+                PORTA = 0b00000011; //On Buzzer RA0 and LED RA1
 		}
 		else if(hour==hourB && minute==minuteB)
         {
-                PORTA = 0b00000101;
+                PORTA = 0b00000101; //On Buzzer RA0 and LED RA2
         }
 		else if(hour==hourC && minute==minuteC)
         {
-                PORTA = 0b00001001;
+                PORTA = 0b00001001; //On Buzzer RA0 and LED RA3
         } else
 		{
-                PORTAbits.RA0 = 1;
-                PORTAbits.RA1 = 1;
-                PORTAbits.RA2 = 1;
-                PORTAbits.RA3 = 1;
+            PORTA = 0b00000000; //Off Buzzer and All LEDS at start
 		}
 	}
 }

@@ -5410,7 +5410,7 @@ extern void delay_us(unsigned int i);
 # 3 "keypad.h"
 extern char getkey(void);
 
-# 15 "Main.c"
+# 13 "Main.c"
 unsigned char hour, minute, second, hourA, minuteA, hourB, minuteB, hourC, minuteC;
 
 char int_2_char (unsigned char int1)
@@ -5680,7 +5680,7 @@ INTCONbits.GIEH =1;
 
 T0CON = 0b00000111;
 
-# 290
+# 288
 INTCON2 = 0b10000100;
 
 
@@ -5697,13 +5697,8 @@ INTCONbits.TMR0IF = 0;
 
 
 }
-
-# 339
 void main(void)
 {
-unsigned char displayUpdated;
-displayUpdated = 1;
-
 ADCON1 = 0x0F;
 CMCON = 0x07;
 
@@ -5731,10 +5726,7 @@ else if(hour==hourC && minute==minuteC)
 PORTA = 0b00001001;
 } else
 {
-PORTAbits.RA0 = 1;
-PORTAbits.RA1 = 1;
-PORTAbits.RA2 = 1;
-PORTAbits.RA3 = 1;
+PORTA = 0b00000000;
 }
 }
 }

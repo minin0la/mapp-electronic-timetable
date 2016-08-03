@@ -86,32 +86,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
 "2571
 [v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
-"2577
-[s S193 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S193 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 ]
-"2586
-[s S194 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S194 . AN0 AN1 AN2 AN3 T0CKI AN4 OSC2 ]
-"2595
-[s S195 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S195 . . VREFM VREFP . LVDIN ]
-"2602
-[s S196 :5 `uc 1 :1 `uc 1 ]
-[n S196 . . HLVDIN ]
-"2606
-[s S197 :7 `uc 1 :1 `uc 1 ]
-[n S197 . . RA7 ]
-"2610
-[s S198 :7 `uc 1 :1 `uc 1 ]
-[n S198 . . RJPU ]
-"2614
-[s S199 :1 `uc 1 ]
-[n S199 . ULPWUIN ]
-"2576
-[u S192 `S193 1 `S194 1 `S195 1 `S196 1 `S197 1 `S198 1 `S199 1 ]
-[n S192 . . . . . . . . ]
-"2618
-[v _PORTAbits `VS192 ~T0 @X0 0 e@3968 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4261,7 +4235,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;delays.h: 5: extern void delay_ms(unsigned int i);
 [; ;delays.h: 7: extern void delay_us(unsigned int i);
 [; ;keypad.h: 3: extern char getkey(void);
-"15 Main.c
+"13 Main.c
 [v _hour `uc ~T0 @X0 1 e ]
 [v _minute `uc ~T0 @X0 1 e ]
 [v _second `uc ~T0 @X0 1 e ]
@@ -4271,86 +4245,86 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _minuteB `uc ~T0 @X0 1 e ]
 [v _hourC `uc ~T0 @X0 1 e ]
 [v _minuteC `uc ~T0 @X0 1 e ]
-[; ;Main.c: 15: unsigned char hour, minute, second, hourA, minuteA, hourB, minuteB, hourC, minuteC;
-"17
+[; ;Main.c: 13: unsigned char hour, minute, second, hourA, minuteA, hourB, minuteB, hourC, minuteC;
+"15
 [v _int_2_char `(uc ~T0 @X0 1 ef1`uc ]
-"18
+"16
 {
-[; ;Main.c: 17: char int_2_char (unsigned char int1)
-[; ;Main.c: 18: {
+[; ;Main.c: 15: char int_2_char (unsigned char int1)
+[; ;Main.c: 16: {
 [e :U _int_2_char ]
-"17
+"15
 [v _int1 `uc ~T0 @X0 1 r1 ]
-"18
+"16
 [f ]
-"19
+"17
 [v _char1 `uc ~T0 @X0 1 a ]
-[; ;Main.c: 19: char char1;
-[; ;Main.c: 20: switch (int1)
-"20
+[; ;Main.c: 17: char char1;
+[; ;Main.c: 18: switch (int1)
+"18
 [e $U 559  ]
-[; ;Main.c: 21: {
-"21
+[; ;Main.c: 19: {
+"19
 {
-[; ;Main.c: 22: case 0 : char1 = '0' ; break;
-"22
+[; ;Main.c: 20: case 0 : char1 = '0' ; break;
+"20
 [e :U 560 ]
 [e = _char1 -> -> 48 `ui `uc ]
 [e $U 558  ]
-[; ;Main.c: 23: case 1 : char1 = '1' ; break;
-"23
+[; ;Main.c: 21: case 1 : char1 = '1' ; break;
+"21
 [e :U 561 ]
 [e = _char1 -> -> 49 `ui `uc ]
 [e $U 558  ]
-[; ;Main.c: 24: case 2 : char1 = '2' ; break;
-"24
+[; ;Main.c: 22: case 2 : char1 = '2' ; break;
+"22
 [e :U 562 ]
 [e = _char1 -> -> 50 `ui `uc ]
 [e $U 558  ]
-[; ;Main.c: 25: case 3 : char1 = '3' ; break;
-"25
+[; ;Main.c: 23: case 3 : char1 = '3' ; break;
+"23
 [e :U 563 ]
 [e = _char1 -> -> 51 `ui `uc ]
 [e $U 558  ]
-[; ;Main.c: 26: case 4 : char1 = '4' ; break;
-"26
+[; ;Main.c: 24: case 4 : char1 = '4' ; break;
+"24
 [e :U 564 ]
 [e = _char1 -> -> 52 `ui `uc ]
 [e $U 558  ]
-[; ;Main.c: 27: case 5 : char1 = '5' ; break;
-"27
+[; ;Main.c: 25: case 5 : char1 = '5' ; break;
+"25
 [e :U 565 ]
 [e = _char1 -> -> 53 `ui `uc ]
 [e $U 558  ]
-[; ;Main.c: 28: case 6 : char1 = '6' ; break;
-"28
+[; ;Main.c: 26: case 6 : char1 = '6' ; break;
+"26
 [e :U 566 ]
 [e = _char1 -> -> 54 `ui `uc ]
 [e $U 558  ]
-[; ;Main.c: 29: case 7 : char1 = '7' ; break;
-"29
+[; ;Main.c: 27: case 7 : char1 = '7' ; break;
+"27
 [e :U 567 ]
 [e = _char1 -> -> 55 `ui `uc ]
 [e $U 558  ]
-[; ;Main.c: 30: case 8 : char1 = '8' ; break;
-"30
+[; ;Main.c: 28: case 8 : char1 = '8' ; break;
+"28
 [e :U 568 ]
 [e = _char1 -> -> 56 `ui `uc ]
 [e $U 558  ]
-[; ;Main.c: 31: case 9 : char1 = '9' ; break;
-"31
+[; ;Main.c: 29: case 9 : char1 = '9' ; break;
+"29
 [e :U 569 ]
 [e = _char1 -> -> 57 `ui `uc ]
 [e $U 558  ]
-[; ;Main.c: 32: default : char1 = '?' ;
-"32
+[; ;Main.c: 30: default : char1 = '?' ;
+"30
 [e :U 570 ]
 [e = _char1 -> -> 63 `ui `uc ]
-"33
+"31
 }
-[; ;Main.c: 33: }
+[; ;Main.c: 31: }
 [e $U 558  ]
-"20
+"18
 [e :U 559 ]
 [e [\ _int1 , $ -> -> 0 `i `uc 560
  , $ -> -> 1 `i `uc 561
@@ -4363,95 +4337,95 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 8 `i `uc 568
  , $ -> -> 9 `i `uc 569
  570 ]
-"33
+"31
 [e :U 558 ]
-[; ;Main.c: 34: return(char1);
-"34
+[; ;Main.c: 32: return(char1);
+"32
 [e ) _char1 ]
 [e $UE 557  ]
-[; ;Main.c: 35: }
-"35
+[; ;Main.c: 33: }
+"33
 [e :UE 557 ]
 }
-"37
+"35
 [v _char_2_int `(uc ~T0 @X0 1 ef1`uc ]
-"38
+"36
 {
-[; ;Main.c: 37: unsigned char char_2_int (char char1)
-[; ;Main.c: 38: {
+[; ;Main.c: 35: unsigned char char_2_int (char char1)
+[; ;Main.c: 36: {
 [e :U _char_2_int ]
-"37
+"35
 [v _char1 `uc ~T0 @X0 1 r1 ]
-"38
+"36
 [f ]
-"39
+"37
 [v _int1 `uc ~T0 @X0 1 a ]
-[; ;Main.c: 39: unsigned char int1;
-[; ;Main.c: 40: switch (char1)
-"40
+[; ;Main.c: 37: unsigned char int1;
+[; ;Main.c: 38: switch (char1)
+"38
 [e $U 573  ]
-[; ;Main.c: 41: {
-"41
+[; ;Main.c: 39: {
+"39
 {
-[; ;Main.c: 42: case '0' : int1 = 0 ; break;
-"42
+[; ;Main.c: 40: case '0' : int1 = 0 ; break;
+"40
 [e :U 574 ]
 [e = _int1 -> -> 0 `i `uc ]
 [e $U 572  ]
-[; ;Main.c: 43: case '1' : int1 = 1 ; break;
-"43
+[; ;Main.c: 41: case '1' : int1 = 1 ; break;
+"41
 [e :U 575 ]
 [e = _int1 -> -> 1 `i `uc ]
 [e $U 572  ]
-[; ;Main.c: 44: case '2' : int1 = 2 ; break;
-"44
+[; ;Main.c: 42: case '2' : int1 = 2 ; break;
+"42
 [e :U 576 ]
 [e = _int1 -> -> 2 `i `uc ]
 [e $U 572  ]
-[; ;Main.c: 45: case '3' : int1 = 3 ; break;
-"45
+[; ;Main.c: 43: case '3' : int1 = 3 ; break;
+"43
 [e :U 577 ]
 [e = _int1 -> -> 3 `i `uc ]
 [e $U 572  ]
-[; ;Main.c: 46: case '4' : int1 = 4 ; break;
-"46
+[; ;Main.c: 44: case '4' : int1 = 4 ; break;
+"44
 [e :U 578 ]
 [e = _int1 -> -> 4 `i `uc ]
 [e $U 572  ]
-[; ;Main.c: 47: case '5' : int1 = 5 ; break;
-"47
+[; ;Main.c: 45: case '5' : int1 = 5 ; break;
+"45
 [e :U 579 ]
 [e = _int1 -> -> 5 `i `uc ]
 [e $U 572  ]
-[; ;Main.c: 48: case '6' : int1 = 6 ; break;
-"48
+[; ;Main.c: 46: case '6' : int1 = 6 ; break;
+"46
 [e :U 580 ]
 [e = _int1 -> -> 6 `i `uc ]
 [e $U 572  ]
-[; ;Main.c: 49: case '7' : int1 = 7 ; break;
-"49
+[; ;Main.c: 47: case '7' : int1 = 7 ; break;
+"47
 [e :U 581 ]
 [e = _int1 -> -> 7 `i `uc ]
 [e $U 572  ]
-[; ;Main.c: 50: case '8' : int1 = 8 ; break;
-"50
+[; ;Main.c: 48: case '8' : int1 = 8 ; break;
+"48
 [e :U 582 ]
 [e = _int1 -> -> 8 `i `uc ]
 [e $U 572  ]
-[; ;Main.c: 51: case '9' : int1 = 9 ; break;
-"51
+[; ;Main.c: 49: case '9' : int1 = 9 ; break;
+"49
 [e :U 583 ]
 [e = _int1 -> -> 9 `i `uc ]
 [e $U 572  ]
-[; ;Main.c: 52: default : int1 = 0 ;
-"52
+[; ;Main.c: 50: default : int1 = 0 ;
+"50
 [e :U 584 ]
 [e = _int1 -> -> 0 `i `uc ]
-"53
+"51
 }
-[; ;Main.c: 53: }
+[; ;Main.c: 51: }
 [e $U 572  ]
-"40
+"38
 [e :U 573 ]
 [e [\ _char1 , $ -> -> 48 `ui `uc 574
  , $ -> -> 49 `ui `uc 575
@@ -4464,171 +4438,171 @@ Version 3.2 HI-TECH Software Intermediate Code
  , $ -> -> 56 `ui `uc 582
  , $ -> -> 57 `ui `uc 583
  584 ]
-"53
+"51
 [e :U 572 ]
-[; ;Main.c: 54: return(int1);
-"54
+[; ;Main.c: 52: return(int1);
+"52
 [e ) _int1 ]
 [e $UE 571  ]
-[; ;Main.c: 55: }
-"55
+[; ;Main.c: 53: }
+"53
 [e :UE 571 ]
 }
 [v F4468 `(v ~T0 @X0 1 tf ]
-"57
+"55
 [v _ISR_Timer0_Int `IF4468 ~T0 @X0 1 e ]
-"58
+"56
 {
-[; ;Main.c: 57: void interrupt ISR_Timer0_Int()
-[; ;Main.c: 58: {
+[; ;Main.c: 55: void interrupt ISR_Timer0_Int()
+[; ;Main.c: 56: {
 [e :U _ISR_Timer0_Int ]
 [f ]
-"59
+"57
 [v _hour10 `uc ~T0 @X0 1 a ]
 [v _hour1 `uc ~T0 @X0 1 a ]
 [v _minute10 `uc ~T0 @X0 1 a ]
 [v _minute1 `uc ~T0 @X0 1 a ]
 [v _second10 `uc ~T0 @X0 1 a ]
 [v _second1 `uc ~T0 @X0 1 a ]
-[; ;Main.c: 59: unsigned char hour10, hour1, minute10, minute1, second10, second1;
-[; ;Main.c: 60: if (INTCONbits.TMR0IF == 1)
-"60
+[; ;Main.c: 57: unsigned char hour10, hour1, minute10, minute1, second10, second1;
+[; ;Main.c: 58: if (INTCONbits.TMR0IF == 1)
+"58
 [e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 586  ]
-[; ;Main.c: 61: {
-"61
+[; ;Main.c: 59: {
+"59
 {
-[; ;Main.c: 65: second = second + 1;
-"65
+[; ;Main.c: 63: second = second + 1;
+"63
 [e = _second -> + -> _second `i -> 1 `i `uc ]
-[; ;Main.c: 66: if ( second > 59 )
-"66
+[; ;Main.c: 64: if ( second > 59 )
+"64
 [e $ ! > -> _second `i -> 59 `i 587  ]
-[; ;Main.c: 67: {
-"67
+[; ;Main.c: 65: {
+"65
 {
-[; ;Main.c: 68: second = 0;
-"68
+[; ;Main.c: 66: second = 0;
+"66
 [e = _second -> -> 0 `i `uc ]
-[; ;Main.c: 69: minute = minute + 1;
-"69
+[; ;Main.c: 67: minute = minute + 1;
+"67
 [e = _minute -> + -> _minute `i -> 1 `i `uc ]
-[; ;Main.c: 70: if ( minute > 59 )
-"70
+[; ;Main.c: 68: if ( minute > 59 )
+"68
 [e $ ! > -> _minute `i -> 59 `i 588  ]
-[; ;Main.c: 71: {
-"71
+[; ;Main.c: 69: {
+"69
 {
-[; ;Main.c: 72: minute = 0;
-"72
+[; ;Main.c: 70: minute = 0;
+"70
 [e = _minute -> -> 0 `i `uc ]
-[; ;Main.c: 73: hour = hour + 1;
-"73
+[; ;Main.c: 71: hour = hour + 1;
+"71
 [e = _hour -> + -> _hour `i -> 1 `i `uc ]
-[; ;Main.c: 74: if ( hour > 23 )
-"74
+[; ;Main.c: 72: if ( hour > 23 )
+"72
 [e $ ! > -> _hour `i -> 23 `i 589  ]
-[; ;Main.c: 75: hour = 0;
-"75
+[; ;Main.c: 73: hour = 0;
+"73
 [e = _hour -> -> 0 `i `uc ]
 [e :U 589 ]
-"76
+"74
 }
 [e :U 588 ]
-"77
+"75
 }
 [e :U 587 ]
-[; ;Main.c: 76: }
-[; ;Main.c: 77: }
-[; ;Main.c: 79: hour10 = hour / 10;
-"79
+[; ;Main.c: 74: }
+[; ;Main.c: 75: }
+[; ;Main.c: 77: hour10 = hour / 10;
+"77
 [e = _hour10 -> / -> _hour `i -> 10 `i `uc ]
-[; ;Main.c: 80: hour1 = hour - hour10 * 10;
-"80
+[; ;Main.c: 78: hour1 = hour - hour10 * 10;
+"78
 [e = _hour1 -> - -> _hour `i * -> _hour10 `i -> 10 `i `uc ]
-[; ;Main.c: 82: minute10 = minute / 10;
-"82
+[; ;Main.c: 80: minute10 = minute / 10;
+"80
 [e = _minute10 -> / -> _minute `i -> 10 `i `uc ]
-[; ;Main.c: 83: minute1 = minute - minute10 * 10;
-"83
+[; ;Main.c: 81: minute1 = minute - minute10 * 10;
+"81
 [e = _minute1 -> - -> _minute `i * -> _minute10 `i -> 10 `i `uc ]
-[; ;Main.c: 85: second10 = second / 10;
-"85
+[; ;Main.c: 83: second10 = second / 10;
+"83
 [e = _second10 -> / -> _second `i -> 10 `i `uc ]
-[; ;Main.c: 86: second1 = second - second10 * 10;
-"86
+[; ;Main.c: 84: second1 = second - second10 * 10;
+"84
 [e = _second1 -> - -> _second `i * -> _second10 `i -> 10 `i `uc ]
-[; ;Main.c: 88: lcd_write_cmd(0x80);
-"88
+[; ;Main.c: 86: lcd_write_cmd(0x80);
+"86
 [e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
-[; ;Main.c: 89: lcd_write_data('t');
-"89
+[; ;Main.c: 87: lcd_write_data('t');
+"87
 [e ( _lcd_write_data (1 -> -> 116 `ui `uc ]
-[; ;Main.c: 90: lcd_write_data('i');
-"90
+[; ;Main.c: 88: lcd_write_data('i');
+"88
 [e ( _lcd_write_data (1 -> -> 105 `ui `uc ]
-[; ;Main.c: 91: lcd_write_data('m');
-"91
+[; ;Main.c: 89: lcd_write_data('m');
+"89
 [e ( _lcd_write_data (1 -> -> 109 `ui `uc ]
-[; ;Main.c: 92: lcd_write_data('e');
-"92
+[; ;Main.c: 90: lcd_write_data('e');
+"90
 [e ( _lcd_write_data (1 -> -> 101 `ui `uc ]
+[; ;Main.c: 91: lcd_write_data(' ');
+"91
+[e ( _lcd_write_data (1 -> -> 32 `ui `uc ]
+[; ;Main.c: 92: lcd_write_data('=');
+"92
+[e ( _lcd_write_data (1 -> -> 61 `ui `uc ]
 [; ;Main.c: 93: lcd_write_data(' ');
 "93
 [e ( _lcd_write_data (1 -> -> 32 `ui `uc ]
-[; ;Main.c: 94: lcd_write_data('=');
+[; ;Main.c: 94: lcd_write_data(int_2_char (hour10));
 "94
-[e ( _lcd_write_data (1 -> -> 61 `ui `uc ]
-[; ;Main.c: 95: lcd_write_data(' ');
-"95
-[e ( _lcd_write_data (1 -> -> 32 `ui `uc ]
-[; ;Main.c: 96: lcd_write_data(int_2_char (hour10));
-"96
 [e ( _lcd_write_data (1 ( _int_2_char (1 _hour10 ]
-[; ;Main.c: 97: lcd_write_data(int_2_char (hour1));
-"97
+[; ;Main.c: 95: lcd_write_data(int_2_char (hour1));
+"95
 [e ( _lcd_write_data (1 ( _int_2_char (1 _hour1 ]
-[; ;Main.c: 98: lcd_write_data(':');
-"98
+[; ;Main.c: 96: lcd_write_data(':');
+"96
 [e ( _lcd_write_data (1 -> -> 58 `ui `uc ]
-[; ;Main.c: 99: lcd_write_data(int_2_char (minute10));
-"99
+[; ;Main.c: 97: lcd_write_data(int_2_char (minute10));
+"97
 [e ( _lcd_write_data (1 ( _int_2_char (1 _minute10 ]
-[; ;Main.c: 100: lcd_write_data(int_2_char (minute1));
-"100
+[; ;Main.c: 98: lcd_write_data(int_2_char (minute1));
+"98
 [e ( _lcd_write_data (1 ( _int_2_char (1 _minute1 ]
-[; ;Main.c: 101: lcd_write_data(':');
-"101
+[; ;Main.c: 99: lcd_write_data(':');
+"99
 [e ( _lcd_write_data (1 -> -> 58 `ui `uc ]
-[; ;Main.c: 102: lcd_write_data(int_2_char (second10));
-"102
+[; ;Main.c: 100: lcd_write_data(int_2_char (second10));
+"100
 [e ( _lcd_write_data (1 ( _int_2_char (1 _second10 ]
-[; ;Main.c: 103: lcd_write_data(int_2_char (second1));
-"103
+[; ;Main.c: 101: lcd_write_data(int_2_char (second1));
+"101
 [e ( _lcd_write_data (1 ( _int_2_char (1 _second1 ]
-[; ;Main.c: 105: INTCONbits.TMR0IF = 0;
-"105
+[; ;Main.c: 103: INTCONbits.TMR0IF = 0;
+"103
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"106
+"104
 }
 [e :U 586 ]
-[; ;Main.c: 106: }
-[; ;Main.c: 107: }
-"107
+[; ;Main.c: 104: }
+[; ;Main.c: 105: }
+"105
 [e :UE 585 ]
 }
-"109
+"107
 [v _SetupTime `(v ~T0 @X0 1 ef ]
-"110
+"108
 {
-[; ;Main.c: 109: void SetupTime()
-[; ;Main.c: 110: {
+[; ;Main.c: 107: void SetupTime()
+[; ;Main.c: 108: {
 [e :U _SetupTime ]
 [f ]
-"111
+"109
 [v _msgindex `uc ~T0 @X0 1 a ]
 [v _outchar `uc ~T0 @X0 1 a ]
 [v _ctemp `uc ~T0 @X0 1 a ]
-"112
+"110
 [v _hour10 `uc ~T0 @X0 1 a ]
 [v _hour1 `uc ~T0 @X0 1 a ]
 [v _minute10 `uc ~T0 @X0 1 a ]
@@ -4661,129 +4635,129 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"113
+"111
 [v _Message `uc ~T0 @X0 21  a ]
-[; ;Main.c: 111: unsigned char msgindex, outchar, ctemp;
-[; ;Main.c: 112: unsigned char hour10, hour1, minute10, minute1, second10, second1;
-[; ;Main.c: 113: char Message[ ] = "Set time hhmmss:    ";
+[; ;Main.c: 109: unsigned char msgindex, outchar, ctemp;
+[; ;Main.c: 110: unsigned char hour10, hour1, minute10, minute1, second10, second1;
+[; ;Main.c: 111: char Message[ ] = "Set time hhmmss:    ";
 [e = _Message F4486 ]
-[; ;Main.c: 115: lcd_write_cmd(0x80);
-"115
+[; ;Main.c: 113: lcd_write_cmd(0x80);
+"113
 [e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
-[; ;Main.c: 117: for (msgindex = 0; msgindex < 20; msgindex++)
-"117
+[; ;Main.c: 115: for (msgindex = 0; msgindex < 20; msgindex++)
+"115
 {
 [e = _msgindex -> -> 0 `i `uc ]
 [e $ < -> _msgindex `i -> 20 `i 591  ]
 [e $U 592  ]
-"118
+"116
 [e :U 591 ]
-[; ;Main.c: 118: {
+[; ;Main.c: 116: {
 {
-[; ;Main.c: 119: outchar = Message[msgindex];
-"119
-[e = _outchar *U + &U _Message * -> _msgindex `ux -> -> # *U &U _Message `ui `ux ]
-[; ;Main.c: 120: lcd_write_data(outchar);
-"120
-[e ( _lcd_write_data (1 _outchar ]
-"121
-}
+[; ;Main.c: 117: outchar = Message[msgindex];
 "117
+[e = _outchar *U + &U _Message * -> _msgindex `ux -> -> # *U &U _Message `ui `ux ]
+[; ;Main.c: 118: lcd_write_data(outchar);
+"118
+[e ( _lcd_write_data (1 _outchar ]
+"119
+}
+"115
 [e ++ _msgindex -> -> 1 `i `uc ]
 [e $ < -> _msgindex `i -> 20 `i 591  ]
 [e :U 592 ]
-"121
+"119
 }
-[; ;Main.c: 121: }
-[; ;Main.c: 123: lcd_write_cmd(0xC0);
-"123
+[; ;Main.c: 119: }
+[; ;Main.c: 121: lcd_write_cmd(0xC0);
+"121
 [e ( _lcd_write_cmd (1 -> -> 192 `i `uc ]
-[; ;Main.c: 125: ctemp=getkey();
+[; ;Main.c: 123: ctemp=getkey();
+"123
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 124: lcd_write_data(ctemp);
+"124
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 125: hour10 = char_2_int (ctemp);
 "125
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 126: lcd_write_data(ctemp);
-"126
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 127: hour10 = char_2_int (ctemp);
-"127
 [e = _hour10 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 129: ctemp=getkey();
+[; ;Main.c: 127: ctemp=getkey();
+"127
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 128: lcd_write_data(ctemp);
+"128
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 129: hour1 = char_2_int (ctemp);
 "129
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 130: lcd_write_data(ctemp);
-"130
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 131: hour1 = char_2_int (ctemp);
-"131
 [e = _hour1 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 133: ctemp=getkey();
+[; ;Main.c: 131: ctemp=getkey();
+"131
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 132: lcd_write_data(ctemp);
+"132
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 133: minute10 = char_2_int (ctemp);
 "133
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 134: lcd_write_data(ctemp);
-"134
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 135: minute10 = char_2_int (ctemp);
-"135
 [e = _minute10 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 137: ctemp=getkey();
+[; ;Main.c: 135: ctemp=getkey();
+"135
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 136: lcd_write_data(ctemp);
+"136
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 137: minute1 = char_2_int (ctemp);
 "137
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 138: lcd_write_data(ctemp);
-"138
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 139: minute1 = char_2_int (ctemp);
-"139
 [e = _minute1 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 141: ctemp=getkey();
+[; ;Main.c: 139: ctemp=getkey();
+"139
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 140: lcd_write_data(ctemp);
+"140
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 141: second10 = char_2_int (ctemp);
 "141
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 142: lcd_write_data(ctemp);
-"142
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 143: second10 = char_2_int (ctemp);
-"143
 [e = _second10 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 145: ctemp=getkey();
-"145
+[; ;Main.c: 143: ctemp=getkey();
+"143
 [e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 146: lcd_write_data(ctemp);
-"146
+[; ;Main.c: 144: lcd_write_data(ctemp);
+"144
 [e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 147: second1 = char_2_int (ctemp);
-"147
+[; ;Main.c: 145: second1 = char_2_int (ctemp);
+"145
 [e = _second1 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 149: hour = hour10 * 10 + hour1;
-"149
+[; ;Main.c: 147: hour = hour10 * 10 + hour1;
+"147
 [e = _hour -> + * -> _hour10 `i -> 10 `i -> _hour1 `i `uc ]
-[; ;Main.c: 150: minute = minute10 * 10 + minute1;
-"150
+[; ;Main.c: 148: minute = minute10 * 10 + minute1;
+"148
 [e = _minute -> + * -> _minute10 `i -> 10 `i -> _minute1 `i `uc ]
-[; ;Main.c: 151: second = second10 * 10 + second1;
-"151
+[; ;Main.c: 149: second = second10 * 10 + second1;
+"149
 [e = _second -> + * -> _second10 `i -> 10 `i -> _second1 `i `uc ]
-[; ;Main.c: 153: delay_ms(500);
-"153
+[; ;Main.c: 151: delay_ms(500);
+"151
 [e ( _delay_ms (1 -> -> 500 `i `ui ]
-[; ;Main.c: 154: lcd_write_cmd(0x01);
-"154
+[; ;Main.c: 152: lcd_write_cmd(0x01);
+"152
 [e ( _lcd_write_cmd (1 -> -> 1 `i `uc ]
-[; ;Main.c: 155: }
-"155
+[; ;Main.c: 153: }
+"153
 [e :UE 590 ]
 }
-"157
+"155
 [v _SetupAlarmTimeA `(v ~T0 @X0 1 ef ]
-"158
+"156
 {
-[; ;Main.c: 157: void SetupAlarmTimeA()
-[; ;Main.c: 158: {
+[; ;Main.c: 155: void SetupAlarmTimeA()
+[; ;Main.c: 156: {
 [e :U _SetupAlarmTimeA ]
 [f ]
-"159
+"157
 [v _msgindex `uc ~T0 @X0 1 a ]
 [v _outchar `uc ~T0 @X0 1 a ]
 [v _ctemp `uc ~T0 @X0 1 a ]
-"160
+"158
 [v _hour10 `uc ~T0 @X0 1 a ]
 [v _hour1 `uc ~T0 @X0 1 a ]
 [v _minute10 `uc ~T0 @X0 1 a ]
@@ -4814,108 +4788,108 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"161
+"159
 [v _Message `uc ~T0 @X0 21  a ]
-[; ;Main.c: 159: unsigned char msgindex, outchar, ctemp;
-[; ;Main.c: 160: unsigned char hour10, hour1, minute10, minute1;
-[; ;Main.c: 161: char Message[ ] = "Subject A Time hhmm:";
+[; ;Main.c: 157: unsigned char msgindex, outchar, ctemp;
+[; ;Main.c: 158: unsigned char hour10, hour1, minute10, minute1;
+[; ;Main.c: 159: char Message[ ] = "Subject A Time hhmm:";
 [e = _Message F4496 ]
-[; ;Main.c: 163: lcd_write_cmd(0x80);
-"163
+[; ;Main.c: 161: lcd_write_cmd(0x80);
+"161
 [e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
-[; ;Main.c: 165: for (msgindex = 0; msgindex < 20; msgindex++)
-"165
+[; ;Main.c: 163: for (msgindex = 0; msgindex < 20; msgindex++)
+"163
 {
 [e = _msgindex -> -> 0 `i `uc ]
 [e $ < -> _msgindex `i -> 20 `i 595  ]
 [e $U 596  ]
-"166
+"164
 [e :U 595 ]
-[; ;Main.c: 166: {
+[; ;Main.c: 164: {
 {
-[; ;Main.c: 167: outchar = Message[msgindex];
-"167
-[e = _outchar *U + &U _Message * -> _msgindex `ux -> -> # *U &U _Message `ui `ux ]
-[; ;Main.c: 168: lcd_write_data(outchar);
-"168
-[e ( _lcd_write_data (1 _outchar ]
-"169
-}
+[; ;Main.c: 165: outchar = Message[msgindex];
 "165
+[e = _outchar *U + &U _Message * -> _msgindex `ux -> -> # *U &U _Message `ui `ux ]
+[; ;Main.c: 166: lcd_write_data(outchar);
+"166
+[e ( _lcd_write_data (1 _outchar ]
+"167
+}
+"163
 [e ++ _msgindex -> -> 1 `i `uc ]
 [e $ < -> _msgindex `i -> 20 `i 595  ]
 [e :U 596 ]
-"169
+"167
 }
-[; ;Main.c: 169: }
-[; ;Main.c: 171: lcd_write_cmd(0xC0);
-"171
+[; ;Main.c: 167: }
+[; ;Main.c: 169: lcd_write_cmd(0xC0);
+"169
 [e ( _lcd_write_cmd (1 -> -> 192 `i `uc ]
-[; ;Main.c: 173: ctemp=getkey();
+[; ;Main.c: 171: ctemp=getkey();
+"171
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 172: lcd_write_data(ctemp);
+"172
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 173: hour10 = char_2_int (ctemp);
 "173
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 174: lcd_write_data(ctemp);
-"174
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 175: hour10 = char_2_int (ctemp);
-"175
 [e = _hour10 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 177: ctemp=getkey();
+[; ;Main.c: 175: ctemp=getkey();
+"175
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 176: lcd_write_data(ctemp);
+"176
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 177: hour1 = char_2_int (ctemp);
 "177
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 178: lcd_write_data(ctemp);
-"178
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 179: hour1 = char_2_int (ctemp);
-"179
 [e = _hour1 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 181: ctemp=getkey();
+[; ;Main.c: 179: ctemp=getkey();
+"179
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 180: lcd_write_data(ctemp);
+"180
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 181: minute10 = char_2_int (ctemp);
 "181
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 182: lcd_write_data(ctemp);
-"182
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 183: minute10 = char_2_int (ctemp);
-"183
 [e = _minute10 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 185: ctemp=getkey();
-"185
+[; ;Main.c: 183: ctemp=getkey();
+"183
 [e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 186: lcd_write_data(ctemp);
-"186
+[; ;Main.c: 184: lcd_write_data(ctemp);
+"184
 [e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 187: minute1 = char_2_int (ctemp);
-"187
+[; ;Main.c: 185: minute1 = char_2_int (ctemp);
+"185
 [e = _minute1 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 189: hourA = hour10 * 10 + hour1;
-"189
+[; ;Main.c: 187: hourA = hour10 * 10 + hour1;
+"187
 [e = _hourA -> + * -> _hour10 `i -> 10 `i -> _hour1 `i `uc ]
-[; ;Main.c: 190: minuteA = minute10 * 10 + minute1;
-"190
+[; ;Main.c: 188: minuteA = minute10 * 10 + minute1;
+"188
 [e = _minuteA -> + * -> _minute10 `i -> 10 `i -> _minute1 `i `uc ]
-[; ;Main.c: 192: delay_ms(500);
-"192
+[; ;Main.c: 190: delay_ms(500);
+"190
 [e ( _delay_ms (1 -> -> 500 `i `ui ]
-[; ;Main.c: 193: lcd_write_cmd(0x01);
-"193
+[; ;Main.c: 191: lcd_write_cmd(0x01);
+"191
 [e ( _lcd_write_cmd (1 -> -> 1 `i `uc ]
-[; ;Main.c: 194: }
-"194
+[; ;Main.c: 192: }
+"192
 [e :UE 594 ]
 }
-"195
+"193
 [v _SetupAlarmTimeB `(v ~T0 @X0 1 ef ]
-"196
+"194
 {
-[; ;Main.c: 195: void SetupAlarmTimeB()
-[; ;Main.c: 196: {
+[; ;Main.c: 193: void SetupAlarmTimeB()
+[; ;Main.c: 194: {
 [e :U _SetupAlarmTimeB ]
 [f ]
-"197
+"195
 [v _msgindex `uc ~T0 @X0 1 a ]
 [v _outchar `uc ~T0 @X0 1 a ]
 [v _ctemp `uc ~T0 @X0 1 a ]
-"198
+"196
 [v _hour10 `uc ~T0 @X0 1 a ]
 [v _hour1 `uc ~T0 @X0 1 a ]
 [v _minute10 `uc ~T0 @X0 1 a ]
@@ -4946,108 +4920,108 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"199
+"197
 [v _Message `uc ~T0 @X0 21  a ]
-[; ;Main.c: 197: unsigned char msgindex, outchar, ctemp;
-[; ;Main.c: 198: unsigned char hour10, hour1, minute10, minute1;
-[; ;Main.c: 199: char Message[ ] = "Subject B Time hhmm:";
+[; ;Main.c: 195: unsigned char msgindex, outchar, ctemp;
+[; ;Main.c: 196: unsigned char hour10, hour1, minute10, minute1;
+[; ;Main.c: 197: char Message[ ] = "Subject B Time hhmm:";
 [e = _Message F4506 ]
-[; ;Main.c: 201: lcd_write_cmd(0x80);
-"201
+[; ;Main.c: 199: lcd_write_cmd(0x80);
+"199
 [e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
-[; ;Main.c: 203: for (msgindex = 0; msgindex < 20; msgindex++)
-"203
+[; ;Main.c: 201: for (msgindex = 0; msgindex < 20; msgindex++)
+"201
 {
 [e = _msgindex -> -> 0 `i `uc ]
 [e $ < -> _msgindex `i -> 20 `i 599  ]
 [e $U 600  ]
-"204
+"202
 [e :U 599 ]
-[; ;Main.c: 204: {
+[; ;Main.c: 202: {
 {
-[; ;Main.c: 205: outchar = Message[msgindex];
-"205
-[e = _outchar *U + &U _Message * -> _msgindex `ux -> -> # *U &U _Message `ui `ux ]
-[; ;Main.c: 206: lcd_write_data(outchar);
-"206
-[e ( _lcd_write_data (1 _outchar ]
-"207
-}
+[; ;Main.c: 203: outchar = Message[msgindex];
 "203
+[e = _outchar *U + &U _Message * -> _msgindex `ux -> -> # *U &U _Message `ui `ux ]
+[; ;Main.c: 204: lcd_write_data(outchar);
+"204
+[e ( _lcd_write_data (1 _outchar ]
+"205
+}
+"201
 [e ++ _msgindex -> -> 1 `i `uc ]
 [e $ < -> _msgindex `i -> 20 `i 599  ]
 [e :U 600 ]
-"207
+"205
 }
-[; ;Main.c: 207: }
-[; ;Main.c: 209: lcd_write_cmd(0xC0);
-"209
+[; ;Main.c: 205: }
+[; ;Main.c: 207: lcd_write_cmd(0xC0);
+"207
 [e ( _lcd_write_cmd (1 -> -> 192 `i `uc ]
-[; ;Main.c: 211: ctemp=getkey();
+[; ;Main.c: 209: ctemp=getkey();
+"209
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 210: lcd_write_data(ctemp);
+"210
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 211: hour10 = char_2_int (ctemp);
 "211
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 212: lcd_write_data(ctemp);
-"212
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 213: hour10 = char_2_int (ctemp);
-"213
 [e = _hour10 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 215: ctemp=getkey();
+[; ;Main.c: 213: ctemp=getkey();
+"213
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 214: lcd_write_data(ctemp);
+"214
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 215: hour1 = char_2_int (ctemp);
 "215
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 216: lcd_write_data(ctemp);
-"216
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 217: hour1 = char_2_int (ctemp);
-"217
 [e = _hour1 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 219: ctemp=getkey();
+[; ;Main.c: 217: ctemp=getkey();
+"217
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 218: lcd_write_data(ctemp);
+"218
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 219: minute10 = char_2_int (ctemp);
 "219
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 220: lcd_write_data(ctemp);
-"220
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 221: minute10 = char_2_int (ctemp);
-"221
 [e = _minute10 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 223: ctemp=getkey();
-"223
+[; ;Main.c: 221: ctemp=getkey();
+"221
 [e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 224: lcd_write_data(ctemp);
-"224
+[; ;Main.c: 222: lcd_write_data(ctemp);
+"222
 [e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 225: minute1 = char_2_int (ctemp);
-"225
+[; ;Main.c: 223: minute1 = char_2_int (ctemp);
+"223
 [e = _minute1 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 227: hourB = hour10 * 10 + hour1;
-"227
+[; ;Main.c: 225: hourB = hour10 * 10 + hour1;
+"225
 [e = _hourB -> + * -> _hour10 `i -> 10 `i -> _hour1 `i `uc ]
-[; ;Main.c: 228: minuteB = minute10 * 10 + minute1;
-"228
+[; ;Main.c: 226: minuteB = minute10 * 10 + minute1;
+"226
 [e = _minuteB -> + * -> _minute10 `i -> 10 `i -> _minute1 `i `uc ]
-[; ;Main.c: 230: delay_ms(500);
-"230
+[; ;Main.c: 228: delay_ms(500);
+"228
 [e ( _delay_ms (1 -> -> 500 `i `ui ]
-[; ;Main.c: 231: lcd_write_cmd(0x01);
-"231
+[; ;Main.c: 229: lcd_write_cmd(0x01);
+"229
 [e ( _lcd_write_cmd (1 -> -> 1 `i `uc ]
-[; ;Main.c: 232: }
-"232
+[; ;Main.c: 230: }
+"230
 [e :UE 598 ]
 }
-"233
+"231
 [v _SetupAlarmTimeC `(v ~T0 @X0 1 ef ]
-"234
+"232
 {
-[; ;Main.c: 233: void SetupAlarmTimeC()
-[; ;Main.c: 234: {
+[; ;Main.c: 231: void SetupAlarmTimeC()
+[; ;Main.c: 232: {
 [e :U _SetupAlarmTimeC ]
 [f ]
-"235
+"233
 [v _msgindex `uc ~T0 @X0 1 a ]
 [v _outchar `uc ~T0 @X0 1 a ]
 [v _ctemp `uc ~T0 @X0 1 a ]
-"236
+"234
 [v _hour10 `uc ~T0 @X0 1 a ]
 [v _hour1 `uc ~T0 @X0 1 a ]
 [v _minute10 `uc ~T0 @X0 1 a ]
@@ -5078,252 +5052,237 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 0 `c
 ..
 ]
-"237
+"235
 [v _Message `uc ~T0 @X0 21  a ]
-[; ;Main.c: 235: unsigned char msgindex, outchar, ctemp;
-[; ;Main.c: 236: unsigned char hour10, hour1, minute10, minute1;
-[; ;Main.c: 237: char Message[ ] = "Subject C Time hhmm:";
+[; ;Main.c: 233: unsigned char msgindex, outchar, ctemp;
+[; ;Main.c: 234: unsigned char hour10, hour1, minute10, minute1;
+[; ;Main.c: 235: char Message[ ] = "Subject C Time hhmm:";
 [e = _Message F4516 ]
-[; ;Main.c: 239: lcd_write_cmd(0x80);
-"239
+[; ;Main.c: 237: lcd_write_cmd(0x80);
+"237
 [e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
-[; ;Main.c: 241: for (msgindex = 0; msgindex < 20; msgindex++)
-"241
+[; ;Main.c: 239: for (msgindex = 0; msgindex < 20; msgindex++)
+"239
 {
 [e = _msgindex -> -> 0 `i `uc ]
 [e $ < -> _msgindex `i -> 20 `i 603  ]
 [e $U 604  ]
-"242
+"240
 [e :U 603 ]
-[; ;Main.c: 242: {
+[; ;Main.c: 240: {
 {
-[; ;Main.c: 243: outchar = Message[msgindex];
-"243
-[e = _outchar *U + &U _Message * -> _msgindex `ux -> -> # *U &U _Message `ui `ux ]
-[; ;Main.c: 244: lcd_write_data(outchar);
-"244
-[e ( _lcd_write_data (1 _outchar ]
-"245
-}
+[; ;Main.c: 241: outchar = Message[msgindex];
 "241
+[e = _outchar *U + &U _Message * -> _msgindex `ux -> -> # *U &U _Message `ui `ux ]
+[; ;Main.c: 242: lcd_write_data(outchar);
+"242
+[e ( _lcd_write_data (1 _outchar ]
+"243
+}
+"239
 [e ++ _msgindex -> -> 1 `i `uc ]
 [e $ < -> _msgindex `i -> 20 `i 603  ]
 [e :U 604 ]
-"245
+"243
 }
-[; ;Main.c: 245: }
-[; ;Main.c: 247: lcd_write_cmd(0xC0);
-"247
+[; ;Main.c: 243: }
+[; ;Main.c: 245: lcd_write_cmd(0xC0);
+"245
 [e ( _lcd_write_cmd (1 -> -> 192 `i `uc ]
-[; ;Main.c: 249: ctemp=getkey();
+[; ;Main.c: 247: ctemp=getkey();
+"247
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 248: lcd_write_data(ctemp);
+"248
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 249: hour10 = char_2_int (ctemp);
 "249
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 250: lcd_write_data(ctemp);
-"250
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 251: hour10 = char_2_int (ctemp);
-"251
 [e = _hour10 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 253: ctemp=getkey();
+[; ;Main.c: 251: ctemp=getkey();
+"251
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 252: lcd_write_data(ctemp);
+"252
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 253: hour1 = char_2_int (ctemp);
 "253
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 254: lcd_write_data(ctemp);
-"254
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 255: hour1 = char_2_int (ctemp);
-"255
 [e = _hour1 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 257: ctemp=getkey();
+[; ;Main.c: 255: ctemp=getkey();
+"255
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 256: lcd_write_data(ctemp);
+"256
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 257: minute10 = char_2_int (ctemp);
 "257
-[e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 258: lcd_write_data(ctemp);
-"258
-[e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 259: minute10 = char_2_int (ctemp);
-"259
 [e = _minute10 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 261: ctemp=getkey();
-"261
+[; ;Main.c: 259: ctemp=getkey();
+"259
 [e = _ctemp ( _getkey ..  ]
-[; ;Main.c: 262: lcd_write_data(ctemp);
-"262
+[; ;Main.c: 260: lcd_write_data(ctemp);
+"260
 [e ( _lcd_write_data (1 _ctemp ]
-[; ;Main.c: 263: minute1 = char_2_int (ctemp);
-"263
+[; ;Main.c: 261: minute1 = char_2_int (ctemp);
+"261
 [e = _minute1 ( _char_2_int (1 _ctemp ]
-[; ;Main.c: 265: hourC = hour10 * 10 + hour1;
-"265
+[; ;Main.c: 263: hourC = hour10 * 10 + hour1;
+"263
 [e = _hourC -> + * -> _hour10 `i -> 10 `i -> _hour1 `i `uc ]
-[; ;Main.c: 266: minuteC = minute10 * 10 + minute1;
-"266
+[; ;Main.c: 264: minuteC = minute10 * 10 + minute1;
+"264
 [e = _minuteC -> + * -> _minute10 `i -> 10 `i -> _minute1 `i `uc ]
-[; ;Main.c: 268: delay_ms(500);
-"268
+[; ;Main.c: 266: delay_ms(500);
+"266
 [e ( _delay_ms (1 -> -> 500 `i `ui ]
-[; ;Main.c: 269: lcd_write_cmd(0x01);
-"269
+[; ;Main.c: 267: lcd_write_cmd(0x01);
+"267
 [e ( _lcd_write_cmd (1 -> -> 1 `i `uc ]
-[; ;Main.c: 270: }
-"270
+[; ;Main.c: 268: }
+"268
 [e :UE 602 ]
 }
-"271
+"269
 [v _SetupTimerInterruptRegisters `(v ~T0 @X0 1 ef ]
-"272
+"270
 {
-[; ;Main.c: 271: void SetupTimerInterruptRegisters()
-[; ;Main.c: 272: {
+[; ;Main.c: 269: void SetupTimerInterruptRegisters()
+[; ;Main.c: 270: {
 [e :U _SetupTimerInterruptRegisters ]
 [f ]
-[; ;Main.c: 273: RCONbits.IPEN =1;
-"273
+[; ;Main.c: 271: RCONbits.IPEN =1;
+"271
 [e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;Main.c: 277: INTCONbits.GIEH =1;
-"277
+[; ;Main.c: 275: INTCONbits.GIEH =1;
+"275
 [e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;Main.c: 282: T0CON = 0b00000111;
-"282
+[; ;Main.c: 280: T0CON = 0b00000111;
+"280
 [e = _T0CON -> -> 7 `i `uc ]
-[; ;Main.c: 290: INTCON2 = 0b10000100;
-"290
+[; ;Main.c: 288: INTCON2 = 0b10000100;
+"288
 [e = _INTCON2 -> -> 132 `i `uc ]
-[; ;Main.c: 295: TMR0H = 0x48;
-"295
+[; ;Main.c: 293: TMR0H = 0x48;
+"293
 [e = _TMR0H -> -> 72 `i `uc ]
-[; ;Main.c: 296: TMR0L = 0xE5;
-"296
+[; ;Main.c: 294: TMR0L = 0xE5;
+"294
 [e = _TMR0L -> -> 229 `i `uc ]
-[; ;Main.c: 298: T0CONbits.TMR0ON = 1;
-"298
+[; ;Main.c: 296: T0CONbits.TMR0ON = 1;
+"296
 [e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;Main.c: 299: INTCONbits.TMR0IE = 1;
-"299
+[; ;Main.c: 297: INTCONbits.TMR0IE = 1;
+"297
 [e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;Main.c: 302: INTCONbits.TMR0IF = 0;
-"302
+[; ;Main.c: 300: INTCONbits.TMR0IF = 0;
+"300
 [e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;Main.c: 305: }
-"305
+[; ;Main.c: 303: }
+"303
 [e :UE 606 ]
 }
-"339
+"304
 [v _main `(v ~T0 @X0 1 ef ]
-"340
+"305
 {
-[; ;Main.c: 339: void main(void)
-[; ;Main.c: 340: {
+[; ;Main.c: 304: void main(void)
+[; ;Main.c: 305: {
 [e :U _main ]
 [f ]
-"341
-[v _displayUpdated `uc ~T0 @X0 1 a ]
-[; ;Main.c: 341: unsigned char displayUpdated;
-[; ;Main.c: 342: displayUpdated = 1;
-"342
-[e = _displayUpdated -> -> 1 `i `uc ]
-[; ;Main.c: 344: ADCON1 = 0x0F;
-"344
+[; ;Main.c: 306: ADCON1 = 0x0F;
+"306
 [e = _ADCON1 -> -> 15 `i `uc ]
-[; ;Main.c: 345: CMCON = 0x07;
-"345
+[; ;Main.c: 307: CMCON = 0x07;
+"307
 [e = _CMCON -> -> 7 `i `uc ]
-[; ;Main.c: 347: lcd_init();
-"347
+[; ;Main.c: 309: lcd_init();
+"309
 [e ( _lcd_init ..  ]
-[; ;Main.c: 349: SetupTime();
-"349
+[; ;Main.c: 311: SetupTime();
+"311
 [e ( _SetupTime ..  ]
-[; ;Main.c: 350: SetupAlarmTimeA();
-"350
+[; ;Main.c: 312: SetupAlarmTimeA();
+"312
 [e ( _SetupAlarmTimeA ..  ]
-[; ;Main.c: 351: SetupAlarmTimeB();
-"351
+[; ;Main.c: 313: SetupAlarmTimeB();
+"313
 [e ( _SetupAlarmTimeB ..  ]
-[; ;Main.c: 352: SetupAlarmTimeC();
-"352
+[; ;Main.c: 314: SetupAlarmTimeC();
+"314
 [e ( _SetupAlarmTimeC ..  ]
-[; ;Main.c: 353: SetupTimerInterruptRegisters();
-"353
+[; ;Main.c: 315: SetupTimerInterruptRegisters();
+"315
 [e ( _SetupTimerInterruptRegisters ..  ]
-[; ;Main.c: 354: TRISA = 0b00000000;
-"354
+[; ;Main.c: 316: TRISA = 0b00000000;
+"316
 [e = _TRISA -> -> 0 `i `uc ]
-[; ;Main.c: 356: while(1)
-"356
+[; ;Main.c: 318: while(1)
+"318
 [e :U 609 ]
-[; ;Main.c: 357: {
-"357
+[; ;Main.c: 319: {
+"319
 {
-[; ;Main.c: 358: if(hour==hourA && minute==minuteA)
-"358
+[; ;Main.c: 320: if(hour==hourA && minute==minuteA)
+"320
 [e $ ! && == -> _hour `i -> _hourA `i == -> _minute `i -> _minuteA `i 611  ]
-[; ;Main.c: 359: {
-"359
+[; ;Main.c: 321: {
+"321
 {
-[; ;Main.c: 360: PORTA = 0b00000011;
-"360
+[; ;Main.c: 322: PORTA = 0b00000011;
+"322
 [e = _PORTA -> -> 3 `i `uc ]
-"361
+"323
 }
-[; ;Main.c: 361: }
+[; ;Main.c: 323: }
 [e $U 612  ]
-"362
+"324
 [e :U 611 ]
-[; ;Main.c: 362: else if(hour==hourB && minute==minuteB)
+[; ;Main.c: 324: else if(hour==hourB && minute==minuteB)
 [e $ ! && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i 613  ]
-[; ;Main.c: 363: {
-"363
+[; ;Main.c: 325: {
+"325
 {
-[; ;Main.c: 364: PORTA = 0b00000101;
-"364
+[; ;Main.c: 326: PORTA = 0b00000101;
+"326
 [e = _PORTA -> -> 5 `i `uc ]
-"365
+"327
 }
-[; ;Main.c: 365: }
+[; ;Main.c: 327: }
 [e $U 614  ]
-"366
+"328
 [e :U 613 ]
-[; ;Main.c: 366: else if(hour==hourC && minute==minuteC)
+[; ;Main.c: 328: else if(hour==hourC && minute==minuteC)
 [e $ ! && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i 615  ]
-[; ;Main.c: 367: {
-"367
+[; ;Main.c: 329: {
+"329
 {
-[; ;Main.c: 368: PORTA = 0b00001001;
-"368
+[; ;Main.c: 330: PORTA = 0b00001001;
+"330
 [e = _PORTA -> -> 9 `i `uc ]
-"369
+"331
 }
-[; ;Main.c: 369: } else
+[; ;Main.c: 331: } else
 [e $U 616  ]
 [e :U 615 ]
-[; ;Main.c: 370: {
-"370
+[; ;Main.c: 332: {
+"332
 {
-[; ;Main.c: 371: PORTAbits.RA0 = 1;
-"371
-[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 372: PORTAbits.RA1 = 1;
-"372
-[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
-[; ;Main.c: 373: PORTAbits.RA2 = 1;
-"373
-[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-[; ;Main.c: 374: PORTAbits.RA3 = 1;
-"374
-[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-"375
+[; ;Main.c: 333: PORTA = 0b00000000;
+"333
+[e = _PORTA -> -> 0 `i `uc ]
+"334
 }
 [e :U 616 ]
 [e :U 614 ]
 [e :U 612 ]
-"376
+"335
 }
 [e :U 608 ]
-"356
+"318
 [e $U 609  ]
 [e :U 610 ]
-[; ;Main.c: 375: }
-[; ;Main.c: 376: }
-[; ;Main.c: 377: }
-"377
+[; ;Main.c: 334: }
+[; ;Main.c: 335: }
+[; ;Main.c: 336: }
+"336
 [e :UE 607 ]
 }
