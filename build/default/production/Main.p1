@@ -75,32 +75,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [n S531 . . . ]
 "8691
 [v _T0CONbits `VS531 ~T0 @X0 0 e@4053 ]
-"2842
-[s S205 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S205 . RC0 RC1 RC2 . RC4 RC5 RC6 RC7 ]
-"2852
-[s S206 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S206 . T1OSO T1OSI CCP1 . TX RX ]
-"2860
-[s S207 :1 `uc 1 :1 `uc 1 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S207 . T13CKI . P1A . CK DT ]
-"2868
-[s S208 :1 `uc 1 :1 `uc 1 ]
-[n S208 . . CCP2 ]
-"2872
-[s S209 :2 `uc 1 :1 `uc 1 ]
-[n S209 . . PA1 ]
-"2876
-[s S210 :1 `uc 1 :1 `uc 1 ]
-[n S210 . . PA2 ]
-"2880
-[s S211 :3 `uc 1 :1 `uc 1 ]
-[n S211 . . RC3 ]
-"2841
-[u S204 `S205 1 `S206 1 `S207 1 `S208 1 `S209 1 `S210 1 `S211 1 ]
-[n S204 . . . . . . . . ]
-"2885
-[v _PORTCbits `VS204 ~T0 @X0 0 e@3970 ]
 [p mainexit ]
 "7173
 [v _ADCON1 `Vuc ~T0 @X0 0 e@4033 ]
@@ -108,8 +82,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _CMCON `Vuc ~T0 @X0 0 e@4020 ]
 "7 lcd.h
 [v _lcd_init `(v ~T0 @X0 0 ef ]
-"4394 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4550.h
-[v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
+"3976 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4550.h
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"2571
+[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
+"2577
+[s S193 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S193 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 ]
+"2586
+[s S194 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S194 . AN0 AN1 AN2 AN3 T0CKI AN4 OSC2 ]
+"2595
+[s S195 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S195 . . VREFM VREFP . LVDIN ]
+"2602
+[s S196 :5 `uc 1 :1 `uc 1 ]
+[n S196 . . HLVDIN ]
+"2606
+[s S197 :7 `uc 1 :1 `uc 1 ]
+[n S197 . . RA7 ]
+"2610
+[s S198 :7 `uc 1 :1 `uc 1 ]
+[n S198 . . RJPU ]
+"2614
+[s S199 :1 `uc 1 ]
+[n S199 . ULPWUIN ]
+"2576
+[u S192 `S193 1 `S194 1 `S195 1 `S196 1 `S197 1 `S198 1 `S199 1 ]
+[n S192 . . . . . . . . ]
+"2618
+[v _PORTAbits `VS192 ~T0 @X0 0 e@3968 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4265,7 +4267,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _second `uc ~T0 @X0 1 e ]
 [v _hourA `uc ~T0 @X0 1 e ]
 [v _minuteA `uc ~T0 @X0 1 e ]
-[; ;Main.c: 15: unsigned char hour, minute, second, hourA, minuteA;
+[v _hourB `uc ~T0 @X0 1 e ]
+[v _minuteB `uc ~T0 @X0 1 e ]
+[v _hourC `uc ~T0 @X0 1 e ]
+[v _minuteC `uc ~T0 @X0 1 e ]
+[; ;Main.c: 15: unsigned char hour, minute, second, hourA, minuteA, hourB, minuteB, hourC, minuteC;
 "17
 [v _int_2_char `(uc ~T0 @X0 1 ef1`uc ]
 "18
@@ -4468,9 +4474,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "55
 [e :UE 571 ]
 }
-[v F4464 `(v ~T0 @X0 1 tf ]
+[v F4468 `(v ~T0 @X0 1 tf ]
 "57
-[v _ISR_Timer0_Int `IF4464 ~T0 @X0 1 e ]
+[v _ISR_Timer0_Int `IF4468 ~T0 @X0 1 e ]
 "58
 {
 [; ;Main.c: 57: void interrupt ISR_Timer0_Int()
@@ -4629,8 +4635,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _minute1 `uc ~T0 @X0 1 a ]
 [v _second10 `uc ~T0 @X0 1 a ]
 [v _second1 `uc ~T0 @X0 1 a ]
-[v F4482 `uc ~T0 @X0 -> 0 `x s ]
-[i F4482
+[v F4486 `uc ~T0 @X0 -> 0 `x s ]
+[i F4486
 :U ..
 -> 83 `c
 -> 101 `c
@@ -4660,7 +4666,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.c: 111: unsigned char msgindex, outchar, ctemp;
 [; ;Main.c: 112: unsigned char hour10, hour1, minute10, minute1, second10, second1;
 [; ;Main.c: 113: char Message[ ] = "Set time hhmmss:    ";
-[e = _Message F4482 ]
+[e = _Message F4486 ]
 [; ;Main.c: 115: lcd_write_cmd(0x80);
 "115
 [e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
@@ -4766,12 +4772,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 590 ]
 }
 "157
-[v _SetupAlarmTime `(v ~T0 @X0 1 ef ]
+[v _SetupAlarmTimeA `(v ~T0 @X0 1 ef ]
 "158
 {
-[; ;Main.c: 157: void SetupAlarmTime()
+[; ;Main.c: 157: void SetupAlarmTimeA()
 [; ;Main.c: 158: {
-[e :U _SetupAlarmTime ]
+[e :U _SetupAlarmTimeA ]
 [f ]
 "159
 [v _msgindex `uc ~T0 @X0 1 a ]
@@ -4782,20 +4788,20 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _hour1 `uc ~T0 @X0 1 a ]
 [v _minute10 `uc ~T0 @X0 1 a ]
 [v _minute1 `uc ~T0 @X0 1 a ]
-[v F4492 `uc ~T0 @X0 -> 0 `x s ]
-[i F4492
+[v F4496 `uc ~T0 @X0 -> 0 `x s ]
+[i F4496
 :U ..
 -> 83 `c
+-> 117 `c
+-> 98 `c
+-> 106 `c
 -> 101 `c
+-> 99 `c
 -> 116 `c
 -> 32 `c
--> 97 `c
--> 108 `c
--> 97 `c
--> 114 `c
--> 109 `c
+-> 65 `c
 -> 32 `c
--> 116 `c
+-> 84 `c
 -> 105 `c
 -> 109 `c
 -> 101 `c
@@ -4812,8 +4818,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _Message `uc ~T0 @X0 21  a ]
 [; ;Main.c: 159: unsigned char msgindex, outchar, ctemp;
 [; ;Main.c: 160: unsigned char hour10, hour1, minute10, minute1;
-[; ;Main.c: 161: char Message[ ] = "Set alarm time hhmm:";
-[e = _Message F4492 ]
+[; ;Main.c: 161: char Message[ ] = "Subject A Time hhmm:";
+[e = _Message F4496 ]
 [; ;Main.c: 163: lcd_write_cmd(0x80);
 "163
 [e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
@@ -4897,182 +4903,427 @@ Version 3.2 HI-TECH Software Intermediate Code
 "194
 [e :UE 594 ]
 }
+"195
+[v _SetupAlarmTimeB `(v ~T0 @X0 1 ef ]
 "196
-[v _SetupTimerInterruptRegisters `(v ~T0 @X0 1 ef ]
-"197
 {
-[; ;Main.c: 196: void SetupTimerInterruptRegisters()
-[; ;Main.c: 197: {
-[e :U _SetupTimerInterruptRegisters ]
+[; ;Main.c: 195: void SetupAlarmTimeB()
+[; ;Main.c: 196: {
+[e :U _SetupAlarmTimeB ]
 [f ]
-[; ;Main.c: 198: RCONbits.IPEN =1;
+"197
+[v _msgindex `uc ~T0 @X0 1 a ]
+[v _outchar `uc ~T0 @X0 1 a ]
+[v _ctemp `uc ~T0 @X0 1 a ]
 "198
-[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
-[; ;Main.c: 202: INTCONbits.GIEH =1;
-"202
-[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
-[; ;Main.c: 207: T0CON = 0b00000111;
+[v _hour10 `uc ~T0 @X0 1 a ]
+[v _hour1 `uc ~T0 @X0 1 a ]
+[v _minute10 `uc ~T0 @X0 1 a ]
+[v _minute1 `uc ~T0 @X0 1 a ]
+[v F4506 `uc ~T0 @X0 -> 0 `x s ]
+[i F4506
+:U ..
+-> 83 `c
+-> 117 `c
+-> 98 `c
+-> 106 `c
+-> 101 `c
+-> 99 `c
+-> 116 `c
+-> 32 `c
+-> 66 `c
+-> 32 `c
+-> 84 `c
+-> 105 `c
+-> 109 `c
+-> 101 `c
+-> 32 `c
+-> 104 `c
+-> 104 `c
+-> 109 `c
+-> 109 `c
+-> 58 `c
+-> 0 `c
+..
+]
+"199
+[v _Message `uc ~T0 @X0 21  a ]
+[; ;Main.c: 197: unsigned char msgindex, outchar, ctemp;
+[; ;Main.c: 198: unsigned char hour10, hour1, minute10, minute1;
+[; ;Main.c: 199: char Message[ ] = "Subject B Time hhmm:";
+[e = _Message F4506 ]
+[; ;Main.c: 201: lcd_write_cmd(0x80);
+"201
+[e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
+[; ;Main.c: 203: for (msgindex = 0; msgindex < 20; msgindex++)
+"203
+{
+[e = _msgindex -> -> 0 `i `uc ]
+[e $ < -> _msgindex `i -> 20 `i 599  ]
+[e $U 600  ]
+"204
+[e :U 599 ]
+[; ;Main.c: 204: {
+{
+[; ;Main.c: 205: outchar = Message[msgindex];
+"205
+[e = _outchar *U + &U _Message * -> _msgindex `ux -> -> # *U &U _Message `ui `ux ]
+[; ;Main.c: 206: lcd_write_data(outchar);
+"206
+[e ( _lcd_write_data (1 _outchar ]
 "207
-[e = _T0CON -> -> 7 `i `uc ]
-[; ;Main.c: 215: INTCON2 = 0b10000100;
+}
+"203
+[e ++ _msgindex -> -> 1 `i `uc ]
+[e $ < -> _msgindex `i -> 20 `i 599  ]
+[e :U 600 ]
+"207
+}
+[; ;Main.c: 207: }
+[; ;Main.c: 209: lcd_write_cmd(0xC0);
+"209
+[e ( _lcd_write_cmd (1 -> -> 192 `i `uc ]
+[; ;Main.c: 211: ctemp=getkey();
+"211
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 212: lcd_write_data(ctemp);
+"212
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 213: hour10 = char_2_int (ctemp);
+"213
+[e = _hour10 ( _char_2_int (1 _ctemp ]
+[; ;Main.c: 215: ctemp=getkey();
 "215
-[e = _INTCON2 -> -> 132 `i `uc ]
-[; ;Main.c: 220: TMR0H = 0x48;
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 216: lcd_write_data(ctemp);
+"216
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 217: hour1 = char_2_int (ctemp);
+"217
+[e = _hour1 ( _char_2_int (1 _ctemp ]
+[; ;Main.c: 219: ctemp=getkey();
+"219
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 220: lcd_write_data(ctemp);
 "220
-[e = _TMR0H -> -> 72 `i `uc ]
-[; ;Main.c: 221: TMR0L = 0xE5;
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 221: minute10 = char_2_int (ctemp);
 "221
-[e = _TMR0L -> -> 229 `i `uc ]
-[; ;Main.c: 223: T0CONbits.TMR0ON = 1;
+[e = _minute10 ( _char_2_int (1 _ctemp ]
+[; ;Main.c: 223: ctemp=getkey();
 "223
-[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
-[; ;Main.c: 224: INTCONbits.TMR0IE = 1;
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 224: lcd_write_data(ctemp);
 "224
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-[; ;Main.c: 227: INTCONbits.TMR0IF = 0;
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 225: minute1 = char_2_int (ctemp);
+"225
+[e = _minute1 ( _char_2_int (1 _ctemp ]
+[; ;Main.c: 227: hourB = hour10 * 10 + hour1;
 "227
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-[; ;Main.c: 230: }
+[e = _hourB -> + * -> _hour10 `i -> 10 `i -> _hour1 `i `uc ]
+[; ;Main.c: 228: minuteB = minute10 * 10 + minute1;
+"228
+[e = _minuteB -> + * -> _minute10 `i -> 10 `i -> _minute1 `i `uc ]
+[; ;Main.c: 230: delay_ms(500);
 "230
+[e ( _delay_ms (1 -> -> 500 `i `ui ]
+[; ;Main.c: 231: lcd_write_cmd(0x01);
+"231
+[e ( _lcd_write_cmd (1 -> -> 1 `i `uc ]
+[; ;Main.c: 232: }
+"232
 [e :UE 598 ]
 }
-"232
-[v _displayAlarmOn `(v ~T0 @X0 1 ef ]
 "233
-{
-[; ;Main.c: 232: void displayAlarmOn()
-[; ;Main.c: 233: {
-[e :U _displayAlarmOn ]
-[f ]
-[; ;Main.c: 234: PORTCbits.RC0 = 1;
+[v _SetupAlarmTimeC `(v ~T0 @X0 1 ef ]
 "234
-[e = . . _PORTCbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 235: PORTCbits.RC1 = 1;
+{
+[; ;Main.c: 233: void SetupAlarmTimeC()
+[; ;Main.c: 234: {
+[e :U _SetupAlarmTimeC ]
+[f ]
 "235
-[e = . . _PORTCbits 0 1 -> -> 1 `i `uc ]
-[; ;Main.c: 236: }
+[v _msgindex `uc ~T0 @X0 1 a ]
+[v _outchar `uc ~T0 @X0 1 a ]
+[v _ctemp `uc ~T0 @X0 1 a ]
 "236
-[e :UE 599 ]
-}
-"238
-[v _displayAlarmOff `(v ~T0 @X0 1 ef ]
+[v _hour10 `uc ~T0 @X0 1 a ]
+[v _hour1 `uc ~T0 @X0 1 a ]
+[v _minute10 `uc ~T0 @X0 1 a ]
+[v _minute1 `uc ~T0 @X0 1 a ]
+[v F4516 `uc ~T0 @X0 -> 0 `x s ]
+[i F4516
+:U ..
+-> 83 `c
+-> 117 `c
+-> 98 `c
+-> 106 `c
+-> 101 `c
+-> 99 `c
+-> 116 `c
+-> 32 `c
+-> 67 `c
+-> 32 `c
+-> 84 `c
+-> 105 `c
+-> 109 `c
+-> 101 `c
+-> 32 `c
+-> 104 `c
+-> 104 `c
+-> 109 `c
+-> 109 `c
+-> 58 `c
+-> 0 `c
+..
+]
+"237
+[v _Message `uc ~T0 @X0 21  a ]
+[; ;Main.c: 235: unsigned char msgindex, outchar, ctemp;
+[; ;Main.c: 236: unsigned char hour10, hour1, minute10, minute1;
+[; ;Main.c: 237: char Message[ ] = "Subject C Time hhmm:";
+[e = _Message F4516 ]
+[; ;Main.c: 239: lcd_write_cmd(0x80);
 "239
-{
-[; ;Main.c: 238: void displayAlarmOff()
-[; ;Main.c: 239: {
-[e :U _displayAlarmOff ]
-[f ]
-[; ;Main.c: 240: PORTCbits.RC0 = 0;
-"240
-[e = . . _PORTCbits 0 0 -> -> 0 `i `uc ]
-[; ;Main.c: 241: PORTCbits.RC1 = 0;
+[e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
+[; ;Main.c: 241: for (msgindex = 0; msgindex < 20; msgindex++)
 "241
-[e = . . _PORTCbits 0 1 -> -> 0 `i `uc ]
-[; ;Main.c: 242: }
+{
+[e = _msgindex -> -> 0 `i `uc ]
+[e $ < -> _msgindex `i -> 20 `i 603  ]
+[e $U 604  ]
 "242
-[e :UE 600 ]
-}
-"244
-[v _main `(v ~T0 @X0 1 ef ]
-"245
-{
-[; ;Main.c: 244: void main(void)
-[; ;Main.c: 245: {
-[e :U _main ]
-[f ]
-"246
-[v _displayUpdated `uc ~T0 @X0 1 a ]
-[; ;Main.c: 246: unsigned char displayUpdated;
-[; ;Main.c: 247: displayUpdated = 1;
-"247
-[e = _displayUpdated -> -> 1 `i `uc ]
-[; ;Main.c: 249: ADCON1 = 0x0F;
-"249
-[e = _ADCON1 -> -> 15 `i `uc ]
-[; ;Main.c: 250: CMCON = 0x07;
-"250
-[e = _CMCON -> -> 7 `i `uc ]
-[; ;Main.c: 252: lcd_init();
-"252
-[e ( _lcd_init ..  ]
-[; ;Main.c: 254: SetupTime();
-"254
-[e ( _SetupTime ..  ]
-[; ;Main.c: 255: SetupAlarmTime();
-"255
-[e ( _SetupAlarmTime ..  ]
-[; ;Main.c: 256: SetupTimerInterruptRegisters();
-"256
-[e ( _SetupTimerInterruptRegisters ..  ]
-[; ;Main.c: 257: TRISC = 0b00000000;
-"257
-[e = _TRISC -> -> 0 `i `uc ]
-[; ;Main.c: 259: while(1)
-"259
 [e :U 603 ]
-[; ;Main.c: 260: {
-"260
+[; ;Main.c: 242: {
 {
-[; ;Main.c: 261: if(hour==hourA && minute==minuteA)
+[; ;Main.c: 243: outchar = Message[msgindex];
+"243
+[e = _outchar *U + &U _Message * -> _msgindex `ux -> -> # *U &U _Message `ui `ux ]
+[; ;Main.c: 244: lcd_write_data(outchar);
+"244
+[e ( _lcd_write_data (1 _outchar ]
+"245
+}
+"241
+[e ++ _msgindex -> -> 1 `i `uc ]
+[e $ < -> _msgindex `i -> 20 `i 603  ]
+[e :U 604 ]
+"245
+}
+[; ;Main.c: 245: }
+[; ;Main.c: 247: lcd_write_cmd(0xC0);
+"247
+[e ( _lcd_write_cmd (1 -> -> 192 `i `uc ]
+[; ;Main.c: 249: ctemp=getkey();
+"249
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 250: lcd_write_data(ctemp);
+"250
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 251: hour10 = char_2_int (ctemp);
+"251
+[e = _hour10 ( _char_2_int (1 _ctemp ]
+[; ;Main.c: 253: ctemp=getkey();
+"253
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 254: lcd_write_data(ctemp);
+"254
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 255: hour1 = char_2_int (ctemp);
+"255
+[e = _hour1 ( _char_2_int (1 _ctemp ]
+[; ;Main.c: 257: ctemp=getkey();
+"257
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 258: lcd_write_data(ctemp);
+"258
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 259: minute10 = char_2_int (ctemp);
+"259
+[e = _minute10 ( _char_2_int (1 _ctemp ]
+[; ;Main.c: 261: ctemp=getkey();
 "261
-[e $ ! && == -> _hour `i -> _hourA `i == -> _minute `i -> _minuteA `i 605  ]
-[; ;Main.c: 262: {
+[e = _ctemp ( _getkey ..  ]
+[; ;Main.c: 262: lcd_write_data(ctemp);
 "262
-{
-[; ;Main.c: 263: if(displayUpdated == 2)
+[e ( _lcd_write_data (1 _ctemp ]
+[; ;Main.c: 263: minute1 = char_2_int (ctemp);
 "263
-[e $ ! == -> _displayUpdated `i -> 2 `i 606  ]
-[; ;Main.c: 264: {
-"264
-{
-[; ;Main.c: 265: displayAlarmOn();
+[e = _minute1 ( _char_2_int (1 _ctemp ]
+[; ;Main.c: 265: hourC = hour10 * 10 + hour1;
 "265
-[e ( _displayAlarmOn ..  ]
-[; ;Main.c: 266: displayUpdated = 1;
+[e = _hourC -> + * -> _hour10 `i -> 10 `i -> _hour1 `i `uc ]
+[; ;Main.c: 266: minuteC = minute10 * 10 + minute1;
 "266
-[e = _displayUpdated -> -> 1 `i `uc ]
-"267
-}
-[e :U 606 ]
+[e = _minuteC -> + * -> _minute10 `i -> 10 `i -> _minute1 `i `uc ]
+[; ;Main.c: 268: delay_ms(500);
 "268
-}
-[; ;Main.c: 267: }
-[; ;Main.c: 268: }
-[e $U 607  ]
+[e ( _delay_ms (1 -> -> 500 `i `ui ]
+[; ;Main.c: 269: lcd_write_cmd(0x01);
 "269
-[e :U 605 ]
-[; ;Main.c: 269: else
-[; ;Main.c: 270: {
+[e ( _lcd_write_cmd (1 -> -> 1 `i `uc ]
+[; ;Main.c: 270: }
 "270
-{
-[; ;Main.c: 271: if(displayUpdated == 1)
+[e :UE 602 ]
+}
 "271
-[e $ ! == -> _displayUpdated `i -> 1 `i 608  ]
-[; ;Main.c: 272: {
+[v _SetupTimerInterruptRegisters `(v ~T0 @X0 1 ef ]
 "272
 {
-[; ;Main.c: 273: displayAlarmOff();
+[; ;Main.c: 271: void SetupTimerInterruptRegisters()
+[; ;Main.c: 272: {
+[e :U _SetupTimerInterruptRegisters ]
+[f ]
+[; ;Main.c: 273: RCONbits.IPEN =1;
 "273
-[e ( _displayAlarmOff ..  ]
-[; ;Main.c: 274: displayUpdated = 2;
-"274
-[e = _displayUpdated -> -> 2 `i `uc ]
-"275
+[e = . . _RCONbits 5 7 -> -> 1 `i `uc ]
+[; ;Main.c: 277: INTCONbits.GIEH =1;
+"277
+[e = . . _INTCONbits 2 7 -> -> 1 `i `uc ]
+[; ;Main.c: 282: T0CON = 0b00000111;
+"282
+[e = _T0CON -> -> 7 `i `uc ]
+[; ;Main.c: 290: INTCON2 = 0b10000100;
+"290
+[e = _INTCON2 -> -> 132 `i `uc ]
+[; ;Main.c: 295: TMR0H = 0x48;
+"295
+[e = _TMR0H -> -> 72 `i `uc ]
+[; ;Main.c: 296: TMR0L = 0xE5;
+"296
+[e = _TMR0L -> -> 229 `i `uc ]
+[; ;Main.c: 298: T0CONbits.TMR0ON = 1;
+"298
+[e = . . _T0CONbits 0 5 -> -> 1 `i `uc ]
+[; ;Main.c: 299: INTCONbits.TMR0IE = 1;
+"299
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+[; ;Main.c: 302: INTCONbits.TMR0IF = 0;
+"302
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;Main.c: 305: }
+"305
+[e :UE 606 ]
+}
+"339
+[v _main `(v ~T0 @X0 1 ef ]
+"340
+{
+[; ;Main.c: 339: void main(void)
+[; ;Main.c: 340: {
+[e :U _main ]
+[f ]
+"341
+[v _displayUpdated `uc ~T0 @X0 1 a ]
+[; ;Main.c: 341: unsigned char displayUpdated;
+[; ;Main.c: 342: displayUpdated = 1;
+"342
+[e = _displayUpdated -> -> 1 `i `uc ]
+[; ;Main.c: 344: ADCON1 = 0x0F;
+"344
+[e = _ADCON1 -> -> 15 `i `uc ]
+[; ;Main.c: 345: CMCON = 0x07;
+"345
+[e = _CMCON -> -> 7 `i `uc ]
+[; ;Main.c: 347: lcd_init();
+"347
+[e ( _lcd_init ..  ]
+[; ;Main.c: 349: SetupTime();
+"349
+[e ( _SetupTime ..  ]
+[; ;Main.c: 350: SetupAlarmTimeA();
+"350
+[e ( _SetupAlarmTimeA ..  ]
+[; ;Main.c: 351: SetupAlarmTimeB();
+"351
+[e ( _SetupAlarmTimeB ..  ]
+[; ;Main.c: 352: SetupAlarmTimeC();
+"352
+[e ( _SetupAlarmTimeC ..  ]
+[; ;Main.c: 353: SetupTimerInterruptRegisters();
+"353
+[e ( _SetupTimerInterruptRegisters ..  ]
+[; ;Main.c: 354: TRISA = 0b00000000;
+"354
+[e = _TRISA -> -> 0 `i `uc ]
+[; ;Main.c: 356: while(1)
+"356
+[e :U 609 ]
+[; ;Main.c: 357: {
+"357
+{
+[; ;Main.c: 358: if(hour==hourA && minute==minuteA)
+"358
+[e $ ! && == -> _hour `i -> _hourA `i == -> _minute `i -> _minuteA `i 611  ]
+[; ;Main.c: 359: {
+"359
+{
+[; ;Main.c: 360: PORTA = 0b00000011;
+"360
+[e = _PORTA -> -> 3 `i `uc ]
+"361
+}
+[; ;Main.c: 361: }
+[e $U 612  ]
+"362
+[e :U 611 ]
+[; ;Main.c: 362: else if(hour==hourB && minute==minuteB)
+[e $ ! && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i 613  ]
+[; ;Main.c: 363: {
+"363
+{
+[; ;Main.c: 364: PORTA = 0b00000101;
+"364
+[e = _PORTA -> -> 5 `i `uc ]
+"365
+}
+[; ;Main.c: 365: }
+[e $U 614  ]
+"366
+[e :U 613 ]
+[; ;Main.c: 366: else if(hour==hourC && minute==minuteC)
+[e $ ! && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i 615  ]
+[; ;Main.c: 367: {
+"367
+{
+[; ;Main.c: 368: PORTA = 0b00001001;
+"368
+[e = _PORTA -> -> 9 `i `uc ]
+"369
+}
+[; ;Main.c: 369: } else
+[e $U 616  ]
+[e :U 615 ]
+[; ;Main.c: 370: {
+"370
+{
+[; ;Main.c: 371: PORTAbits.RA0 = 1;
+"371
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 372: PORTAbits.RA1 = 1;
+"372
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+[; ;Main.c: 373: PORTAbits.RA2 = 1;
+"373
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[; ;Main.c: 374: PORTAbits.RA3 = 1;
+"374
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+"375
+}
+[e :U 616 ]
+[e :U 614 ]
+[e :U 612 ]
+"376
 }
 [e :U 608 ]
-"276
-}
-[e :U 607 ]
-"277
-}
-[e :U 602 ]
-"259
-[e $U 603  ]
-[e :U 604 ]
-[; ;Main.c: 275: }
-[; ;Main.c: 276: }
-[; ;Main.c: 277: }
-[; ;Main.c: 278: }
-"278
-[e :UE 601 ]
+"356
+[e $U 609  ]
+[e :U 610 ]
+[; ;Main.c: 375: }
+[; ;Main.c: 376: }
+[; ;Main.c: 377: }
+"377
+[e :UE 607 ]
 }

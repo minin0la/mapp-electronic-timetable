@@ -12,7 +12,7 @@
 #include "delays.h"
 #include "keypad.h"
 
-unsigned char hour, minute, second, hourA, minuteA;
+unsigned char hour, minute, second, hourA, minuteA, hourB, minuteB, hourC, minuteC;
 
 char int_2_char (unsigned char int1)
 {
@@ -154,11 +154,11 @@ void SetupTime()
 	lcd_write_cmd(0x01);
 }
 
-void SetupAlarmTime()
+void SetupAlarmTimeA()
 {
 	unsigned char msgindex, outchar, ctemp;
 	unsigned char hour10, hour1, minute10, minute1;    
-	char Message[ ] = "Set alarm time hhmm:";
+	char Message[ ] = "Subject A Time hhmm:";
 
 	lcd_write_cmd(0x80);
 
@@ -192,7 +192,82 @@ void SetupAlarmTime()
 	delay_ms(500);
 	lcd_write_cmd(0x01);
 }
+void SetupAlarmTimeB()
+{
+	unsigned char msgindex, outchar, ctemp;
+	unsigned char hour10, hour1, minute10, minute1;    
+	char Message[ ] = "Subject B Time hhmm:";
 
+	lcd_write_cmd(0x80);
+
+	for (msgindex = 0; msgindex < 20; msgindex++)
+	{
+		outchar = Message[msgindex];
+		lcd_write_data(outchar);
+	}
+
+	lcd_write_cmd(0xC0); // Move cursor to line 2 position 1
+
+	ctemp=getkey(); // waits and get an ascii key number when pressed
+	lcd_write_data(ctemp); //display on LCD
+	hour10 = char_2_int (ctemp);
+
+	ctemp=getkey();
+	lcd_write_data(ctemp);
+	hour1 = char_2_int (ctemp);
+
+	ctemp=getkey();
+	lcd_write_data(ctemp);
+	minute10 = char_2_int (ctemp);
+
+	ctemp=getkey();
+	lcd_write_data(ctemp);
+	minute1 = char_2_int (ctemp);
+
+	hourB = hour10 * 10 + hour1;
+	minuteB = minute10 * 10 + minute1;
+
+	delay_ms(500);
+	lcd_write_cmd(0x01);
+}
+void SetupAlarmTimeC()
+{
+	unsigned char msgindex, outchar, ctemp;
+	unsigned char hour10, hour1, minute10, minute1;    
+	char Message[ ] = "Subject C Time hhmm:";
+
+	lcd_write_cmd(0x80);
+
+	for (msgindex = 0; msgindex < 20; msgindex++)
+	{
+		outchar = Message[msgindex];
+		lcd_write_data(outchar);
+	}
+
+	lcd_write_cmd(0xC0); // Move cursor to line 2 position 1
+
+	ctemp=getkey(); // waits and get an ascii key number when pressed
+	lcd_write_data(ctemp); //display on LCD
+	hour10 = char_2_int (ctemp);
+
+	ctemp=getkey();
+	lcd_write_data(ctemp);
+	hour1 = char_2_int (ctemp);
+
+	ctemp=getkey();
+	lcd_write_data(ctemp);
+	minute10 = char_2_int (ctemp);
+
+	ctemp=getkey();
+	lcd_write_data(ctemp);
+	minute1 = char_2_int (ctemp);
+
+	hourC = hour10 * 10 + hour1;
+	minuteC = minute10 * 10 + minute1;
+
+	delay_ms(500);
+	lcd_write_cmd(0x01);
+}
 void SetupTimerInterruptRegisters()
 {
 	RCONbits.IPEN =1;	// Bit7 Interrupt Priority Enable Bit
@@ -228,19 +303,39 @@ void SetupTimerInterruptRegisters()
 				// 0 TMR0 register did not overflow
 
 }
-
-void displayAlarmOn()
-{
-    PORTCbits.RC0 = 1;   
-    PORTCbits.RC1 = 1; 
+/*
+void displayAlarmAOn()
+{   
+    PORTAbits.RA1 = 1; 
 }
-
-void displayAlarmOff()
-{
-    PORTCbits.RC0 = 0;   
-    PORTCbits.RC1 = 0; 
+void displayAlarmBOn()
+{   
+    PORTAbits.RA2 = 1; 
 }
-
+void displayAlarmCOn()
+{   
+    PORTAbits.RA3 = 1; 
+}
+void displayAlarmAOff()
+{ 
+    PORTAbits.RA1 = 0; 
+}
+void displayAlarmBOff()
+{  
+    PORTAbits.RA2 = 0; 
+}
+void displayAlarmCOff()
+{  
+    PORTAbits.RA3 = 0; 
+}
+void BuzzerOff()
+{
+    PORTAbits.RA0 = 0;
+}
+void BuzzerOn()
+{
+    PORTAbits.RA0 = 1;
+} */
 void main(void)   //------------ Main Program  ---------------------------------------------------------------
 {
 	unsigned char displayUpdated;
@@ -252,27 +347,31 @@ void main(void)   //------------ Main Program  ---------------------------------
 	lcd_init();
 
 	SetupTime();
-	SetupAlarmTime();
+	SetupAlarmTimeA();
+	SetupAlarmTimeB();
+    SetupAlarmTimeC();
 	SetupTimerInterruptRegisters();
-    TRISC = 0b00000000;
+    TRISA = 0b00000000;
     
 	while(1)
 	{
 		if(hour==hourA && minute==minuteA)
 		{
-			if(displayUpdated == 2)
-			{
-				displayAlarmOn();
-				displayUpdated = 1;
-			}
+                PORTA = 0b00000011;
 		}
-		else
+		else if(hour==hourB && minute==minuteB)
+        {
+                PORTA = 0b00000101;
+        }
+		else if(hour==hourC && minute==minuteC)
+        {
+                PORTA = 0b00001001;
+        } else
 		{
-			if(displayUpdated == 1)
-			{
-				displayAlarmOff();
-				displayUpdated = 2;
-			}
+                PORTAbits.RA0 = 1;
+                PORTAbits.RA1 = 1;
+                PORTAbits.RA2 = 1;
+                PORTAbits.RA3 = 1;
 		}
 	}
 }
