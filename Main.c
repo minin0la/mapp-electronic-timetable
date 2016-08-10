@@ -308,19 +308,6 @@ void SetupTimerInterruptRegisters()
 
 }
 
-void Version() //Program to show program version
-{
-	unsigned char msgindex, outchar;
-	char Version[ ] = "ETT Version 1.1     ";
-
-	lcd_write_cmd(0x80);
-
-	for (msgindex = 0; msgindex < 20; msgindex++)
-	{
-		outchar = Version[msgindex];
-		lcd_write_data(outchar);
-	}
-}
 void main(void)   //------------ Main Program  ---------------------------------------------------------------
 {
 	ADCON1 = 0x0F;
@@ -329,7 +316,7 @@ void main(void)   //------------ Main Program  ---------------------------------
 	lcd_init();
     TRISA = 0b00000000; //Set PORTAs as outputs
 
-    Version();//Show version number
+    version();//Show version number
 	SetupTime(); //Get Time
 	SetupAlarmTimeA(); //Get Alarm Time for Subject A
 	SetupAlarmTimeB(); //Get Alarm Time for Subject B

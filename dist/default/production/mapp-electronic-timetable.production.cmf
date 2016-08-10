@@ -11,12 +11,17 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
+$/tmp/xcXrMgFkw.obj
+idloc IDLOC 0 200000 200000 8 1
+reset_vec CODE 0 1000 1000 4 1
+end_init CODE 0 1016 1016 4 1
+config CONFIG 0 300000 300000 E 1
 $dist/default/production/mapp-electronic-timetable.production.obj
 cinit CODE 0 1A1C 1A1C 5A 1
 intcode_body CODE 0 102E 102E 17C 1
 text0 CODE 0 19B2 19B2 6A 1
-text1 CODE 0 17EE 17EE 72 1
-text2 CODE 0 1ACA 1ACA 4E 1
+text1 CODE 0 1ACA 1ACA 4E 1
+text2 CODE 0 17EE 17EE 72 1
 text3 CODE 0 1BCE 1BCE 1C 1
 text4 CODE 0 11AA 11AA 13A 1
 text5 CODE 0 12E4 12E4 F8 1
@@ -43,11 +48,6 @@ idataBANK0 CODE 0 1A76 1A76 54 1
 dataBANK0 BANK0 1 60 60 54 1
 dataCOMRAM COMRAM 1 24 24 15 1
 bssCOMRAM COMRAM 1 39 39 9 1
-$/tmp/xcXA3RAyE.obj
-idloc IDLOC 0 200000 200000 8 1
-reset_vec CODE 0 1000 1000 4 1
-end_init CODE 0 1016 1016 4 1
-config CONFIG 0 300000 300000 E 1
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -398,93 +398,93 @@ $dist/default/production/mapp-electronic-timetable.production.obj
 1BE4 text3 CODE >303:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
 1BE6 text3 CODE >306:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
 1BE8 text3 CODE >309:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1ACA text2 CODE >311:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1ACA text2 CODE >314:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1ADC text2 CODE >316:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1AE2 text2 CODE >318:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1AF2 text2 CODE >320:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1B0A text2 CODE >321:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1B12 text2 CODE >318:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-17EE text1 CODE >83:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-17EE text1 CODE >86:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-17F2 text1 CODE >87:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-17F6 text1 CODE >88:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-17F8 text1 CODE >89:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-17FA text1 CODE >90:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-17FC text1 CODE >92:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-1814 text1 CODE >93:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-1824 text1 CODE >92:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-182A text1 CODE >106:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-1830 text1 CODE >107:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-1836 text1 CODE >109:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-183C text1 CODE >112:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-1842 text1 CODE >115:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-1848 text1 CODE >119:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-184E text1 CODE >121:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-185E text1 CODE >123:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
-19B2 text0 CODE >324:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19B2 text0 CODE >326:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19B6 text0 CODE >327:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19BA text0 CODE >329:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19BE text0 CODE >330:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19C2 text0 CODE >332:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19C6 text0 CODE >333:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19CA text0 CODE >334:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19CE text0 CODE >335:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19D2 text0 CODE >336:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19D6 text0 CODE >337:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19DA text0 CODE >341:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19EA text0 CODE >343:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19EE text0 CODE >345:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-19FE text0 CODE >347:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1A02 text0 CODE >349:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1A12 text0 CODE >351:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1A16 text0 CODE >354:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1A1A text0 CODE >339:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
-1A1C cinit CODE >1756:/tmp/xcXTK6ngL
-1A1C cinit CODE >1758:/tmp/xcXTK6ngL
-1A1C cinit CODE >1761:/tmp/xcXTK6ngL
-1A1C cinit CODE >1827:/tmp/xcXTK6ngL
-1A1E cinit CODE >1828:/tmp/xcXTK6ngL
-1A20 cinit CODE >1829:/tmp/xcXTK6ngL
-1A22 cinit CODE >1830:/tmp/xcXTK6ngL
-1A24 cinit CODE >1831:/tmp/xcXTK6ngL
-1A26 cinit CODE >1832:/tmp/xcXTK6ngL
-1A28 cinit CODE >1833:/tmp/xcXTK6ngL
-1A2C cinit CODE >1834:/tmp/xcXTK6ngL
-1A30 cinit CODE >1835:/tmp/xcXTK6ngL
-1A30 cinit CODE >1836:/tmp/xcXTK6ngL
-1A32 cinit CODE >1837:/tmp/xcXTK6ngL
-1A36 cinit CODE >1838:/tmp/xcXTK6ngL
-1A38 cinit CODE >1839:/tmp/xcXTK6ngL
-1A3A cinit CODE >1840:/tmp/xcXTK6ngL
-1A3C cinit CODE >1844:/tmp/xcXTK6ngL
-1A3E cinit CODE >1845:/tmp/xcXTK6ngL
-1A40 cinit CODE >1846:/tmp/xcXTK6ngL
-1A42 cinit CODE >1847:/tmp/xcXTK6ngL
-1A44 cinit CODE >1848:/tmp/xcXTK6ngL
-1A46 cinit CODE >1849:/tmp/xcXTK6ngL
-1A48 cinit CODE >1850:/tmp/xcXTK6ngL
-1A4C cinit CODE >1851:/tmp/xcXTK6ngL
-1A50 cinit CODE >1852:/tmp/xcXTK6ngL
-1A50 cinit CODE >1853:/tmp/xcXTK6ngL
-1A52 cinit CODE >1854:/tmp/xcXTK6ngL
-1A56 cinit CODE >1855:/tmp/xcXTK6ngL
-1A58 cinit CODE >1856:/tmp/xcXTK6ngL
-1A5A cinit CODE >1857:/tmp/xcXTK6ngL
-1A5C cinit CODE >1861:/tmp/xcXTK6ngL
-1A60 cinit CODE >1862:/tmp/xcXTK6ngL
-1A62 cinit CODE >1863:/tmp/xcXTK6ngL
-1A62 cinit CODE >1864:/tmp/xcXTK6ngL
-1A64 cinit CODE >1865:/tmp/xcXTK6ngL
-1A66 cinit CODE >1866:/tmp/xcXTK6ngL
-1A68 cinit CODE >1872:/tmp/xcXTK6ngL
-1A68 cinit CODE >1874:/tmp/xcXTK6ngL
-1A6A cinit CODE >1875:/tmp/xcXTK6ngL
-1A6C cinit CODE >1877:/tmp/xcXTK6ngL
-1A6E cinit CODE >1878:/tmp/xcXTK6ngL
-1A70 cinit CODE >1879:/tmp/xcXTK6ngL
-1A72 cinit CODE >1880:/tmp/xcXTK6ngL
+17EE text2 CODE >83:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+17EE text2 CODE >86:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+17F2 text2 CODE >87:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+17F6 text2 CODE >88:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+17F8 text2 CODE >89:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+17FA text2 CODE >90:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+17FC text2 CODE >92:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+1814 text2 CODE >93:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+1824 text2 CODE >92:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+182A text2 CODE >106:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+1830 text2 CODE >107:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+1836 text2 CODE >109:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+183C text2 CODE >112:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+1842 text2 CODE >115:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+1848 text2 CODE >119:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+184E text2 CODE >121:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+185E text2 CODE >123:/home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
+1ACA text1 CODE >12:/home/minin0la/Documents/mapp-electronic-timetable/version.c
+1ACA text1 CODE >15:/home/minin0la/Documents/mapp-electronic-timetable/version.c
+1ADC text1 CODE >17:/home/minin0la/Documents/mapp-electronic-timetable/version.c
+1AE2 text1 CODE >19:/home/minin0la/Documents/mapp-electronic-timetable/version.c
+1AF2 text1 CODE >21:/home/minin0la/Documents/mapp-electronic-timetable/version.c
+1B0A text1 CODE >22:/home/minin0la/Documents/mapp-electronic-timetable/version.c
+1B12 text1 CODE >19:/home/minin0la/Documents/mapp-electronic-timetable/version.c
+19B2 text0 CODE >311:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19B2 text0 CODE >313:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19B6 text0 CODE >314:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19BA text0 CODE >316:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19BE text0 CODE >317:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19C2 text0 CODE >319:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19C6 text0 CODE >320:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19CA text0 CODE >321:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19CE text0 CODE >322:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19D2 text0 CODE >323:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19D6 text0 CODE >324:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19DA text0 CODE >328:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19EA text0 CODE >330:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19EE text0 CODE >332:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+19FE text0 CODE >334:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+1A02 text0 CODE >336:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+1A12 text0 CODE >338:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+1A16 text0 CODE >341:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+1A1A text0 CODE >326:/home/minin0la/Documents/mapp-electronic-timetable/Main.c
+1A1C cinit CODE >2097:/tmp/xcXN7fV4n
+1A1C cinit CODE >2099:/tmp/xcXN7fV4n
+1A1C cinit CODE >2102:/tmp/xcXN7fV4n
+1A1C cinit CODE >2168:/tmp/xcXN7fV4n
+1A1E cinit CODE >2169:/tmp/xcXN7fV4n
+1A20 cinit CODE >2170:/tmp/xcXN7fV4n
+1A22 cinit CODE >2171:/tmp/xcXN7fV4n
+1A24 cinit CODE >2172:/tmp/xcXN7fV4n
+1A26 cinit CODE >2173:/tmp/xcXN7fV4n
+1A28 cinit CODE >2174:/tmp/xcXN7fV4n
+1A2C cinit CODE >2175:/tmp/xcXN7fV4n
+1A30 cinit CODE >2176:/tmp/xcXN7fV4n
+1A30 cinit CODE >2177:/tmp/xcXN7fV4n
+1A32 cinit CODE >2178:/tmp/xcXN7fV4n
+1A36 cinit CODE >2179:/tmp/xcXN7fV4n
+1A38 cinit CODE >2180:/tmp/xcXN7fV4n
+1A3A cinit CODE >2181:/tmp/xcXN7fV4n
+1A3C cinit CODE >2185:/tmp/xcXN7fV4n
+1A3E cinit CODE >2186:/tmp/xcXN7fV4n
+1A40 cinit CODE >2187:/tmp/xcXN7fV4n
+1A42 cinit CODE >2188:/tmp/xcXN7fV4n
+1A44 cinit CODE >2189:/tmp/xcXN7fV4n
+1A46 cinit CODE >2190:/tmp/xcXN7fV4n
+1A48 cinit CODE >2191:/tmp/xcXN7fV4n
+1A4C cinit CODE >2192:/tmp/xcXN7fV4n
+1A50 cinit CODE >2193:/tmp/xcXN7fV4n
+1A50 cinit CODE >2194:/tmp/xcXN7fV4n
+1A52 cinit CODE >2195:/tmp/xcXN7fV4n
+1A56 cinit CODE >2196:/tmp/xcXN7fV4n
+1A58 cinit CODE >2197:/tmp/xcXN7fV4n
+1A5A cinit CODE >2198:/tmp/xcXN7fV4n
+1A5C cinit CODE >2202:/tmp/xcXN7fV4n
+1A60 cinit CODE >2203:/tmp/xcXN7fV4n
+1A62 cinit CODE >2204:/tmp/xcXN7fV4n
+1A62 cinit CODE >2205:/tmp/xcXN7fV4n
+1A64 cinit CODE >2206:/tmp/xcXN7fV4n
+1A66 cinit CODE >2207:/tmp/xcXN7fV4n
+1A68 cinit CODE >2213:/tmp/xcXN7fV4n
+1A68 cinit CODE >2215:/tmp/xcXN7fV4n
+1A6A cinit CODE >2216:/tmp/xcXN7fV4n
+1A6C cinit CODE >2218:/tmp/xcXN7fV4n
+1A6E cinit CODE >2219:/tmp/xcXN7fV4n
+1A70 cinit CODE >2220:/tmp/xcXN7fV4n
+1A72 cinit CODE >2221:/tmp/xcXN7fV4n
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -508,15 +508,16 @@ __Hspace_2 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.product
 __HidataBANK0 0 0 ABS 0 idataBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 SetupAlarmTimeB@hour10 DD 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 __Hibigdata 0 0 CODE 0 ibigdata dist/default/production/mapp-electronic-timetable.production.obj
-__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXA3RAyE.obj
+__mediumconst 0 0 MEDIUMCONST 0 mediumconst /tmp/xcXrMgFkw.obj
 __Heeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/mapp-electronic-timetable.production.obj
+__size_of_version 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 __Lsmallconst 101A 0 SMALLCONST 0 smallconst dist/default/production/mapp-electronic-timetable.production.obj
-___sp 0 0 STACK 2 stack /tmp/xcXA3RAyE.obj
+___sp 0 0 STACK 2 stack /tmp/xcXrMgFkw.obj
 _hour 39 0 COMRAM 1 bssCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 _main 19B2 0 CODE 0 text0 dist/default/production/mapp-electronic-timetable.production.obj
 btemp 42 0 COMRAM 1 temp dist/default/production/mapp-electronic-timetable.production.obj
 _lcd_write_cmd 18D2 0 CODE 0 text9 dist/default/production/mapp-electronic-timetable.production.obj
-start 1016 0 CODE 0 init /tmp/xcXA3RAyE.obj
+start 1016 0 CODE 0 init /tmp/xcXrMgFkw.obj
 __size_of___awdiv 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 __size_of_main 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 __HbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
@@ -534,11 +535,11 @@ _ISR_Timer0_Int 1008 0 CODE 0 intcode dist/default/production/mapp-electronic-ti
 _T0CONbits FD5 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 __HdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 __size_of_SetupTimerInterruptRegisters 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
-__accesstop 60 0 ABS 0 - /tmp/xcXA3RAyE.obj
-intlevel0 0 0 CODE 0 text /tmp/xcXA3RAyE.obj
-intlevel1 0 0 CODE 0 text /tmp/xcXA3RAyE.obj
-intlevel2 0 0 CODE 0 text /tmp/xcXA3RAyE.obj
-intlevel3 0 0 CODE 0 text /tmp/xcXA3RAyE.obj
+__accesstop 60 0 ABS 0 - /tmp/xcXrMgFkw.obj
+intlevel0 0 0 CODE 0 text /tmp/xcXrMgFkw.obj
+intlevel1 0 0 CODE 0 text /tmp/xcXrMgFkw.obj
+intlevel2 0 0 CODE 0 text /tmp/xcXrMgFkw.obj
+intlevel3 0 0 CODE 0 text /tmp/xcXrMgFkw.obj
 ISR_Timer0_Int@second10 1C 0 COMRAM 1 cstackCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 __LbssCOMRAM 0 0 ABS 0 bssCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 __end_of_SetupAlarmTimeA 15CC 0 CODE 0 text7 dist/default/production/mapp-electronic-timetable.production.obj
@@ -553,14 +554,13 @@ __pidataCOMRAM 1BEA 0 CODE 0 idataCOMRAM dist/default/production/mapp-electronic
 _ADCON1 FC1 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 i2lcd_write_data@temp1 4 0 COMRAM 1 cstackCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 ___awdiv@dividend 1 0 COMRAM 1 cstackCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
-___inthi_sp 0 0 STACK 2 stack /tmp/xcXA3RAyE.obj
-___intlo_sp 0 0 STACK 2 stack /tmp/xcXA3RAyE.obj
-Version@msgindex CA 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
-Version@outchar C9 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
+___inthi_sp 0 0 STACK 2 stack /tmp/xcXrMgFkw.obj
+___intlo_sp 0 0 STACK 2 stack /tmp/xcXrMgFkw.obj
 __LdataCOMRAM 0 0 ABS 0 dataCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 __Hintcode_body 0 0 ABS 0 intcode_body dist/default/production/mapp-electronic-timetable.production.obj
 _int_2_char 1778 0 CODE 0 text18 dist/default/production/mapp-electronic-timetable.production.obj
 __end_of_ISR_Timer0_Int 11AA 0 CODE 0 intcode_body dist/default/production/mapp-electronic-timetable.production.obj
+__end_of_version 1B18 0 CODE 0 text1 dist/default/production/mapp-electronic-timetable.production.obj
 __end_of_lcd_strobe 1BAC 0 CODE 0 text10 dist/default/production/mapp-electronic-timetable.production.obj
 __Lintsave_regs 0 0 BIGRAM 1 intsave_regs dist/default/production/mapp-electronic-timetable.production.obj
 lcd_write_cmd@temp2 20 0 COMRAM 1 cstackCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
@@ -626,8 +626,8 @@ __size_of_char_2_int 0 0 ABS 0 - dist/default/production/mapp-electronic-timetab
 SetupAlarmTimeB@Message C7 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 __Hbigbss 0 0 BIGRAM 1 bigbss dist/default/production/mapp-electronic-timetable.production.obj
 __Hbigram 0 0 ABS 0 bigram dist/default/production/mapp-electronic-timetable.production.obj
-__size_of_Version 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
-__smallconst 101A 0 SMALLCONST 0 smallconst /tmp/xcXA3RAyE.obj
+__smallconst 101A 0 SMALLCONST 0 smallconst /tmp/xcXrMgFkw.obj
+version@F4277 24 0 COMRAM 1 dataCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 __size_of_lcd_init 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 __Hcomram 0 0 ABS 0 comram dist/default/production/mapp-electronic-timetable.production.obj
 __Hconfig 30000E 0 CONFIG 0 config dist/default/production/mapp-electronic-timetable.production.obj
@@ -691,7 +691,6 @@ __Hirdata 0 0 CODE 0 irdata dist/default/production/mapp-electronic-timetable.pr
 __S0 30000E 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 __S1 E5 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 __S2 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
-Version@F4348 24 0 COMRAM 1 dataCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 SetupAlarmTimeA@minute10 DF 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 SetupAlarmTimeB@minute10 DF 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 __size_of_lcd_write_data 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
@@ -703,10 +702,9 @@ __Hnvrram 0 0 COMRAM 1 nvrram dist/default/production/mapp-electronic-timetable.
 SetupAlarmTimeC@minute10 DF 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 __end_ofi2_lcd_write_cmd 19B2 0 CODE 0 text16 dist/default/production/mapp-electronic-timetable.production.obj
 __size_of_lcd_strobe 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
-Version@Version B4 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 int_func 102E 0 CODE 0 intcode_body dist/default/production/mapp-electronic-timetable.production.obj
 _getkey 1B18 0 CODE 0 text11 dist/default/production/mapp-electronic-timetable.production.obj
-_lcd_init 17EE 0 CODE 0 text1 dist/default/production/mapp-electronic-timetable.production.obj
+_lcd_init 17EE 0 CODE 0 text2 dist/default/production/mapp-electronic-timetable.production.obj
 lcd_write_cmd@cmd 1F 0 COMRAM 1 cstackCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 int_2_char@char1 2 0 COMRAM 1 cstackCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 __Lintentry 0 0 ABS 0 intentry dist/default/production/mapp-electronic-timetable.production.obj
@@ -715,7 +713,7 @@ __Hrparam 0 0 COMRAM 1 rparam dist/default/production/mapp-electronic-timetable.
 __pdataBANK0 60 0 BANK0 1 dataBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 __activetblptr 2 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 __Hstruct 0 0 COMRAM 1 struct dist/default/production/mapp-electronic-timetable.production.obj
-__end_of_lcd_init 1860 0 CODE 0 text1 dist/default/production/mapp-electronic-timetable.production.obj
+__end_of_lcd_init 1860 0 CODE 0 text2 dist/default/production/mapp-electronic-timetable.production.obj
 __Htext10 0 0 ABS 0 text10 dist/default/production/mapp-electronic-timetable.production.obj
 __Htext11 0 0 ABS 0 text11 dist/default/production/mapp-electronic-timetable.production.obj
 __Htext12 0 0 ABS 0 text12 dist/default/production/mapp-electronic-timetable.production.obj
@@ -725,8 +723,8 @@ __Htext16 0 0 ABS 0 text16 dist/default/production/mapp-electronic-timetable.pro
 __Htext17 0 0 ABS 0 text17 dist/default/production/mapp-electronic-timetable.production.obj
 __Htext18 0 0 ABS 0 text18 dist/default/production/mapp-electronic-timetable.production.obj
 __Htext19 0 0 ABS 0 text19 dist/default/production/mapp-electronic-timetable.production.obj
+_version 1ACA 0 CODE 0 text1 dist/default/production/mapp-electronic-timetable.production.obj
 _minute 3D 0 COMRAM 1 bssCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
-__end_of_Version 1B18 0 CODE 0 text2 dist/default/production/mapp-electronic-timetable.production.obj
 __end_of_SetupTime 12E4 0 CODE 0 text4 dist/default/production/mapp-electronic-timetable.production.obj
 __ptext10 1B8A 0 CODE 0 text10 dist/default/production/mapp-electronic-timetable.production.obj
 __ptext11 1B18 0 CODE 0 text11 dist/default/production/mapp-electronic-timetable.production.obj
@@ -737,6 +735,7 @@ __ptext16 1942 0 CODE 0 text16 dist/default/production/mapp-electronic-timetable
 __ptext17 1BAC 0 CODE 0 text17 dist/default/production/mapp-electronic-timetable.production.obj
 __ptext18 1778 0 CODE 0 text18 dist/default/production/mapp-electronic-timetable.production.obj
 __ptext19 16F4 0 CODE 0 text19 dist/default/production/mapp-electronic-timetable.production.obj
+version@outchar C9 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 ___awdiv 16F4 0 CODE 0 text19 dist/default/production/mapp-electronic-timetable.production.obj
 __size_of_SetupTime 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 __pintcode_body 102E 0 CODE 0 intcode_body dist/default/production/mapp-electronic-timetable.production.obj
@@ -759,8 +758,8 @@ _SetupTime 11AA 0 CODE 0 text4 dist/default/production/mapp-electronic-timetable
 __size_of_int_2_char 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 lcd_write_data@temp1 20 0 COMRAM 1 cstackCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 getkey@lookup B4 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
-stackhi 7FF 0 ABS 0 - /tmp/xcXA3RAyE.obj
-stacklo E5 0 ABS 0 - /tmp/xcXA3RAyE.obj
+stackhi 7FF 0 ABS 0 - /tmp/xcXrMgFkw.obj
+stacklo E5 0 ABS 0 - /tmp/xcXrMgFkw.obj
 __Lintcode 1008 0 CODE 0 intcode dist/default/production/mapp-electronic-timetable.production.obj
 __Lintret 0 0 ABS 0 intret dist/default/production/mapp-electronic-timetable.production.obj
 SetupAlarmTimeB@F4332 75 0 BANK0 1 dataBANK0 dist/default/production/mapp-electronic-timetable.production.obj
@@ -781,6 +780,7 @@ i2_lcd_strobe 1BAC 0 CODE 0 text17 dist/default/production/mapp-electronic-timet
 __size_of_delay_ms 0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
 __LcstackCOMRAM 0 0 ABS 0 cstackCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 end_of_initialization 1A68 0 CODE 0 cinit dist/default/production/mapp-electronic-timetable.production.obj
+version@msgindex CA 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 __Lnvrram 0 0 COMRAM 1 nvrram dist/default/production/mapp-electronic-timetable.production.obj
 __Hintentry 0 0 ABS 0 intentry dist/default/production/mapp-electronic-timetable.production.obj
 _RCONbits FD0 0 ABS 0 - dist/default/production/mapp-electronic-timetable.production.obj
@@ -792,8 +792,8 @@ __Lrparam 0 0 COMRAM 1 rparam dist/default/production/mapp-electronic-timetable.
 __pcinit 1A1C 0 CODE 0 cinit dist/default/production/mapp-electronic-timetable.production.obj
 __end_ofgetkey@F4270 102D 0 SMALLCONST 0 smallconst dist/default/production/mapp-electronic-timetable.production.obj
 __ptext0 19B2 0 CODE 0 text0 dist/default/production/mapp-electronic-timetable.production.obj
-__ptext1 17EE 0 CODE 0 text1 dist/default/production/mapp-electronic-timetable.production.obj
-__ptext2 1ACA 0 CODE 0 text2 dist/default/production/mapp-electronic-timetable.production.obj
+__ptext1 1ACA 0 CODE 0 text1 dist/default/production/mapp-electronic-timetable.production.obj
+__ptext2 17EE 0 CODE 0 text2 dist/default/production/mapp-electronic-timetable.production.obj
 __ptext3 1BCE 0 CODE 0 text3 dist/default/production/mapp-electronic-timetable.production.obj
 __ptext4 11AA 0 CODE 0 text4 dist/default/production/mapp-electronic-timetable.production.obj
 __ptext5 12E4 0 CODE 0 text5 dist/default/production/mapp-electronic-timetable.production.obj
@@ -812,7 +812,7 @@ __Ltext17 0 0 ABS 0 text17 dist/default/production/mapp-electronic-timetable.pro
 __Ltext18 0 0 ABS 0 text18 dist/default/production/mapp-electronic-timetable.production.obj
 __Ltext19 0 0 ABS 0 text19 dist/default/production/mapp-electronic-timetable.production.obj
 SetupAlarmTimeB@outchar DC 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
-__ramtop 800 0 RAM 0 ramtop /tmp/xcXA3RAyE.obj
+__ramtop 800 0 RAM 0 ramtop /tmp/xcXrMgFkw.obj
 __Lpowerup 1016 0 CODE 0 powerup dist/default/production/mapp-electronic-timetable.production.obj
 __Leeprom_data 0 0 EEDATA 0 eeprom_data dist/default/production/mapp-electronic-timetable.production.obj
 lcd_init@i 22 0 COMRAM 1 cstackCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
@@ -863,12 +863,12 @@ _hourB 3B 0 COMRAM 1 bssCOMRAM dist/default/production/mapp-electronic-timetable
 _hourC 3C 0 COMRAM 1 bssCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 SetupAlarmTimeC@hour10 DD 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 __HdataBANK0 0 0 ABS 0 dataBANK0 dist/default/production/mapp-electronic-timetable.production.obj
+version@Version B4 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 SetupTime@minute1 E0 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 __initialization 1A1C 0 CODE 0 cinit dist/default/production/mapp-electronic-timetable.production.obj
 int_2_char@int1 1 0 COMRAM 1 cstackCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 __pdataCOMRAM 24 0 COMRAM 1 dataCOMRAM dist/default/production/mapp-electronic-timetable.production.obj
 SetupAlarmTimeA@Message C7 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
-_Version 1ACA 0 CODE 0 text2 dist/default/production/mapp-electronic-timetable.production.obj
 getkey@keycode C6 0 BANK0 1 cstackBANK0 dist/default/production/mapp-electronic-timetable.production.obj
 __Hfardata 0 0 FARRAM 0 fardata dist/default/production/mapp-electronic-timetable.production.obj
 __Hsmallconst 102E 0 SMALLCONST 0 smallconst dist/default/production/mapp-electronic-timetable.production.obj

@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=/opt/microchip/xc8/v1.38/dat/en_msgs.txt -cs \
   -h+dist/default/production/mapp-electronic-timetable.production.sym \
   --cmf=dist/default/production/mapp-electronic-timetable.production.cmf -z \
-  -Q18F4550 -o/tmp/xcXw1IvF2 \
+  -Q18F4550 -o/tmp/xcXce1T64 \
   -Mdist/default/production/mapp-electronic-timetable.production.map -E1 \
   -ver=XC8 -ASTACK=0E5h-07ffh -pstack=STACK -ACODE=01000h-07FFFh \
   -ACONST=01000h-07FFFh -ASMALLCONST=01000h-010FFhx112 \
@@ -23,7 +23,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcXA3RAyE.obj \
+  /tmp/xcXrMgFkw.obj \
   dist/default/production/mapp-electronic-timetable.production.obj 
 
 Object code version is 3.11
@@ -36,7 +36,7 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcXA3RAyE.obj
+/tmp/xcXrMgFkw.obj
                 end_init                           1016     1016        4      804       0
                 reset_vec                          1000     1000        4      800       0
                 idloc                            200000   200000        8   200000       0
@@ -62,8 +62,8 @@ dist/default/production/mapp-electronic-timetable.production.obj
                 text5                              12E4     12E4       F8      817       0
                 text4                              11AA     11AA      13A      817       0
                 text3                              1BCE     1BCE       1C      817       0
-                text2                              1ACA     1ACA       4E      817       0
-                text1                              17EE     17EE       72      817       0
+                text2                              17EE     17EE       72      817       0
+                text1                              1ACA     1ACA       4E      817       0
                 text0                              19B2     19B2       6A      817       0
                 cstackCOMRAM                          1        1       23        1       1
                 cstackBANK0                          B4       B4       31       60       1
@@ -98,8 +98,8 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text5                              12E4     12E4       F8         0
                 text4                              11AA     11AA      13A         0
                 text3                              1BCE     1BCE       1C         0
-                text2                              1ACA     1ACA       4E         0
-                text1                              17EE     17EE       72         0
+                text2                              17EE     17EE       72         0
+                text1                              1ACA     1ACA       4E         0
                 text0                              19B2     19B2       6A         0
                 cinit                              1A1C     1A1C       5A         0
                 idataBANK0                         1A76     1A76       54         0
@@ -243,10 +243,6 @@ SetupTime@msgindex                     cstackBANK0  0000E3
 SetupTime@outchar                      cstackBANK0  0000DC
 SetupTime@second1                      cstackBANK0  0000E2
 SetupTime@second10                     cstackBANK0  0000E1
-Version@F4348                          dataCOMRAM   000024
-Version@Version                        cstackBANK0  0000B4
-Version@msgindex                       cstackBANK0  0000CA
-Version@outchar                        cstackBANK0  0000C9
 _ADCON1                                (abs)        000FC1
 _CMCON                                 (abs)        000FB4
 _INTCON2                               (abs)        000FF1
@@ -269,7 +265,6 @@ _TMR0H                                 (abs)        000FD7
 _TMR0L                                 (abs)        000FD6
 _TRISA                                 (abs)        000F92
 _TRISD                                 (abs)        000F95
-_Version                               text2        001ACA
 __HRAM                                 (abs)        000000
 __Habs1                                abs1         000000
 __Hbank0                               bank0        000000
@@ -460,18 +455,18 @@ __end_of_SetupAlarmTimeB               text6        0014D4
 __end_of_SetupAlarmTimeC               text5        0013DC
 __end_of_SetupTime                     text4        0012E4
 __end_of_SetupTimerInterruptRegisters  text3        001BEA
-__end_of_Version                       text2        001B18
 __end_of___awdiv                       text19       001778
 __end_of__initialization               cinit        001A68
 __end_of_char_2_int                    text13       0018D2
 __end_of_delay_ms                      text12       001B8A
 __end_of_getkey                        text11       001B56
 __end_of_int_2_char                    text18       0017EE
-__end_of_lcd_init                      text1        001860
+__end_of_lcd_init                      text2        001860
 __end_of_lcd_strobe                    text10       001BAC
 __end_of_lcd_write_cmd                 text9        001942
 __end_of_lcd_write_data                text8        001660
 __end_of_main                          text0        001A1C
+__end_of_version                       text1        001B18
 __end_ofgetkey@F4270                   smallconst   00102D
 __end_ofi2_lcd_strobe                  text17       001BCE
 __end_ofi2_lcd_write_cmd               text16       0019B2
@@ -490,7 +485,7 @@ __pintcode                             intcode      001008
 __pintcode_body                        intcode_body 00102E
 __psmallconst                          smallconst   00101A
 __ptext0                               text0        0019B2
-__ptext1                               text1        0017EE
+__ptext1                               text1        001ACA
 __ptext10                              text10       001B8A
 __ptext11                              text11       001B18
 __ptext12                              text12       001B56
@@ -500,7 +495,7 @@ __ptext16                              text16       001942
 __ptext17                              text17       001BAC
 __ptext18                              text18       001778
 __ptext19                              text19       0016F4
-__ptext2                               text2        001ACA
+__ptext2                               text2        0017EE
 __ptext3                               text3        001BCE
 __ptext4                               text4        0011AA
 __ptext5                               text5        0012E4
@@ -515,7 +510,6 @@ __size_of_SetupAlarmTimeB              (abs)        000000
 __size_of_SetupAlarmTimeC              (abs)        000000
 __size_of_SetupTime                    (abs)        000000
 __size_of_SetupTimerInterruptRegisters (abs)        000000
-__size_of_Version                      (abs)        000000
 __size_of___awdiv                      (abs)        000000
 __size_of_char_2_int                   (abs)        000000
 __size_of_delay_ms                     (abs)        000000
@@ -526,6 +520,7 @@ __size_of_lcd_strobe                   (abs)        000000
 __size_of_lcd_write_cmd                (abs)        000000
 __size_of_lcd_write_data               (abs)        000000
 __size_of_main                         (abs)        000000
+__size_of_version                      (abs)        000000
 __size_ofi2_lcd_strobe                 (abs)        000000
 __size_ofi2_lcd_write_cmd              (abs)        000000
 __size_ofi2_lcd_write_data             (abs)        000000
@@ -538,7 +533,7 @@ _hourA                                 bssCOMRAM    00003A
 _hourB                                 bssCOMRAM    00003B
 _hourC                                 bssCOMRAM    00003C
 _int_2_char                            text18       001778
-_lcd_init                              text1        0017EE
+_lcd_init                              text2        0017EE
 _lcd_strobe                            text10       001B8A
 _lcd_write_cmd                         text9        0018D2
 _lcd_write_data                        text8        0015CC
@@ -548,6 +543,7 @@ _minuteA                               bssCOMRAM    00003E
 _minuteB                               bssCOMRAM    00003F
 _minuteC                               bssCOMRAM    000040
 _second                                bssCOMRAM    000041
+_version                               text1        001ACA
 btemp                                  temp         000042
 char_2_int@char1                       cstackCOMRAM 00001D
 char_2_int@int1                        cstackCOMRAM 00001E
@@ -581,13 +577,17 @@ stackhi                                (abs)        0007FF
 stacklo                                (abs)        0000E5
 start                                  init         001016
 start_initialization                   cinit        001A1C
+version@F4277                          dataCOMRAM   000024
+version@Version                        cstackBANK0  0000B4
+version@msgindex                       cstackBANK0  0000CA
+version@outchar                        cstackBANK0  0000C9
 
 
 FUNCTION INFORMATION:
 
  *************** function _main *****************
  Defined at:
-		line 324 in file "Main.c"
+		line 311 in file "Main.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -613,10 +613,43 @@ Total ram usage:        0 bytes
 		_SetupAlarmTimeC
 		_SetupTime
 		_SetupTimerInterruptRegisters
-		_Version
 		_lcd_init
+		_version
  This function is called by:
 		Startup code after reset
+ This function uses a non-reentrant model
+
+
+ *************** function _version *****************
+ Defined at:
+		line 12 in file "version.c"
+ Parameters:    Size  Location     Type
+		None
+ Auto vars:     Size  Location     Type
+  Version        21    0[BANK0 ] unsigned char [21]
+  msgindex        1   22[BANK0 ] unsigned char 
+  outchar         1   21[BANK0 ] unsigned char 
+ Return value:  Size  Location     Type
+                  2   73[None  ] int 
+ Registers used:
+		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
+ Tracked objects:
+		On entry : 
+		On exit  : 
+		Unchanged: 
+ Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
+      Params:         0       0       0       0       0       0       0       0       0
+      Locals:         0      23       0       0       0       0       0       0       0
+      Temps:          0       0       0       0       0       0       0       0       0
+      Totals:         0      23       0       0       0       0       0       0       0
+Total ram usage:       23 bytes
+ Hardware stack levels used:    1
+ Hardware stack levels required when called:    5
+ This function calls:
+		_lcd_write_cmd
+		_lcd_write_data
+ This function is called by:
+		_main
  This function uses a non-reentrant model
 
 
@@ -645,39 +678,6 @@ Total ram usage:        3 bytes
  Hardware stack levels required when called:    5
  This function calls:
 		_lcd_write_cmd
- This function is called by:
-		_main
- This function uses a non-reentrant model
-
-
- *************** function _Version *****************
- Defined at:
-		line 311 in file "Main.c"
- Parameters:    Size  Location     Type
-		None
- Auto vars:     Size  Location     Type
-  Version        21    0[BANK0 ] unsigned char [21]
-  msgindex        1   22[BANK0 ] unsigned char 
-  outchar         1   21[BANK0 ] unsigned char 
- Return value:  Size  Location     Type
-                  1    wreg      void 
- Registers used:
-		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, prodl, prodh, cstack
- Tracked objects:
-		On entry : 
-		On exit  : 
-		Unchanged: 
- Data sizes:     COMRAM   BANK0   BANK1   BANK2   BANK3   BANK4   BANK5   BANK6   BANK7
-      Params:         0       0       0       0       0       0       0       0       0
-      Locals:         0      23       0       0       0       0       0       0       0
-      Temps:          0       0       0       0       0       0       0       0       0
-      Totals:         0      23       0       0       0       0       0       0       0
-Total ram usage:       23 bytes
- Hardware stack levels used:    1
- Hardware stack levels required when called:    5
- This function calls:
-		_lcd_write_cmd
-		_lcd_write_data
  This function is called by:
 		_main
  This function uses a non-reentrant model
@@ -910,7 +910,7 @@ Total ram usage:        3 bytes
 		_SetupAlarmTimeA
 		_SetupAlarmTimeB
 		_SetupAlarmTimeC
-		_Version
+		_version
  This function uses a non-reentrant model
 
 
@@ -946,7 +946,7 @@ Total ram usage:        3 bytes
 		_SetupAlarmTimeA
 		_SetupAlarmTimeB
 		_SetupAlarmTimeC
-		_Version
+		_version
  This function uses a non-reentrant model
 
 
@@ -1306,9 +1306,8 @@ Main.c
 		_SetupAlarmTimeC		CODE           	12E4	0000	249
 		_SetupTime     		CODE           	11AA	0000	315
 		_SetupTimerInterruptRegisters		CODE           	1BCE	0000	29
-		_Version       		CODE           	1ACA	0000	79
 
-Main.c estimated size: 1906
+Main.c estimated size: 1827
 
 shared
 		i2_lcd_write_cmd		CODE           	1942	0000	113
@@ -1323,4 +1322,9 @@ delays_utilities.c
 		_delay_ms      		CODE           	1B56	0000	53
 
 delays_utilities.c estimated size: 53
+
+version.c
+		_version       		CODE           	1ACA	0000	79
+
+version.c estimated size: 79
 
