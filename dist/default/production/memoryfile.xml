@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
-  <executable name="dist/default/production\mapp-electronic-timetable.production.hex">
+  <executable name="dist/default/production/mapp-electronic-timetable.production.hex">
     <memory name="program">
       <units>bytes</units>
       <length>28672</length>
-      <used>2916</used>
-      <free>25756</free>
+      <used>3067</used>
+      <free>25605</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>2048</length>
-      <used>171</used>
-      <free>1877</free>
+      <used>199</used>
+      <free>1849</free>
     </memory>
   </executable>
 </project>
