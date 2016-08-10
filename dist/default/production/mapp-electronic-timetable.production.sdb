@@ -59,9 +59,9 @@
 "275
 [v _SetupTimerInterruptRegisters SetupTimerInterruptRegisters `(v  1 e 1 0 ]
 "311
-[v _Version Version `(v  1 e 1 0 ]
-"324
 [v _main main `(v  1 e 1 0 ]
+"12 /home/minin0la/Documents/mapp-electronic-timetable/version.c
+[v _version version `(i  1 e 2 0 ]
 "2571 /opt/microchip/xc8/v1.38/include/pic18f4550.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
 "2709
@@ -217,10 +217,21 @@
 [v _minuteB minuteB `uc  1 e 1 0 ]
 [v _hourC hourC `uc  1 e 1 0 ]
 [v _minuteC minuteC `uc  1 e 1 0 ]
-"324
+"311
 [v _main main `(v  1 e 1 0 ]
 {
-"357
+"344
+} 0
+"12 /home/minin0la/Documents/mapp-electronic-timetable/version.c
+[v _version version `(i  1 e 2 0 ]
+{
+"15
+[v version@Version Version `[21]uc  1 a 21 0 ]
+"14
+[v version@msgindex msgindex `uc  1 a 1 22 ]
+[v version@outchar outchar `uc  1 a 1 21 ]
+[v version@F4277 F4277 `[21]uc  1 s 21 F4277 ]
+"24
 } 0
 "83 /home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
 [v _lcd_init lcd_init `(v  1 e 1 0 ]
@@ -229,17 +240,7 @@
 [v lcd_init@i i `i  1 a 2 33 ]
 "123
 } 0
-"311 /home/minin0la/Documents/mapp-electronic-timetable/Main.c
-[v _Version Version `(v  1 e 1 0 ]
-{
-"313
-[v Version@Version Version `[21]uc  1 a 21 0 ]
-[v Version@msgindex msgindex `uc  1 a 1 22 ]
-[v Version@outchar outchar `uc  1 a 1 21 ]
-[v Version@F4348 F4348 `[21]uc  1 s 21 F4348 ]
-"323
-} 0
-"275
+"275 /home/minin0la/Documents/mapp-electronic-timetable/Main.c
 [v _SetupTimerInterruptRegisters SetupTimerInterruptRegisters `(v  1 e 1 0 ]
 {
 "309
