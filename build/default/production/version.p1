@@ -1,28 +1,8 @@
 Version 3.2 HI-TECH Software Intermediate Code
-"2968 /opt/microchip/xc8/v1.38/include/pic18f4550.h
-[s S210 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S210 . RD0 RD1 RD2 RD3 RD4 RD5 RD6 RD7 ]
-"2978
-[s S211 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S211 . SPP0 SPP1 SPP2 SPP3 SPP4 SPP5 SPP6 SPP7 ]
-"2988
-[s S212 :7 `uc 1 :1 `uc 1 ]
-[n S212 . . SS2 ]
-"2967
-[u S209 `S210 1 `S211 1 `S212 1 ]
-[n S209 . . . . ]
-"2993
-[v _PORTDbits `VS209 ~T0 @X0 0 e@3971 ]
-[v F4259 `(v ~T0 @X0 1 tf1`ul ]
-"157 /opt/microchip/xc8/v1.38/include/pic18.h
-[v __delay `JF4259 ~T0 @X0 0 e ]
-[p i __delay ]
-"2962 /opt/microchip/xc8/v1.38/include/pic18f4550.h
-[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
-"14 lcd_utilities.c
-[v _lcd_strobe `(v ~T0 @X0 0 ef ]
-"4349 /opt/microchip/xc8/v1.38/include/pic18f4550.h
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"10 lcd.h
+[v _lcd_write_cmd `(v ~T0 @X0 0 ef1`uc ]
+"13
+[v _lcd_write_data `(v ~T0 @X0 0 ef1`uc ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4015,221 +3995,80 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic18.h: 157: extern __nonreentrant void _delay(unsigned long);
 [; ;pic18.h: 159: extern __nonreentrant void _delaywdt(unsigned long);
 [; ;pic18.h: 161: extern __nonreentrant void _delay3(unsigned char);
-[; ;lcd_utilities.c: 14: void lcd_strobe(void);
-"18 lcd_utilities.c
-[v _lcd_write_cmd `(v ~T0 @X0 1 ef1`uc ]
+[; ;lcd.h: 7: extern void lcd_init(void);
+[; ;lcd.h: 10: extern void lcd_write_cmd(unsigned char cmd);
+[; ;lcd.h: 13: extern void lcd_write_data(char data);
+"12 version.c
+[v _version `(v ~T0 @X0 1 ef ]
+"13
+{
+[; ;version.c: 12: void version(void)
+[; ;version.c: 13: {
+[e :U _version ]
+[f ]
+"14
+[v _msgindex `uc ~T0 @X0 1 a ]
+[v _outchar `uc ~T0 @X0 1 a ]
+[v F4277 `uc ~T0 @X0 -> 0 `x s ]
+[i F4277
+:U ..
+-> 69 `c
+-> 84 `c
+-> 84 `c
+-> 32 `c
+-> 86 `c
+-> 101 `c
+-> 114 `c
+-> 115 `c
+-> 105 `c
+-> 111 `c
+-> 110 `c
+-> 32 `c
+-> 49 `c
+-> 46 `c
+-> 50 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 0 `c
+..
+]
+"15
+[v _Version `uc ~T0 @X0 21  a ]
+[; ;version.c: 14: unsigned char msgindex, outchar;
+[; ;version.c: 15: char Version[ ] = "ETT Version 1.2     ";
+[e = _Version F4277 ]
+[; ;version.c: 17: lcd_write_cmd(0x80);
+"17
+[e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
+[; ;version.c: 19: for (msgindex = 0; msgindex < 20; msgindex++)
 "19
 {
-[; ;lcd_utilities.c: 18: void lcd_write_cmd(unsigned char cmd)
-[; ;lcd_utilities.c: 19: {
-[e :U _lcd_write_cmd ]
-"18
-[v _cmd `uc ~T0 @X0 1 r1 ]
-"19
-[f ]
+[e = _msgindex -> -> 0 `i `uc ]
+[e $ < -> _msgindex `i -> 20 `i 529  ]
+[e $U 530  ]
 "20
-[v _temp2 `uc ~T0 @X0 1 a ]
-[; ;lcd_utilities.c: 20: unsigned char temp2;
-[; ;lcd_utilities.c: 21: PORTDbits.RD6 = 0;
+[e :U 529 ]
+[; ;version.c: 20: {
+{
+[; ;version.c: 21: outchar = Version[msgindex];
 "21
-[e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
-[; ;lcd_utilities.c: 22: _delay((unsigned long)((4)*(48000000/4000.0)));
+[e = _outchar *U + &U _Version * -> _msgindex `ux -> -> # *U &U _Version `ui `ux ]
+[; ;version.c: 22: lcd_write_data(outchar);
 "22
-[e ( __delay (1 -> * -> -> 4 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 23: temp2 = cmd;
+[e ( _lcd_write_data (1 _outchar ]
 "23
-[e = _temp2 _cmd ]
-[; ;lcd_utilities.c: 24: temp2 = temp2 >> 4;
+}
+"19
+[e ++ _msgindex -> -> 1 `i `uc ]
+[e $ < -> _msgindex `i -> 20 `i 529  ]
+[e :U 530 ]
+"23
+}
+[; ;version.c: 23: }
+[; ;version.c: 24: }
 "24
-[e = _temp2 -> >> -> _temp2 `i -> 4 `i `uc ]
-[; ;lcd_utilities.c: 25: PORTD = temp2 & 0x0F;
-"25
-[e = _PORTD -> & -> _temp2 `i -> 15 `i `uc ]
-[; ;lcd_utilities.c: 27: _delay((unsigned long)((8)*(48000000/4000.0)));
-"27
-[e ( __delay (1 -> * -> -> 8 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 28: lcd_strobe();
-"28
-[e ( _lcd_strobe ..  ]
-[; ;lcd_utilities.c: 30: _delay((unsigned long)((8)*(48000000/4000.0)));
-"30
-[e ( __delay (1 -> * -> -> 8 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 32: temp2 = cmd;
-"32
-[e = _temp2 _cmd ]
-[; ;lcd_utilities.c: 33: PORTD = temp2 & 0x0F;
-"33
-[e = _PORTD -> & -> _temp2 `i -> 15 `i `uc ]
-[; ;lcd_utilities.c: 35: _delay((unsigned long)((8)*(48000000/4000.0)));
-"35
-[e ( __delay (1 -> * -> -> 8 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 36: lcd_strobe();
-"36
-[e ( _lcd_strobe ..  ]
-[; ;lcd_utilities.c: 37: _delay((unsigned long)((8)*(48000000/4000.0)));
-"37
-[e ( __delay (1 -> * -> -> 8 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 39: }
-"39
 [e :UE 528 ]
-}
-"43
-[v _lcd_write_data `(v ~T0 @X0 1 ef1`uc ]
-"44
-{
-[; ;lcd_utilities.c: 43: void lcd_write_data(char data)
-[; ;lcd_utilities.c: 44: {
-[e :U _lcd_write_data ]
-"43
-[v _data `uc ~T0 @X0 1 r1 ]
-"44
-[f ]
-"45
-[v _temp1 `uc ~T0 @X0 1 a ]
-[; ;lcd_utilities.c: 45: char temp1;
-[; ;lcd_utilities.c: 47: PORTDbits.RD6 = 1;
-"47
-[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
-[; ;lcd_utilities.c: 48: _delay((unsigned long)((4)*(48000000/4000.0)));
-"48
-[e ( __delay (1 -> * -> -> 4 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 50: temp1 = data;
-"50
-[e = _temp1 _data ]
-[; ;lcd_utilities.c: 51: temp1 = temp1 >> 4;
-"51
-[e = _temp1 -> >> -> _temp1 `i -> 4 `i `uc ]
-[; ;lcd_utilities.c: 52: PORTD = temp1 & 0x0F;
-"52
-[e = _PORTD -> & -> _temp1 `i -> 15 `i `uc ]
-[; ;lcd_utilities.c: 53: _delay((unsigned long)((8)*(48000000/4000.0)));
-"53
-[e ( __delay (1 -> * -> -> 8 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 54: PORTDbits.RD6 = 1;
-"54
-[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
-[; ;lcd_utilities.c: 55: _delay((unsigned long)((8)*(48000000/4000.0)));
-"55
-[e ( __delay (1 -> * -> -> 8 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 57: lcd_strobe();
-"57
-[e ( _lcd_strobe ..  ]
-[; ;lcd_utilities.c: 58: _delay((unsigned long)((8)*(48000000/4000.0)));
-"58
-[e ( __delay (1 -> * -> -> 8 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 60: temp1 = data;
-"60
-[e = _temp1 _data ]
-[; ;lcd_utilities.c: 61: PORTD = temp1 & 0x0F;
-"61
-[e = _PORTD -> & -> _temp1 `i -> 15 `i `uc ]
-[; ;lcd_utilities.c: 62: _delay((unsigned long)((8)*(48000000/4000.0)));
-"62
-[e ( __delay (1 -> * -> -> 8 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 63: PORTDbits.RD6 = 1;
-"63
-[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
-[; ;lcd_utilities.c: 64: _delay((unsigned long)((10)*(48000000/4000.0)));
-"64
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 66: lcd_strobe();
-"66
-[e ( _lcd_strobe ..  ]
-[; ;lcd_utilities.c: 67: _delay((unsigned long)((10)*(48000000/4000.0)));
-"67
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 68: }
-"68
-[e :UE 529 ]
-}
-"73
-[v _lcd_strobe `(v ~T0 @X0 1 ef ]
-"74
-{
-[; ;lcd_utilities.c: 73: void lcd_strobe(void)
-[; ;lcd_utilities.c: 74: {
-[e :U _lcd_strobe ]
-[f ]
-[; ;lcd_utilities.c: 75: PORTDbits.RD4 = 1;
-"75
-[e = . . _PORTDbits 0 4 -> -> 1 `i `uc ]
-[; ;lcd_utilities.c: 76: _delay((unsigned long)((8)*(48000000/4000.0)));
-"76
-[e ( __delay (1 -> * -> -> 8 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 77: PORTDbits.RD4 = 0;
-"77
-[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
-[; ;lcd_utilities.c: 78: _delay((unsigned long)((8)*(48000000/4000.0)));
-"78
-[e ( __delay (1 -> * -> -> 8 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 79: }
-"79
-[e :UE 530 ]
-}
-"83
-[v _lcd_init `(v ~T0 @X0 1 ef ]
-"84
-{
-[; ;lcd_utilities.c: 83: void lcd_init(void)
-[; ;lcd_utilities.c: 84: {
-[e :U _lcd_init ]
-[f ]
-"85
-[v _i `i ~T0 @X0 1 a ]
-[; ;lcd_utilities.c: 85: int i;
-[; ;lcd_utilities.c: 86: TRISD = 0x00;
-"86
-[e = _TRISD -> -> 0 `i `uc ]
-[; ;lcd_utilities.c: 87: PORTD = 0x00;
-"87
-[e = _PORTD -> -> 0 `i `uc ]
-[; ;lcd_utilities.c: 88: PORTDbits.RD4 = 0;
-"88
-[e = . . _PORTDbits 0 4 -> -> 0 `i `uc ]
-[; ;lcd_utilities.c: 89: PORTDbits.RD6 = 0;
-"89
-[e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
-[; ;lcd_utilities.c: 90: PORTDbits.RD5 = 0;
-"90
-[e = . . _PORTDbits 0 5 -> -> 0 `i `uc ]
-[; ;lcd_utilities.c: 92: for(i=0;i<100;i++)
-"92
-{
-[e = _i -> 0 `i ]
-[e $ < _i -> 100 `i 532  ]
-[e $U 533  ]
-"93
-[e :U 532 ]
-[; ;lcd_utilities.c: 93: _delay((unsigned long)((10)*(48000000/4000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-"92
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 100 `i 532  ]
-[e :U 533 ]
-"93
-}
-[; ;lcd_utilities.c: 106: lcd_write_cmd(0x33);
-"106
-[e ( _lcd_write_cmd (1 -> -> 51 `i `uc ]
-[; ;lcd_utilities.c: 107: lcd_write_cmd(0x32);
-"107
-[e ( _lcd_write_cmd (1 -> -> 50 `i `uc ]
-[; ;lcd_utilities.c: 109: lcd_write_cmd(0x28);
-"109
-[e ( _lcd_write_cmd (1 -> -> 40 `i `uc ]
-[; ;lcd_utilities.c: 112: lcd_write_cmd(0x0E);
-"112
-[e ( _lcd_write_cmd (1 -> -> 14 `i `uc ]
-[; ;lcd_utilities.c: 115: lcd_write_cmd(0x06);
-"115
-[e ( _lcd_write_cmd (1 -> -> 6 `i `uc ]
-[; ;lcd_utilities.c: 119: lcd_write_cmd(0x01);
-"119
-[e ( _lcd_write_cmd (1 -> -> 1 `i `uc ]
-[; ;lcd_utilities.c: 121: _delay((unsigned long)((10)*(48000000/4000.0)));
-"121
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 48000000 `l `d .4000.0 `ul ]
-[; ;lcd_utilities.c: 123: }
-"123
-[e :UE 531 ]
 }

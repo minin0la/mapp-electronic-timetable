@@ -157,6 +157,8 @@ void SetupAlarmTimeA() //Program to get Alarm Time for Subject A
 	unsigned char msgindex, outchar, ctemp;
 	unsigned char hour10, hour1, minute10, minute1;    
 	char Message[ ] = "Subject A Time hhmm:";
+    
+    PORTA = 0b00000010; //On LED RA1
 
 	lcd_write_cmd(0x80);
 
@@ -195,6 +197,8 @@ void SetupAlarmTimeB() //Program to get Alarm Time for Subject B
 	unsigned char msgindex, outchar, ctemp;
 	unsigned char hour10, hour1, minute10, minute1;    
 	char Message[ ] = "Subject B Time hhmm:";
+    
+    PORTA = 0b00000100; //On LED RA2
 
 	lcd_write_cmd(0x80);
 
@@ -233,6 +237,8 @@ void SetupAlarmTimeC() //Program to get Alarm Time for Subject C
 	unsigned char msgindex, outchar, ctemp;
 	unsigned char hour10, hour1, minute10, minute1;    
 	char Message[ ] = "Subject C Time hhmm:";
+    
+    PORTA = 0b00001000; //On LED RA3
 
 	lcd_write_cmd(0x80);
 
@@ -301,33 +307,35 @@ void SetupTimerInterruptRegisters()
 				// 0 TMR0 register did not overflow
 
 }
+
 void main(void)   //------------ Main Program  ---------------------------------------------------------------
 {
 	ADCON1 = 0x0F;
 	CMCON = 0x07;
     
 	lcd_init();
+    TRISA = 0b00000000; //Set PORTAs as outputs
 
+    version();//Show version number
 	SetupTime(); //Get Time
 	SetupAlarmTimeA(); //Get Alarm Time for Subject A
 	SetupAlarmTimeB(); //Get Alarm Time for Subject B
     SetupAlarmTimeC(); //Get Alarm Time for Subject C
 	SetupTimerInterruptRegisters();
-    TRISA = 0b00000000; //Set PORTAs as outputs
     
 	while(1)
 	{
 		if(hour==hourA && minute==minuteA)
 		{
-                PORTA = 0b00000011; //On Buzzer RA0 and LED RA1
+            PORTA = 0b00000011; //On Buzzer RA0 and LED RA1
 		}
 		else if(hour==hourB && minute==minuteB)
         {
-                PORTA = 0b00000101; //On Buzzer RA0 and LED RA2
+            PORTA = 0b00000101; //On Buzzer RA0 and LED RA2
         }
 		else if(hour==hourC && minute==minuteC)
         {
-                PORTA = 0b00001001; //On Buzzer RA0 and LED RA3
+            PORTA = 0b00001001; //On Buzzer RA0 and LED RA3
         } else
 		{
             PORTA = 0b00000000; //Off Buzzer and All LEDS at start
