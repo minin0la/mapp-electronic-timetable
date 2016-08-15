@@ -1,9 +1,9 @@
 
 
-Microchip Technology PIC18 LITE Macro Assembler V1.38 build -256452561 
-                                                                                               Mon Aug 15 08:25:28 2016
+Microchip Technology PIC18 LITE Macro Assembler V1.35 build -356382666 
+                                                                                               Mon Aug 15 16:35:09 2016
 
-Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010351
+Microchip Technology Omniscient Code Generator v1.35 (Free mode) build 201507080246
      1                           	processor	18F4550
      2                           	fnconf	rparam,??,?,0
      3                           	opt	pw 120
@@ -46,7 +46,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
     40  001BEE                     __pidataCOMRAM:
     41                           	opt stack 0
     42                           
-    43                           ;initializer for version@F4277
+    43                           ;initializer for version@F4451
     44  001BEE  45                 	db	69
     45  001BEF  54                 	db	84
     46  001BF0  54                 	db	84
@@ -73,7 +73,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
     67  001A7A                     __pidataBANK0:
     68                           	opt stack 0
     69                           
-    70                           ;initializer for SetupAlarmTimeA@F4322
+    70                           ;initializer for SetupAlarmTimeA@F4496
     71  001A7A  53                 	db	83
     72  001A7B  75                 	db	117
     73  001A7C  62                 	db	98
@@ -96,7 +96,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
     90  001A8D  3A                 	db	58
     91  001A8E  00                 	db	0
     92                           
-    93                           ;initializer for SetupAlarmTimeB@F4332
+    93                           ;initializer for SetupAlarmTimeB@F4506
     94  001A8F  53                 	db	83
     95  001A90  75                 	db	117
     96  001A91  62                 	db	98
@@ -119,7 +119,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    113  001AA2  3A                 	db	58
    114  001AA3  00                 	db	0
    115                           
-   116                           ;initializer for SetupAlarmTimeC@F4342
+   116                           ;initializer for SetupAlarmTimeC@F4516
    117  001AA4  53                 	db	83
    118  001AA5  75                 	db	117
    119  001AA6  62                 	db	98
@@ -142,7 +142,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    136  001AB7  3A                 	db	58
    137  001AB8  00                 	db	0
    138                           
-   139                           ;initializer for SetupTime@F4312
+   139                           ;initializer for SetupTime@F4486
    140  001AB9  53                 	db	83
    141  001ABA  65                 	db	101
    142  001ABB  74                 	db	116
@@ -169,7 +169,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    163  00101A                     __psmallconst:
    164                           	opt stack 0
    165  00101A  00                 	db	0
-   166  00101B                     getkey@F4270:
+   166  00101B                     getkey@F4444:
    167                           	opt stack 0
    168  00101B  31                 	db	49
    169  00101C  32                 	db	50
@@ -189,7 +189,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    183  00102A  43                 	db	67
    184  00102B  20                 	db	32
    185  00102C  00                 	db	0
-   186  00102D                     __end_ofgetkey@F4270:
+   186  00102D                     __end_ofgetkey@F4444:
    187                           	opt stack 0
    188  0000                     _ADCON1	set	4033
    189  0000                     _CMCON	set	4020
@@ -219,47 +219,47 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    213  001A20                     __initialization:
    214                           	opt stack 0
    215                           
-   216                           ; Initialize objects allocated to BANK0 (84 bytes)
-   217                           ; load TBLPTR registers with __pidataBANK0
-   218  001A20  0E7A               	movlw	low __pidataBANK0
-   219  001A22  6EF6               	movwf	tblptrl,c
-   220  001A24  0E1A               	movlw	high __pidataBANK0
-   221  001A26  6EF7               	movwf	tblptrh,c
-   222  001A28  0E00               	movlw	low (__pidataBANK0 shr (0+16))
-   223  001A2A  6EF8               	movwf	tblptru,c
-   224  001A2C  EE00  F060         	lfsr	0,__pdataBANK0
-   225  001A30  EE10 F054          	lfsr	1,84
-   226  001A34                     copy_data0:
-   227  001A34  0009               	tblrd		*+
-   228  001A36  CFF5 FFEE          	movff	tablat,postinc0
-   229  001A3A  50E5               	movf	postdec1,w,c
-   230  001A3C  50E1               	movf	fsr1l,w,c
-   231  001A3E  E1FA               	bnz	copy_data0
-   232                           
-   233                           ; Initialize objects allocated to COMRAM (21 bytes)
-   234                           ; load TBLPTR registers with __pidataCOMRAM
-   235  001A40  0EEE               	movlw	low __pidataCOMRAM
-   236  001A42  6EF6               	movwf	tblptrl,c
-   237  001A44  0E1B               	movlw	high __pidataCOMRAM
-   238  001A46  6EF7               	movwf	tblptrh,c
-   239  001A48  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
-   240  001A4A  6EF8               	movwf	tblptru,c
-   241  001A4C  EE00  F024         	lfsr	0,__pdataCOMRAM
-   242  001A50  EE10 F015          	lfsr	1,21
-   243  001A54                     copy_data1:
-   244  001A54  0009               	tblrd		*+
-   245  001A56  CFF5 FFEE          	movff	tablat,postinc0
-   246  001A5A  50E5               	movf	postdec1,w,c
-   247  001A5C  50E1               	movf	fsr1l,w,c
-   248  001A5E  E1FA               	bnz	copy_data1
-   249                           
-   250                           ; Clear objects allocated to COMRAM (9 bytes)
-   251  001A60  EE00  F039         	lfsr	0,__pbssCOMRAM
-   252  001A64  0E09               	movlw	9
-   253  001A66                     clear_0:
-   254  001A66  6AEE               	clrf	postinc0,c
-   255  001A68  06E8               	decf	wreg,f,c
-   256  001A6A  E1FD               	bnz	clear_0
+   216                           ; Clear objects allocated to COMRAM (9 bytes)
+   217  001A20  EE00  F039         	lfsr	0,__pbssCOMRAM
+   218  001A24  0E09               	movlw	9
+   219  001A26                     clear_0:
+   220  001A26  6AEE               	clrf	postinc0,c
+   221  001A28  06E8               	decf	wreg,f,c
+   222  001A2A  E1FD               	bnz	clear_0
+   223                           
+   224                           ; Initialize objects allocated to BANK0 (84 bytes)
+   225                           ; load TBLPTR registers with __pidataBANK0
+   226  001A2C  0E7A               	movlw	low __pidataBANK0
+   227  001A2E  6EF6               	movwf	tblptrl,c
+   228  001A30  0E1A               	movlw	high __pidataBANK0
+   229  001A32  6EF7               	movwf	tblptrh,c
+   230  001A34  0E00               	movlw	low (__pidataBANK0 shr (0+16))
+   231  001A36  6EF8               	movwf	tblptru,c
+   232  001A38  EE00  F060         	lfsr	0,__pdataBANK0
+   233  001A3C  EE10 F054          	lfsr	1,84
+   234  001A40                     copy_data0:
+   235  001A40  0009               	tblrd		*+
+   236  001A42  CFF5 FFEE          	movff	tablat,postinc0
+   237  001A46  50E5               	movf	postdec1,w,c
+   238  001A48  50E1               	movf	fsr1l,w,c
+   239  001A4A  E1FA               	bnz	copy_data0
+   240                           
+   241                           ; Initialize objects allocated to COMRAM (21 bytes)
+   242                           ; load TBLPTR registers with __pidataCOMRAM
+   243  001A4C  0EEE               	movlw	low __pidataCOMRAM
+   244  001A4E  6EF6               	movwf	tblptrl,c
+   245  001A50  0E1B               	movlw	high __pidataCOMRAM
+   246  001A52  6EF7               	movwf	tblptrh,c
+   247  001A54  0E00               	movlw	low (__pidataCOMRAM shr (0+16))
+   248  001A56  6EF8               	movwf	tblptru,c
+   249  001A58  EE00  F024         	lfsr	0,__pdataCOMRAM
+   250  001A5C  EE10 F015          	lfsr	1,21
+   251  001A60                     copy_data1:
+   252  001A60  0009               	tblrd		*+
+   253  001A62  CFF5 FFEE          	movff	tablat,postinc0
+   254  001A66  50E5               	movf	postdec1,w,c
+   255  001A68  50E1               	movf	fsr1l,w,c
+   256  001A6A  E1FA               	bnz	copy_data1
    257  001A6C                     end_of_initialization:
    258                           	opt stack 0
    259  001A6C                     __end_of__initialization:
@@ -321,7 +321,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    315                           	psect	dataCOMRAM
    316  000024                     __pdataCOMRAM:
    317                           	opt stack 0
-   318  000024                     version@F4277:
+   318  000024                     version@F4451:
    319                           	opt stack 0
    320  000024                     	ds	21
    321                           tblptru	equ	0xFF8
@@ -336,16 +336,16 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    330                           	psect	dataBANK0
    331  000060                     __pdataBANK0:
    332                           	opt stack 0
-   333  000060                     SetupAlarmTimeA@F4322:
+   333  000060                     SetupAlarmTimeA@F4496:
    334                           	opt stack 0
    335  000060                     	ds	21
-   336  000075                     SetupAlarmTimeB@F4332:
+   336  000075                     SetupAlarmTimeB@F4506:
    337                           	opt stack 0
    338  000075                     	ds	21
-   339  00008A                     SetupAlarmTimeC@F4342:
+   339  00008A                     SetupAlarmTimeC@F4516:
    340                           	opt stack 0
    341  00008A                     	ds	21
-   342  00009F                     SetupTime@F4312:
+   342  00009F                     SetupTime@F4486:
    343                           	opt stack 0
    344  00009F                     	ds	21
    345                           tblptru	equ	0xFF8
@@ -542,7 +542,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    536  000007                     	ds	2
    537  000009                     ??_ISR_Timer0_Int:
    538                           
-   539                           ; 1 bytes @ 0x8
+   539                           ; 0 bytes @ 0x8
    540  000009                     	ds	14
    541  000017                     ISR_Timer0_Int@hour1:
    542                           	opt stack 0
@@ -608,7 +608,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    602  000020                     	ds	1
    603  000021                     ??_lcd_init:
    604                           
-   605                           ; 1 bytes @ 0x20
+   605                           ; 0 bytes @ 0x20
    606  000021                     	ds	1
    607  000022                     lcd_init@i:
    608                           	opt stack 0
@@ -624,7 +624,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    618                           postdec1	equ	0xFE5
    619                           fsr1l	equ	0xFE1
    620                           
-   621                           ; 1 bytes @ 0x23
+   621                           ; 0 bytes @ 0x23
    622 ;;
    623 ;;Main: autosize = 0, tempsize = 0, incstack = 0, save=0
    624 ;;
@@ -636,7 +636,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    630 ;; Auto vars:     Size  Location     Type
    631 ;;		None
    632 ;; Return value:  Size  Location     Type
-   633 ;;                  1    wreg      void 
+   633 ;;		None               void
    634 ;; Registers used:
    635 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
    636 ;; Tracked objects:
@@ -819,7 +819,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    813                           ;version.c: 15: char Version[ ] = "ETT Version 1.3     ";
    814                           
    815                           ;incstack = 0
-   816  001ACE  EE20  F024         	lfsr	2,version@F4277
+   816  001ACE  EE20  F024         	lfsr	2,version@F4451
    817  001AD2  EE10  F0B4         	lfsr	1,version@Version
    818  001AD6  0E14               	movlw	20
    819  001AD8                     u981:
@@ -896,7 +896,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    890 ;; Auto vars:     Size  Location     Type
    891 ;;  i               2   33[COMRAM] int 
    892 ;; Return value:  Size  Location     Type
-   893 ;;                  1    wreg      void 
+   893 ;;		None               void
    894 ;; Registers used:
    895 ;;		wreg, status,2, status,0, cstack
    896 ;; Tracked objects:
@@ -1038,7 +1038,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   1032 ;; Auto vars:     Size  Location     Type
   1033 ;;		None
   1034 ;; Return value:  Size  Location     Type
-  1035 ;;                  1    wreg      void 
+  1035 ;;		None               void
   1036 ;; Registers used:
   1037 ;;		wreg, status,2
   1038 ;; Tracked objects:
@@ -1137,7 +1137,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   1131 ;;  hour10          1   41[BANK0 ] unsigned char 
   1132 ;;  outchar         1   40[BANK0 ] unsigned char 
   1133 ;; Return value:  Size  Location     Type
-  1134 ;;                  1    wreg      void 
+  1134 ;;		None               void
   1135 ;; Registers used:
   1136 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
   1137 ;; Tracked objects:
@@ -1174,7 +1174,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   1168                           ;Main.c: 111: char Message[ ] = "Set time hhmmss:    ";
   1169                           
   1170                           ;incstack = 0
-  1171  0011AA  EE20  F09F         	lfsr	2,SetupTime@F4312
+  1171  0011AA  EE20  F09F         	lfsr	2,SetupTime@F4486
   1172  0011AE  EE10  F0C7         	lfsr	1,SetupTime@Message
   1173  0011B2  0E14               	movlw	20
   1174  0011B4                     u861:
@@ -1420,7 +1420,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   1414 ;;  hour10          1   41[BANK0 ] unsigned char 
   1415 ;;  outchar         1   40[BANK0 ] unsigned char 
   1416 ;; Return value:  Size  Location     Type
-  1417 ;;                  1    wreg      void 
+  1417 ;;		None               void
   1418 ;; Registers used:
   1419 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
   1420 ;; Tracked objects:
@@ -1457,7 +1457,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   1451                           ;Main.c: 239: char Message[ ] = "Subject C Time hhmm:";
   1452                           
   1453                           ;incstack = 0
-  1454  0012E4  EE20  F08A         	lfsr	2,SetupAlarmTimeC@F4342
+  1454  0012E4  EE20  F08A         	lfsr	2,SetupAlarmTimeC@F4516
   1455  0012E8  EE10  F0C7         	lfsr	1,SetupAlarmTimeC@Message
   1456  0012EC  0E14               	movlw	20
   1457  0012EE                     u951:
@@ -1659,7 +1659,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   1653 ;;  hour10          1   41[BANK0 ] unsigned char 
   1654 ;;  outchar         1   40[BANK0 ] unsigned char 
   1655 ;; Return value:  Size  Location     Type
-  1656 ;;                  1    wreg      void 
+  1656 ;;		None               void
   1657 ;; Registers used:
   1658 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
   1659 ;; Tracked objects:
@@ -1696,7 +1696,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   1690                           ;Main.c: 199: char Message[ ] = "Subject B Time hhmm:";
   1691                           
   1692                           ;incstack = 0
-  1693  0013DC  EE20  F075         	lfsr	2,SetupAlarmTimeB@F4332
+  1693  0013DC  EE20  F075         	lfsr	2,SetupAlarmTimeB@F4506
   1694  0013E0  EE10  F0C7         	lfsr	1,SetupAlarmTimeB@Message
   1695  0013E4  0E14               	movlw	20
   1696  0013E6                     u921:
@@ -1898,7 +1898,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   1892 ;;  hour10          1   41[BANK0 ] unsigned char 
   1893 ;;  outchar         1   40[BANK0 ] unsigned char 
   1894 ;; Return value:  Size  Location     Type
-  1895 ;;                  1    wreg      void 
+  1895 ;;		None               void
   1896 ;; Registers used:
   1897 ;;		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
   1898 ;; Tracked objects:
@@ -1935,7 +1935,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   1929                           ;Main.c: 159: char Message[ ] = "Subject A Time hhmm:";
   1930                           
   1931                           ;incstack = 0
-  1932  0014D4  EE20  F060         	lfsr	2,SetupAlarmTimeA@F4322
+  1932  0014D4  EE20  F060         	lfsr	2,SetupAlarmTimeA@F4496
   1933  0014D8  EE10  F0C7         	lfsr	1,SetupAlarmTimeA@Message
   1934  0014DC  0E14               	movlw	20
   1935  0014DE                     u891:
@@ -2131,7 +2131,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   2125 ;;  data            1   30[COMRAM] unsigned char 
   2126 ;;  temp1           1   31[COMRAM] unsigned char 
   2127 ;; Return value:  Size  Location     Type
-  2128 ;;                  1    wreg      void 
+  2128 ;;		None               void
   2129 ;; Registers used:
   2130 ;;		wreg, status,2, status,0, cstack
   2131 ;; Tracked objects:
@@ -2307,7 +2307,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   2301 ;;  cmd             1   30[COMRAM] unsigned char 
   2302 ;;  temp2           1   31[COMRAM] unsigned char 
   2303 ;; Return value:  Size  Location     Type
-  2304 ;;                  1    wreg      void 
+  2304 ;;		None               void
   2305 ;; Registers used:
   2306 ;;		wreg, status,2, status,0, cstack
   2307 ;; Tracked objects:
@@ -2455,7 +2455,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   2449 ;; Auto vars:     Size  Location     Type
   2450 ;;		None
   2451 ;; Return value:  Size  Location     Type
-  2452 ;;                  1    wreg      void 
+  2452 ;;		None               void
   2453 ;; Registers used:
   2454 ;;		wreg
   2455 ;; Tracked objects:
@@ -2576,10 +2576,10 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   2570                           ;keypad_utilities.c: 19: const unsigned char lookup[] = "123F456E789DA0BC ";
   2571                           
   2572                           ;incstack = 0
-  2573  001B1C  0E1B               	movlw	low getkey@F4270
+  2573  001B1C  0E1B               	movlw	low getkey@F4444
   2574  001B1E  6EF6               	movwf	tblptrl,c
   2575  001B20                     	if	1	;There is more than 1 active tblptr byte
-  2576  001B20  0E10               	movlw	high getkey@F4270
+  2576  001B20  0E10               	movlw	high getkey@F4444
   2577  001B22  6EF7               	movwf	tblptrh,c
   2578  001B24                     	endif
   2579  001B24                     	if	0	;There are less than 3 active tblptr bytes
@@ -2646,7 +2646,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   2640 ;; Auto vars:     Size  Location     Type
   2641 ;;  j               2   31[COMRAM] unsigned int 
   2642 ;; Return value:  Size  Location     Type
-  2643 ;;                  1    wreg      void 
+  2643 ;;		None               void
   2644 ;; Registers used:
   2645 ;;		wreg, status,2, status,0
   2646 ;; Tracked objects:
@@ -2895,7 +2895,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   2889 ;;  minute1         1   23[COMRAM] unsigned char 
   2890 ;;  hour1           1   22[COMRAM] unsigned char 
   2891 ;; Return value:  Size  Location     Type
-  2892 ;;                  1    wreg      void 
+  2892 ;;		None               void
   2893 ;; Registers used:
   2894 ;;		wreg, status,2, status,0, prodl, prodh, cstack
   2895 ;; Tracked objects:
@@ -3204,7 +3204,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   3198 ;;  data            1    2[COMRAM] unsigned char 
   3199 ;;  lcd_write_da    1    3[COMRAM] unsigned char 
   3200 ;; Return value:  Size  Location     Type
-  3201 ;;                  1    wreg      void 
+  3201 ;;		None               void
   3202 ;; Registers used:
   3203 ;;		wreg, status,2, status,0, cstack
   3204 ;; Tracked objects:
@@ -3382,7 +3382,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   3376 ;;  cmd             1    2[COMRAM] unsigned char 
   3377 ;;  lcd_write_cm    1    3[COMRAM] unsigned char 
   3378 ;; Return value:  Size  Location     Type
-  3379 ;;                  1    wreg      void 
+  3379 ;;		None               void
   3380 ;; Registers used:
   3381 ;;		wreg, status,2, status,0, cstack
   3382 ;; Tracked objects:
@@ -3531,7 +3531,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   3525 ;; Auto vars:     Size  Location     Type
   3526 ;;		None
   3527 ;; Return value:  Size  Location     Type
-  3528 ;;                  1    wreg      void 
+  3528 ;;		None               void
   3529 ;; Registers used:
   3530 ;;		wreg
   3531 ;; Tracked objects:
@@ -3768,7 +3768,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
   3762                           
   3763 ;; *************** function ___awdiv *****************
   3764 ;; Defined at:
-  3765 ;;		line 8 in file "/opt/microchip/xc8/v1.38/sources/common/awdiv.c"
+  3765 ;;		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c"
   3766 ;; Parameters:    Size  Location     Type
   3767 ;;  dividend        2    0[COMRAM] int 
   3768 ;;  divisor         2    2[COMRAM] int 
@@ -4288,8 +4288,8 @@ DATA                 0      0      C6       3        0.0%
 CODE                 0      0       0       0        0.0%
 
 
-Microchip Technology PIC18 Macro Assembler V1.38 build -256452561 
-Symbol Table                                                                                   Mon Aug 15 08:25:28 2016
+Microchip Technology PIC18 Macro Assembler V1.35 build -356382666 
+Symbol Table                                                                                   Mon Aug 15 16:35:09 2016
 
        ??_SetupTimerInterruptRegisters 001D                                     l33 1B34  
                                    l36 1B40                           ___awdiv@sign 0006  
@@ -4300,7 +4300,7 @@ Symbol Table                                                                    
                                   u921 13E6                                    u861 11B4  
                                   u951 12EE                                    u891 14DE  
                                   u981 1AD8                                    prod 000FF3  
-                                  wreg 000FE8                            getkey@F4270 101B  
+                                  wreg 000FE8                            getkey@F4444 101B  
                                  l2111 1526                                   l2103 1500  
                                  l2033 182A                                   l2025 1804  
                                  l2043 11C8                                   l1501 188E  
@@ -4357,7 +4357,7 @@ Symbol Table                                                                    
                          getkey@lookup 00B4                        __initialization 1A20  
                          __end_of_main 1A20                                 ??_main 0024  
                         __activetblptr 000002                      ??i2_lcd_write_cmd 0002  
-                               _ADCON1 000FC1                           version@F4277 0024  
+                               _ADCON1 000FC1                           version@F4451 0024  
                      ___awdiv@dividend 0001                           i2_lcd_strobe 1BB0  
                                i2l1743 1708                                 i2l1755 172E  
                                i2l1771 1760                                 i2l1757 1736  
@@ -4367,7 +4367,7 @@ Symbol Table                                                                    
                      __end_of_delay_ms 1B8E                       __end_of_lcd_init 1860  
                        char_2_int@int1 001E                              ??___awdiv 0005  
                        _ISR_Timer0_Int 1008                                 _getkey 1B1C  
-                               clear_0 1A66                       ___awdiv@quotient 0007  
+                               clear_0 1A26                       ___awdiv@quotient 0007  
                                _minute 003D                                 _second 0041  
                          __pdataCOMRAM 0024                     __size_of_SetupTime 013A  
                          __mediumconst 0000                                 tblptrh 000FF7  
@@ -4394,7 +4394,7 @@ Symbol Table                                                                    
                               __ptext4 11AA                                __ptext5 12E4  
                               __ptext6 13DC                                __ptext7 14D4  
                               __ptext8 15CC                                __ptext9 18D2  
-                            _T0CONbits 000FD5                         SetupTime@F4312 009F  
+                            _T0CONbits 000FD5                         SetupTime@F4486 009F  
                               _minuteA 003E                                _minuteB 003F  
                               _minuteC 0040                             ??_delay_ms 001F  
                           ?_char_2_int 0001                                _version 1ACE  
@@ -4424,9 +4424,9 @@ Symbol Table                                                                    
                              ?___awdiv 0001                             ?_SetupTime 0001  
                           __smallconst 101A                           ??_char_2_int 001D  
                              ?_version 0001                          ?i2_lcd_strobe 0001  
-                 SetupAlarmTimeA@F4322 0060                   SetupAlarmTimeB@F4332 0075  
+                 SetupAlarmTimeA@F4496 0060                   SetupAlarmTimeB@F4506 0075  
                             delay_ms@i 001D                              delay_ms@j 0020  
-                 SetupAlarmTimeC@F4342 008A                    ISR_Timer0_Int@hour1 0017  
+                 SetupAlarmTimeC@F4516 008A                    ISR_Timer0_Int@hour1 0017  
                              i2u130_47 16E8                               i2u131_47 194C  
                              i2u132_47 196C                               i2u124_47 166A  
                              i2u133_47 197E                               i2u125_47 168A  
@@ -4442,8 +4442,8 @@ Symbol Table                                                                    
                       _SetupAlarmTimeA 14D4                        _SetupAlarmTimeB 13DC  
                       _SetupAlarmTimeC 12E4                         ??i2_lcd_strobe 0001  
                        version@Version 00B4                           ??_lcd_strobe 001D  
-                     SetupTime@Message 00C7                              copy_data0 1A34  
-                            copy_data1 1A54                   i2lcd_write_data@data 0003  
+                     SetupTime@Message 00C7                              copy_data0 1A40  
+                            copy_data1 1A60                   i2lcd_write_data@data 0003  
                  i2lcd_write_cmd@temp2 0004                           ??_int_2_char 0001  
  __end_of_SetupTimerInterruptRegisters 1BEE  __size_of_SetupTimerInterruptRegisters 001C  
          _SetupTimerInterruptRegisters 1BD2                __size_of_lcd_write_data 0094  
@@ -4466,7 +4466,7 @@ Symbol Table                                                                    
                            _INTCONbits 000FF2                 __size_of_lcd_write_cmd 0070  
                 ISR_Timer0_Int@minute1 0018                  ISR_Timer0_Int@second1 0019  
                        int_2_char@int1 0001                        SetupTime@hour10 00DD  
-                             intlevel2 0000                    __end_ofgetkey@F4270 102D  
+                             intlevel2 0000                    __end_ofgetkey@F4444 102D  
                  __end_ofi2_lcd_strobe 1BD2                 SetupAlarmTimeA@Message 00C7  
                SetupAlarmTimeB@Message 00C7                 SetupAlarmTimeC@Message 00C7  
               SetupAlarmTimeA@minute10 00DF                SetupAlarmTimeA@msgindex 00E1  

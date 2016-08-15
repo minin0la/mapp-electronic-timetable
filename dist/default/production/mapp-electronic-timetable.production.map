@@ -1,11 +1,11 @@
-Microchip MPLAB XC8 Compiler V1.38 ()
+Microchip MPLAB XC8 Compiler V1.35 ()
 
 Linker command line:
 
--W-3 --edf=/opt/microchip/xc8/v1.38/dat/en_msgs.txt -cs \
-  -h+dist/default/production/mapp-electronic-timetable.production.sym \
-  --cmf=dist/default/production/mapp-electronic-timetable.production.cmf -z \
-  -Q18F4550 -o/tmp/xcXoRn7dV \
+-W-3 --edf=C:\Program Files (x86)\Microchip\xc8\v1.35\dat\en_msgs.txt -cs \
+  -h+dist/default/production\mapp-electronic-timetable.production.sym \
+  --cmf=dist/default/production\mapp-electronic-timetable.production.cmf -z \
+  -Q18F4550 -oC:\Users\wxwen\AppData\Local\Temp\sbko.2 \
   -Mdist/default/production/mapp-electronic-timetable.production.map -E1 \
   -ver=XC8 -ASTACK=0E5h-07ffh -pstack=STACK -ACODE=01000h-07FFFh \
   -ACONST=01000h-07FFFh -ASMALLCONST=01000h-010FFhx112 \
@@ -23,8 +23,8 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  /tmp/xcX1eZf2d.obj \
-  dist/default/production/mapp-electronic-timetable.production.obj 
+  C:\Users\wxwen\AppData\Local\Temp\sbko.obj \
+  dist/default/production\mapp-electronic-timetable.production.obj 
 
 Object code version is 3.11
 
@@ -36,12 +36,12 @@ Call graph: (short form)
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-/tmp/xcX1eZf2d.obj
+C:\Users\wxwen\AppData\Local\Temp\sbko.obj
                 end_init                           1016     1016        4      804       0
                 reset_vec                          1000     1000        4      800       0
                 idloc                            200000   200000        8   200000       0
                 config                           300000   300000        E   300000       0
-dist/default/production/mapp-electronic-timetable.production.obj
+dist/default/production\mapp-electronic-timetable.production.obj
                 intcode                            1008     1008        E      804       0
                 temp                                 42       42        1        1       1
                 smallconst                         101A     101A       14      80D       0
@@ -205,7 +205,7 @@ ISR_Timer0_Int@minute1                 cstackCOMRAM 000018
 ISR_Timer0_Int@minute10                cstackCOMRAM 00001B
 ISR_Timer0_Int@second1                 cstackCOMRAM 000019
 ISR_Timer0_Int@second10                cstackCOMRAM 00001C
-SetupAlarmTimeA@F4322                  dataBANK0    000060
+SetupAlarmTimeA@F4496                  dataBANK0    000060
 SetupAlarmTimeA@Message                cstackBANK0  0000C7
 SetupAlarmTimeA@ctemp                  cstackBANK0  0000E2
 SetupAlarmTimeA@hour1                  cstackBANK0  0000DE
@@ -214,7 +214,7 @@ SetupAlarmTimeA@minute1                cstackBANK0  0000E0
 SetupAlarmTimeA@minute10               cstackBANK0  0000DF
 SetupAlarmTimeA@msgindex               cstackBANK0  0000E1
 SetupAlarmTimeA@outchar                cstackBANK0  0000DC
-SetupAlarmTimeB@F4332                  dataBANK0    000075
+SetupAlarmTimeB@F4506                  dataBANK0    000075
 SetupAlarmTimeB@Message                cstackBANK0  0000C7
 SetupAlarmTimeB@ctemp                  cstackBANK0  0000E2
 SetupAlarmTimeB@hour1                  cstackBANK0  0000DE
@@ -223,7 +223,7 @@ SetupAlarmTimeB@minute1                cstackBANK0  0000E0
 SetupAlarmTimeB@minute10               cstackBANK0  0000DF
 SetupAlarmTimeB@msgindex               cstackBANK0  0000E1
 SetupAlarmTimeB@outchar                cstackBANK0  0000DC
-SetupAlarmTimeC@F4342                  dataBANK0    00008A
+SetupAlarmTimeC@F4516                  dataBANK0    00008A
 SetupAlarmTimeC@Message                cstackBANK0  0000C7
 SetupAlarmTimeC@ctemp                  cstackBANK0  0000E2
 SetupAlarmTimeC@hour1                  cstackBANK0  0000DE
@@ -232,7 +232,7 @@ SetupAlarmTimeC@minute1                cstackBANK0  0000E0
 SetupAlarmTimeC@minute10               cstackBANK0  0000DF
 SetupAlarmTimeC@msgindex               cstackBANK0  0000E1
 SetupAlarmTimeC@outchar                cstackBANK0  0000DC
-SetupTime@F4312                        dataBANK0    00009F
+SetupTime@F4486                        dataBANK0    00009F
 SetupTime@Message                      cstackBANK0  0000C7
 SetupTime@ctemp                        cstackBANK0  0000E4
 SetupTime@hour1                        cstackBANK0  0000DE
@@ -467,7 +467,7 @@ __end_of_lcd_write_cmd                 text9        001942
 __end_of_lcd_write_data                text8        001660
 __end_of_main                          text0        001A20
 __end_of_version                       text1        001B1C
-__end_ofgetkey@F4270                   smallconst   00102D
+__end_ofgetkey@F4444                   smallconst   00102D
 __end_ofi2_lcd_strobe                  text17       001BD2
 __end_ofi2_lcd_write_cmd               text16       0019B2
 __end_ofi2_lcd_write_data              text15       0016F4
@@ -550,7 +550,7 @@ char_2_int@int1                        cstackCOMRAM 00001E
 delay_ms@i                             cstackCOMRAM 00001D
 delay_ms@j                             cstackCOMRAM 000020
 end_of_initialization                  cinit        001A6C
-getkey@F4270                           smallconst   00101B
+getkey@F4444                           smallconst   00101B
 getkey@keycode                         cstackBANK0  0000C6
 getkey@lookup                          cstackBANK0  0000B4
 i2_lcd_strobe                          text17       001BB0
@@ -577,7 +577,7 @@ stackhi                                (abs)        0007FF
 stacklo                                (abs)        0000E5
 start                                  init         001016
 start_initialization                   cinit        001A20
-version@F4277                          dataCOMRAM   000024
+version@F4451                          dataCOMRAM   000024
 version@Version                        cstackBANK0  0000B4
 version@msgindex                       cstackBANK0  0000CA
 version@outchar                        cstackBANK0  0000C9
@@ -593,7 +593,7 @@ FUNCTION INFORMATION:
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -661,7 +661,7 @@ Total ram usage:       23 bytes
  Auto vars:     Size  Location     Type
   i               2   33[COMRAM] int 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -691,7 +691,7 @@ Total ram usage:        3 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, status,2
  Tracked objects:
@@ -730,7 +730,7 @@ Total ram usage:        0 bytes
   hour10          1   41[BANK0 ] unsigned char 
   outchar         1   40[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -771,7 +771,7 @@ Total ram usage:       30 bytes
   hour10          1   41[BANK0 ] unsigned char 
   outchar         1   40[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -812,7 +812,7 @@ Total ram usage:       28 bytes
   hour10          1   41[BANK0 ] unsigned char 
   outchar         1   40[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -853,7 +853,7 @@ Total ram usage:       28 bytes
   hour10          1   41[BANK0 ] unsigned char 
   outchar         1   40[BANK0 ] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, fsr1l, fsr1h, fsr2l, fsr2h, status,2, status,0, tblptrl, tblptrh, tblptru, prodl, prodh, cstack
  Tracked objects:
@@ -888,7 +888,7 @@ Total ram usage:       28 bytes
   data            1   30[COMRAM] unsigned char 
   temp1           1   31[COMRAM] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -923,7 +923,7 @@ Total ram usage:        3 bytes
   cmd             1   30[COMRAM] unsigned char 
   temp2           1   31[COMRAM] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -958,7 +958,7 @@ Total ram usage:        3 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg
  Tracked objects:
@@ -1023,7 +1023,7 @@ Total ram usage:       19 bytes
  Auto vars:     Size  Location     Type
   j               2   31[COMRAM] unsigned int 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, status,2, status,0
  Tracked objects:
@@ -1095,7 +1095,7 @@ Total ram usage:        2 bytes
   minute1         1   23[COMRAM] unsigned char 
   hour1           1   22[COMRAM] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, status,2, status,0, prodl, prodh, cstack
  Tracked objects:
@@ -1129,7 +1129,7 @@ Total ram usage:       20 bytes
   data            1    2[COMRAM] unsigned char 
   lcd_write_da    1    3[COMRAM] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -1160,7 +1160,7 @@ Total ram usage:        3 bytes
   cmd             1    2[COMRAM] unsigned char 
   lcd_write_cm    1    3[COMRAM] unsigned char 
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg, status,2, status,0, cstack
  Tracked objects:
@@ -1190,7 +1190,7 @@ Total ram usage:        3 bytes
  Auto vars:     Size  Location     Type
 		None
  Return value:  Size  Location     Type
-                  1    wreg      void 
+		None               void
  Registers used:
 		wreg
  Tracked objects:
@@ -1244,7 +1244,7 @@ Total ram usage:        2 bytes
 
  *************** function ___awdiv *****************
  Defined at:
-		line 8 in file "/opt/microchip/xc8/v1.38/sources/common/awdiv.c"
+		line 8 in file "C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c"
  Parameters:    Size  Location     Type
   dividend        2    0[COMRAM] int 
   divisor         2    2[COMRAM] int 
@@ -1278,6 +1278,11 @@ Total ram usage:        8 bytes
 MODULE INFORMATION
 
 Module		Function		Class		Link	Load	Size
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c
+		___awdiv       		CODE           	16F4	0000	133
+
+C:\Program Files (x86)\Microchip\xc8\v1.35\sources\common\awdiv.c estimated size: 133
+
 lcd_utilities.c
 		_lcd_write_data		CODE           	15CC	0000	149
 		_lcd_write_cmd 		CODE           	18D2	0000	113
@@ -1290,11 +1295,6 @@ keypad_utilities.c
 		_getkey        		CODE           	1B1C	0000	63
 
 keypad_utilities.c estimated size: 63
-
-/opt/microchip/xc8/v1.38/sources/common/awdiv.c
-		___awdiv       		CODE           	16F4	0000	133
-
-/opt/microchip/xc8/v1.38/sources/common/awdiv.c estimated size: 133
 
 Main.c
 		_int_2_char    		CODE           	1778	0000	119
@@ -1314,7 +1314,7 @@ shared
 		__initialization		CODE           	1A20	0000	77
 		i2_lcd_write_data		CODE           	1660	0000	149
 		i2_lcd_strobe  		CODE           	1BB0	0000	35
-		getkey@F4270   		SMALLCONST     	101B	0000	19
+		getkey@F4444   		SMALLCONST     	101B	0000	19
 
 shared estimated size: 393
 
