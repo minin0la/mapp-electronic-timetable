@@ -316,6 +316,7 @@ void main(void)   //------------ Main Program  ---------------------------------
 	lcd_init();
     TRISA = 0b00000000; //Set PORTAs as outputs
     PORTA = 0b00000000;
+    int AlarmAOff = 0;
 
     version();//Show version number
 	SetupTime(); //Get Time
@@ -326,10 +327,14 @@ void main(void)   //------------ Main Program  ---------------------------------
     
 	while(1)
 	{
-		if(hour==hourA && minute==minuteA)
-		{
-            PORTA = 0b00000011; //On Buzzer RA0 and LED RA1
-		}
+		if(hour==hourA && minute==minuteA && AlarmAOff == 0)
+        {
+            PORTA = 0b00000011; //On Buzzer RA0 and LED RA1  
+        }
+            if (PORTAbits.RA5 == 0) //when mute is pressed
+            {
+            AlarmAOff = 1;
+            }
 		else if(hour==hourB && minute==minuteB)
         {
             PORTA = 0b00000101; //On Buzzer RA0 and LED RA2

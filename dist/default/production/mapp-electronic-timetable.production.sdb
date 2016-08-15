@@ -64,6 +64,42 @@
 [v _version version `(i  1 e 2 0 ]
 "2571 C:\Program Files (x86)\Microchip\xc8\v1.35\include\pic18f4550.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
+[s S368 . 1 `uc 1 RA0 1 0 :1:0 
+`uc 1 RA1 1 0 :1:1 
+`uc 1 RA2 1 0 :1:2 
+`uc 1 RA3 1 0 :1:3 
+`uc 1 RA4 1 0 :1:4 
+`uc 1 RA5 1 0 :1:5 
+`uc 1 RA6 1 0 :1:6 
+]
+"2618
+[s S376 . 1 `uc 1 AN0 1 0 :1:0 
+`uc 1 AN1 1 0 :1:1 
+`uc 1 AN2 1 0 :1:2 
+`uc 1 AN3 1 0 :1:3 
+`uc 1 T0CKI 1 0 :1:4 
+`uc 1 AN4 1 0 :1:5 
+`uc 1 OSC2 1 0 :1:6 
+]
+[s S384 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 VREFM 1 0 :1:2 
+`uc 1 VREFP 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 LVDIN 1 0 :1:5 
+]
+[s S390 . 1 `uc 1 . 1 0 :5:0 
+`uc 1 HLVDIN 1 0 :1:5 
+]
+[s S393 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RA7 1 0 :1:7 
+]
+[s S396 . 1 `uc 1 . 1 0 :7:0 
+`uc 1 RJPU 1 0 :1:7 
+]
+[s S399 . 1 `uc 1 ULPWUIN 1 0 :1:0 
+]
+[u S401 . 1 `S368 1 . 1 0 `S376 1 . 1 0 `S384 1 . 1 0 `S390 1 . 1 0 `S393 1 . 1 0 `S396 1 . 1 0 `S399 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES401  1 e 1 @3968 ]
 "2727
 [v _PORTB PORTB `VEuc  1 e 1 @3969 ]
 [s S98 . 1 `uc 1 RB0 1 0 :1:0 
@@ -238,7 +274,9 @@
 "311
 [v _main main `(v  1 e 0 0 ]
 {
-"345
+"319
+[v main@AlarmAOff AlarmAOff `i  1 a 2 49 ]
+"350
 } 0
 "12 C:\Users\wxwen\Documents\GitHub\mapp-electronic-timetable\version.c
 [v _version version `(i  1 e 2 0 ]
