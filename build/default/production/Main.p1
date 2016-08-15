@@ -80,7 +80,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_init `(v ~T0 @X0 0 ef ]
 "3778 /opt/microchip/xc8/v1.38/include/pic18f4550.h
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"337 Main.c
+"335 Main.c
 [v _version `(i ~T0 @X0 0 ef ]
 "2577 /opt/microchip/xc8/v1.38/include/pic18f4550.h
 [s S193 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -5060,209 +5060,203 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e :UE 577 ]
 }
 "312
-[v _Setup `(v ~T0 @X0 1 ef ]
+[v _Startup `(v ~T0 @X0 1 ef ]
 "313
 {
-[; ;Main.c: 312: void Setup()
+[; ;Main.c: 312: void Startup()
 [; ;Main.c: 313: {
-[e :U _Setup ]
+[e :U _Startup ]
 [f ]
-[; ;Main.c: 314: PORTA = 0b00000001;
+[; ;Main.c: 314: PORTA = 0b00000010;
 "314
-[e = _PORTA -> -> 1 `i `uc ]
-[; ;Main.c: 315: delay_ms(500);
-"315
-[e ( _delay_ms (1 -> -> 500 `i `ui ]
-[; ;Main.c: 316: PORTA = 0b00000010;
-"316
 [e = _PORTA -> -> 2 `i `uc ]
-[; ;Main.c: 317: delay_ms(500);
-"317
-[e ( _delay_ms (1 -> -> 500 `i `ui ]
-[; ;Main.c: 318: PORTA = 0b00000100;
-"318
+[; ;Main.c: 315: delay_ms(1000);
+"315
+[e ( _delay_ms (1 -> -> 1000 `i `ui ]
+[; ;Main.c: 316: PORTA = 0b00000100;
+"316
 [e = _PORTA -> -> 4 `i `uc ]
-[; ;Main.c: 319: delay_ms(500);
-"319
-[e ( _delay_ms (1 -> -> 500 `i `ui ]
-[; ;Main.c: 320: PORTA = 0b00001000;
-"320
+[; ;Main.c: 317: delay_ms(1000);
+"317
+[e ( _delay_ms (1 -> -> 1000 `i `ui ]
+[; ;Main.c: 318: PORTA = 0b00001000;
+"318
 [e = _PORTA -> -> 8 `i `uc ]
-[; ;Main.c: 321: delay_ms(500);
-"321
-[e ( _delay_ms (1 -> -> 500 `i `ui ]
-[; ;Main.c: 322: PORTA = 0b00001111;
-"322
+[; ;Main.c: 319: delay_ms(1000);
+"319
+[e ( _delay_ms (1 -> -> 1000 `i `ui ]
+[; ;Main.c: 320: PORTA = 0b00001111;
+"320
 [e = _PORTA -> -> 15 `i `uc ]
-[; ;Main.c: 323: delay_ms(500);
-"323
-[e ( _delay_ms (1 -> -> 500 `i `ui ]
-[; ;Main.c: 324: PORTA = 0b00000000;
-"324
+[; ;Main.c: 321: delay_ms(1000);
+"321
+[e ( _delay_ms (1 -> -> 1000 `i `ui ]
+[; ;Main.c: 322: PORTA = 0b00000000;
+"322
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;Main.c: 325: AlarmAOff = 0;
-"325
+[; ;Main.c: 323: AlarmAOff = 0;
+"323
 [e = _AlarmAOff -> 0 `i ]
-[; ;Main.c: 326: AlarmBOff = 0;
-"326
+[; ;Main.c: 324: AlarmBOff = 0;
+"324
 [e = _AlarmBOff -> 0 `i ]
-[; ;Main.c: 327: AlarmCOff = 0;
-"327
+[; ;Main.c: 325: AlarmCOff = 0;
+"325
 [e = _AlarmCOff -> 0 `i ]
-[; ;Main.c: 328: }
-"328
+[; ;Main.c: 326: }
+"326
 [e :UE 578 ]
 }
-"329
+"327
 [v _main `(v ~T0 @X0 1 ef ]
-"330
+"328
 {
-[; ;Main.c: 329: void main(void)
-[; ;Main.c: 330: {
+[; ;Main.c: 327: void main(void)
+[; ;Main.c: 328: {
 [e :U _main ]
 [f ]
-[; ;Main.c: 331: ADCON1 = 0x0F;
-"331
+[; ;Main.c: 329: ADCON1 = 0x0F;
+"329
 [e = _ADCON1 -> -> 15 `i `uc ]
-[; ;Main.c: 332: CMCON = 0x07;
-"332
+[; ;Main.c: 330: CMCON = 0x07;
+"330
 [e = _CMCON -> -> 7 `i `uc ]
-[; ;Main.c: 334: lcd_init();
-"334
+[; ;Main.c: 332: lcd_init();
+"332
 [e ( _lcd_init ..  ]
-[; ;Main.c: 335: TRISA = 0b00110000;
-"335
+[; ;Main.c: 333: TRISA = 0b00110000;
+"333
 [e = _TRISA -> -> 48 `i `uc ]
-[; ;Main.c: 337: version();
-"337
+[; ;Main.c: 335: version();
+"335
 [e ( _version ..  ]
-[; ;Main.c: 338: Setup();
-"338
-[e ( _Setup ..  ]
-[; ;Main.c: 339: SetupTime();
-"339
+[; ;Main.c: 336: Startup();
+"336
+[e ( _Startup ..  ]
+[; ;Main.c: 337: SetupTime();
+"337
 [e ( _SetupTime ..  ]
-[; ;Main.c: 340: SetupAlarmTimeA();
-"340
+[; ;Main.c: 338: SetupAlarmTimeA();
+"338
 [e ( _SetupAlarmTimeA ..  ]
-[; ;Main.c: 341: SetupAlarmTimeB();
-"341
+[; ;Main.c: 339: SetupAlarmTimeB();
+"339
 [e ( _SetupAlarmTimeB ..  ]
-[; ;Main.c: 342: SetupAlarmTimeC();
-"342
+[; ;Main.c: 340: SetupAlarmTimeC();
+"340
 [e ( _SetupAlarmTimeC ..  ]
-[; ;Main.c: 343: SetupTimerInterruptRegisters();
-"343
+[; ;Main.c: 341: SetupTimerInterruptRegisters();
+"341
 [e ( _SetupTimerInterruptRegisters ..  ]
-[; ;Main.c: 345: while(1)
-"345
+[; ;Main.c: 343: while(1)
+"343
 [e :U 581 ]
+[; ;Main.c: 344: {
+"344
+{
+[; ;Main.c: 345: if(hour==hourA && minute==minuteA && AlarmAOff == 0)
+"345
+[e $ ! && && == -> _hour `i -> _hourA `i == -> _minute `i -> _minuteA `i == _AlarmAOff -> 0 `i 583  ]
 [; ;Main.c: 346: {
 "346
 {
-[; ;Main.c: 347: if(hour==hourA && minute==minuteA && AlarmAOff == 0)
+[; ;Main.c: 347: PORTA = 0b00000011;
 "347
-[e $ ! && && == -> _hour `i -> _hourA `i == -> _minute `i -> _minuteA `i == _AlarmAOff -> 0 `i 583  ]
-[; ;Main.c: 348: {
-"348
-{
-[; ;Main.c: 349: PORTA = 0b00000011;
-"349
 [e = _PORTA -> -> 3 `i `uc ]
-[; ;Main.c: 350: if (PORTAbits.RA5 == 0)
-"350
+[; ;Main.c: 348: if (PORTAbits.RA5 == 0)
+"348
 [e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 584  ]
-[; ;Main.c: 351: {
-"351
+[; ;Main.c: 349: {
+"349
 {
-[; ;Main.c: 352: AlarmAOff = 1;
-"352
+[; ;Main.c: 350: AlarmAOff = 1;
+"350
 [e = _AlarmAOff -> 1 `i ]
-"353
+"351
 }
 [e :U 584 ]
-"354
+"352
 }
-[; ;Main.c: 353: }
-[; ;Main.c: 354: }
+[; ;Main.c: 351: }
+[; ;Main.c: 352: }
 [e $U 585  ]
-"355
+"353
 [e :U 583 ]
-[; ;Main.c: 355: else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
+[; ;Main.c: 353: else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
 [e $ ! && && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i == _AlarmBOff -> 0 `i 586  ]
-[; ;Main.c: 356: {
-"356
+[; ;Main.c: 354: {
+"354
 {
-[; ;Main.c: 357: PORTA = 0b00000101;
-"357
+[; ;Main.c: 355: PORTA = 0b00000101;
+"355
 [e = _PORTA -> -> 5 `i `uc ]
-[; ;Main.c: 358: if (PORTAbits.RA5 == 0)
-"358
+[; ;Main.c: 356: if (PORTAbits.RA5 == 0)
+"356
 [e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 587  ]
-[; ;Main.c: 359: {
-"359
+[; ;Main.c: 357: {
+"357
 {
-[; ;Main.c: 360: AlarmBOff = 1;
-"360
+[; ;Main.c: 358: AlarmBOff = 1;
+"358
 [e = _AlarmBOff -> 1 `i ]
-"361
+"359
 }
 [e :U 587 ]
-"362
+"360
 }
-[; ;Main.c: 361: }
-[; ;Main.c: 362: }
+[; ;Main.c: 359: }
+[; ;Main.c: 360: }
 [e $U 588  ]
-"363
+"361
 [e :U 586 ]
-[; ;Main.c: 363: else if(hour==hourC && minute==minuteC && AlarmCOff== 0)
+[; ;Main.c: 361: else if(hour==hourC && minute==minuteC && AlarmCOff== 0)
 [e $ ! && && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i == _AlarmCOff -> 0 `i 589  ]
-[; ;Main.c: 364: {
-"364
+[; ;Main.c: 362: {
+"362
 {
-[; ;Main.c: 365: PORTA = 0b00001001;
-"365
+[; ;Main.c: 363: PORTA = 0b00001001;
+"363
 [e = _PORTA -> -> 9 `i `uc ]
-[; ;Main.c: 366: if (PORTAbits.RA5 == 0)
-"366
+[; ;Main.c: 364: if (PORTAbits.RA5 == 0)
+"364
 [e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 590  ]
-[; ;Main.c: 367: {
-"367
+[; ;Main.c: 365: {
+"365
 {
-[; ;Main.c: 368: AlarmCOff = 1;
-"368
+[; ;Main.c: 366: AlarmCOff = 1;
+"366
 [e = _AlarmCOff -> 1 `i ]
-"369
+"367
 }
 [e :U 590 ]
-"370
+"368
 }
-[; ;Main.c: 369: }
-[; ;Main.c: 370: }
+[; ;Main.c: 367: }
+[; ;Main.c: 368: }
 [e $U 591  ]
-"371
+"369
 [e :U 589 ]
-[; ;Main.c: 371: else
-[; ;Main.c: 372: {
-"372
+[; ;Main.c: 369: else
+[; ;Main.c: 370: {
+"370
 {
-[; ;Main.c: 373: PORTA = 0b00000000;
-"373
+[; ;Main.c: 371: PORTA = 0b00000000;
+"371
 [e = _PORTA -> -> 0 `i `uc ]
-"374
+"372
 }
 [e :U 591 ]
 [e :U 588 ]
 [e :U 585 ]
-"375
+"373
 }
 [e :U 580 ]
-"345
+"343
 [e $U 581  ]
 [e :U 582 ]
+[; ;Main.c: 372: }
+[; ;Main.c: 373: }
 [; ;Main.c: 374: }
-[; ;Main.c: 375: }
-[; ;Main.c: 376: }
-"376
+"374
 [e :UE 579 ]
 }

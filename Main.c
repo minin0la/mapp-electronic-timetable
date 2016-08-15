@@ -309,18 +309,16 @@ void SetupTimerInterruptRegisters()
 
 }
 
-void Setup()
+void Startup()
 {
-    PORTA = 0b00000001;
-    delay_ms(500);
     PORTA = 0b00000010;
-    delay_ms(500);
+    delay_ms(1000);
     PORTA = 0b00000100;
-    delay_ms(500);
+    delay_ms(1000);
     PORTA = 0b00001000;
-    delay_ms(500);
+    delay_ms(1000);
     PORTA = 0b00001111;
-    delay_ms(500);
+    delay_ms(1000);
     PORTA = 0b00000000;
     AlarmAOff = 0;
     AlarmBOff = 0;
@@ -335,7 +333,7 @@ void main(void)   //------------ Main Program  ---------------------------------
     TRISA = 0b00110000; //Set PORTAs as outputs and inputs
 
     version();//Show version number
-    Setup();//Startup
+    Startup();//Startup
 	SetupTime(); //Get Time
 	SetupAlarmTimeA(); //Get Alarm Time for Subject A
 	SetupAlarmTimeB(); //Get Alarm Time for Subject B

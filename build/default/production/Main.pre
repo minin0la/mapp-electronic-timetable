@@ -5531,18 +5531,16 @@ INTCONbits.TMR0IF = 0;
 
 }
 
-void Setup()
+void Startup()
 {
-PORTA = 0b00000001;
-delay_ms(500);
 PORTA = 0b00000010;
-delay_ms(500);
+delay_ms(1000);
 PORTA = 0b00000100;
-delay_ms(500);
+delay_ms(1000);
 PORTA = 0b00001000;
-delay_ms(500);
+delay_ms(1000);
 PORTA = 0b00001111;
-delay_ms(500);
+delay_ms(1000);
 PORTA = 0b00000000;
 AlarmAOff = 0;
 AlarmBOff = 0;
@@ -5557,7 +5555,7 @@ lcd_init();
 TRISA = 0b00110000;
 
 version();
-Setup();
+Startup();
 SetupTime();
 SetupAlarmTimeA();
 SetupAlarmTimeB();
