@@ -84,7 +84,7 @@ void interrupt ISR_Timer0_Int()
 		second1 = second - second10 * 10;
 
 		lcd_write_cmd(0x80);
-		lcd_write_data('t');
+		lcd_write_data('T');
 		lcd_write_data('i');
 		lcd_write_data('m');
 		lcd_write_data('e');
@@ -315,6 +315,9 @@ void main(void)   //------------ Main Program  ---------------------------------
     
 	lcd_init();
     TRISA = 0b00000000; //Set PORTAs as outputs
+    int AlarmAOff = 0;
+    int AlarmBOff = 0;
+    int AlarmCOff = 0;
 
     version();//Show version number
 	SetupTime(); //Get Time
@@ -323,22 +326,45 @@ void main(void)   //------------ Main Program  ---------------------------------
     SetupAlarmTimeC(); //Get Alarm Time for Subject C
 	SetupTimerInterruptRegisters();
     
-	while(1)
+    while(1)
+    {
+	while(PORTAbits.RA5 == 1)
 	{
-		if(hour==hourA && minute==minuteA)
+		if(hour==hourA && minute==minuteA && AlarmAOff == 0)
 		{
             PORTA = 0b00000011; //On Buzzer RA0 and LED RA1
 		}
-		else if(hour==hourB && minute==minuteB)
+		else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
         {
             PORTA = 0b00000101; //On Buzzer RA0 and LED RA2
         }
-		else if(hour==hourC && minute==minuteC)
+		else if(hour==hourC && minute==minuteC && AlarmCOff == 0)
         {
             PORTA = 0b00001001; //On Buzzer RA0 and LED RA3
-        } else
+        } 
+        else
 		{
             PORTA = 0b00000000; //Off Buzzer and All LEDS at start
 		}
 	}
+    while (PORTAbits.RA5 == 0)
+    {
+       if(hour==hourA && minute==minuteA)
+		{
+            AlarmAOff = 1; //Set value AlarmAOff to 1
+		}
+		else if(hour==hourB && minute==minuteB)
+        {
+            AlarmBOff = 1; //Set value AlarmAOff to 1
+        }
+		else if(hour==hourC && minute==minuteC)
+        {
+            AlarmCOff = 1; //Set value AlarmAOff to 1
+        } 
+        else
+		{
+            PORTA = 0b00000000; //Off Buzzer and All LEDS at start
+		} 
+    }
+    }
 }

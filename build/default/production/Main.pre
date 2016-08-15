@@ -5311,7 +5311,7 @@ second10 = second / 10;
 second1 = second - second10 * 10;
 
 lcd_write_cmd(0x80);
-lcd_write_data('t');
+lcd_write_data('T');
 lcd_write_data('i');
 lcd_write_data('m');
 lcd_write_data('e');
@@ -5537,6 +5537,9 @@ CMCON = 0x07;
 
 lcd_init();
 TRISA = 0b00000000;
+int AlarmAOff = 0;
+int AlarmBOff = 0;
+int AlarmCOff = 0;
 
 version();
 SetupTime();
@@ -5547,20 +5550,43 @@ SetupTimerInterruptRegisters();
 
 while(1)
 {
-if(hour==hourA && minute==minuteA)
+while(PORTAbits.RA5 == 1)
+{
+if(hour==hourA && minute==minuteA && AlarmAOff == 0)
 {
 PORTA = 0b00000011;
 }
-else if(hour==hourB && minute==minuteB)
+else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
 {
 PORTA = 0b00000101;
 }
-else if(hour==hourC && minute==minuteC)
+else if(hour==hourC && minute==minuteC && AlarmCOff == 0)
 {
 PORTA = 0b00001001;
-} else
+}
+else
 {
 PORTA = 0b00000000;
+}
+}
+while (PORTAbits.RA5 == 0)
+{
+if(hour==hourA && minute==minuteA)
+{
+AlarmAOff = 1;
+}
+else if(hour==hourB && minute==minuteB)
+{
+AlarmBOff = 1;
+}
+else if(hour==hourC && minute==minuteC)
+{
+AlarmCOff = 1;
+}
+else
+{
+PORTA = 0b00000000;
+}
 }
 }
 }
