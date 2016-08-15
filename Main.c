@@ -11,6 +11,7 @@
 #include "keypad.h"
 
 unsigned char hour, minute, second, hourA, minuteA, hourB, minuteB, hourC, minuteC;
+int AlarmAOff, AlarmBOff, AlarmCOff;
 
 char int_2_char (unsigned char int1)
 {
@@ -84,7 +85,7 @@ void interrupt ISR_Timer0_Int()
 		second1 = second - second10 * 10;
 
 		lcd_write_cmd(0x80);
-		lcd_write_data('t');
+		lcd_write_data('T');
 		lcd_write_data('i');
 		lcd_write_data('m');
 		lcd_write_data('e');
@@ -308,16 +309,33 @@ void SetupTimerInterruptRegisters()
 
 }
 
+void Setup()
+{
+    PORTA = 0b00000001;
+    delay_ms(500);
+    PORTA = 0b00000010;
+    delay_ms(500);
+    PORTA = 0b00000100;
+    delay_ms(500);
+    PORTA = 0b00001000;
+    delay_ms(500);
+    PORTA = 0b00001111;
+    delay_ms(500);
+    PORTA = 0b00000000;
+    AlarmAOff = 0;
+    AlarmBOff = 0;
+    AlarmCOff = 0;
+}
 void main(void)   //------------ Main Program  ---------------------------------------------------------------
 {
 	ADCON1 = 0x0F;
 	CMCON = 0x07;
     
 	lcd_init();
-    TRISA = 0b00000000; //Set PORTAs as outputs
-    PORTA = 0b00000000;
+    TRISA = 0b00110000; //Set PORTAs as outputs and inputs
 
     version();//Show version number
+    Setup();//Startup
 	SetupTime(); //Get Time
 	SetupAlarmTimeA(); //Get Alarm Time for Subject A
 	SetupAlarmTimeB(); //Get Alarm Time for Subject B
@@ -326,18 +344,31 @@ void main(void)   //------------ Main Program  ---------------------------------
     
 	while(1)
 	{
-		if(hour==hourA && minute==minuteA)
-		{
+		if(hour==hourA && minute==minuteA && AlarmAOff == 0)
+        {
             PORTA = 0b00000011; //On Buzzer RA0 and LED RA1
-		}
-		else if(hour==hourB && minute==minuteB)
+            if (PORTAbits.RA5 == 0) //when mute is pressed
+            {
+                AlarmAOff = 1;
+            }
+        }
+		else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
         {
             PORTA = 0b00000101; //On Buzzer RA0 and LED RA2
+            if (PORTAbits.RA5 == 0) //when mute is pressed
+            {
+                AlarmBOff = 1;
+            }
         }
-		else if(hour==hourC && minute==minuteC)
+		else if(hour==hourC && minute==minuteC && AlarmCOff== 0)
         {
             PORTA = 0b00001001; //On Buzzer RA0 and LED RA3
-        } else
+            if (PORTAbits.RA5 == 0) //when mute is pressed
+            {
+                AlarmCOff = 1;
+            }
+        }
+        else
 		{
             PORTA = 0b00000000; //Off Buzzer and All LEDS at start
 		}
