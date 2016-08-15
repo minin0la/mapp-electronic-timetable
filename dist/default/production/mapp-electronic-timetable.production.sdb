@@ -274,9 +274,11 @@
 "311
 [v _main main `(v  1 e 0 0 ]
 {
+"334
+[v main@a a `ui  1 a 2 51 ]
 "319
 [v main@AlarmAOff AlarmAOff `i  1 a 2 49 ]
-"350
+"355
 } 0
 "12 C:\Users\wxwen\Documents\GitHub\mapp-electronic-timetable\version.c
 [v _version version `(i  1 e 2 0 ]

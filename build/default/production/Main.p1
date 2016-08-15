@@ -5280,69 +5280,86 @@ Version 3.2 HI-TECH Software Intermediate Code
 "333
 }
 [e :U 611 ]
-[; ;Main.c: 333: }
-[; ;Main.c: 334: if (PORTAbits.RA5 == 0)
 "334
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 612  ]
-[; ;Main.c: 335: {
+[v _a `ui ~T0 @X0 1 a ]
+[; ;Main.c: 333: }
+[; ;Main.c: 334: unsigned int a;
+[; ;Main.c: 335: a = 0;
 "335
-{
-[; ;Main.c: 336: AlarmAOff = 1;
+[e = _a -> -> 0 `i `ui ]
+[; ;Main.c: 336: if (PORTAbits.RA5 == 0)
 "336
-[e = _AlarmAOff -> 1 `i ]
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 612  ]
+[; ;Main.c: 337: {
 "337
-}
-[; ;Main.c: 337: }
-[e $U 613  ]
-"338
-[e :U 612 ]
-[; ;Main.c: 338: else if(hour==hourB && minute==minuteB)
-[e $ ! && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i 614  ]
-[; ;Main.c: 339: {
-"339
 {
-[; ;Main.c: 340: PORTA = 0b00000101;
+[; ;Main.c: 338: a = 1;
+"338
+[e = _a -> -> 1 `i `ui ]
+[; ;Main.c: 339: if (a==1 && PORTAbits.RA5 ==1){
+"339
+[e $ ! && == _a -> -> 1 `i `ui == -> . . _PORTAbits 0 5 `i -> 1 `i 613  ]
+{
+[; ;Main.c: 340: AlarmAOff = 1;
 "340
-[e = _PORTA -> -> 5 `i `uc ]
+[e = _AlarmAOff -> 1 `i ]
 "341
 }
-[; ;Main.c: 341: }
-[e $U 615  ]
-"342
-[e :U 614 ]
-[; ;Main.c: 342: else if(hour==hourC && minute==minuteC)
-[e $ ! && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i 616  ]
-[; ;Main.c: 343: {
-"343
-{
-[; ;Main.c: 344: PORTA = 0b00001001;
-"344
-[e = _PORTA -> -> 9 `i `uc ]
-"345
-}
-[; ;Main.c: 345: } else
-[e $U 617  ]
-[e :U 616 ]
-[; ;Main.c: 346: {
-"346
-{
-[; ;Main.c: 347: PORTA = 0b00000000;
-"347
-[e = _PORTA -> -> 0 `i `uc ]
-"348
-}
-[e :U 617 ]
-[e :U 615 ]
 [e :U 613 ]
+"342
+}
+[; ;Main.c: 341: }
+[; ;Main.c: 342: }
+[e $U 614  ]
+"343
+[e :U 612 ]
+[; ;Main.c: 343: else if(hour==hourB && minute==minuteB)
+[e $ ! && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i 615  ]
+[; ;Main.c: 344: {
+"344
+{
+[; ;Main.c: 345: PORTA = 0b00000101;
+"345
+[e = _PORTA -> -> 5 `i `uc ]
+"346
+}
+[; ;Main.c: 346: }
+[e $U 616  ]
+"347
+[e :U 615 ]
+[; ;Main.c: 347: else if(hour==hourC && minute==minuteC)
+[e $ ! && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i 617  ]
+[; ;Main.c: 348: {
+"348
+{
+[; ;Main.c: 349: PORTA = 0b00001001;
 "349
+[e = _PORTA -> -> 9 `i `uc ]
+"350
+}
+[; ;Main.c: 350: } else
+[e $U 618  ]
+[e :U 617 ]
+[; ;Main.c: 351: {
+"351
+{
+[; ;Main.c: 352: PORTA = 0b00000000;
+"352
+[e = _PORTA -> -> 0 `i `uc ]
+"353
+}
+[e :U 618 ]
+[e :U 616 ]
+[e :U 614 ]
+"354
 }
 [e :U 608 ]
 "328
 [e $U 609  ]
 [e :U 610 ]
-[; ;Main.c: 348: }
-[; ;Main.c: 349: }
-[; ;Main.c: 350: }
-"350
+[; ;Main.c: 353: }
+[; ;Main.c: 354: }
+[; ;Main.c: 355: }
+"355
 [e :UE 607 ]
 }

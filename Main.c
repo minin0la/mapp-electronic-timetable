@@ -331,9 +331,14 @@ void main(void)   //------------ Main Program  ---------------------------------
         {
             PORTA = 0b00000011; //On Buzzer RA0 and LED RA1  
         }
+        unsigned int a;
+        a = 0;
             if (PORTAbits.RA5 == 0) //when mute is pressed
             {
-            AlarmAOff = 1;
+                a = 1;
+                if (a==1 && PORTAbits.RA5 ==1){
+                    AlarmAOff = 1;
+                }
             }
 		else if(hour==hourB && minute==minuteB)
         {
