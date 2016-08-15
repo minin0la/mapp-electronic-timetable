@@ -80,7 +80,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_init `(v ~T0 @X0 0 ef ]
 "3778 /opt/microchip/xc8/v1.38/include/pic18f4550.h
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"319 Main.c
+"320 Main.c
 [v _version `(i ~T0 @X0 0 ef ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -5054,92 +5054,95 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.c: 317: TRISA = 0b00000000;
 "317
 [e = _TRISA -> -> 0 `i `uc ]
-[; ;Main.c: 319: version();
-"319
-[e ( _version ..  ]
-[; ;Main.c: 320: SetupTime();
+[; ;Main.c: 318: PORTA = 0b00000000;
+"318
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;Main.c: 320: version();
 "320
-[e ( _SetupTime ..  ]
-[; ;Main.c: 321: SetupAlarmTimeA();
+[e ( _version ..  ]
+[; ;Main.c: 321: SetupTime();
 "321
-[e ( _SetupAlarmTimeA ..  ]
-[; ;Main.c: 322: SetupAlarmTimeB();
+[e ( _SetupTime ..  ]
+[; ;Main.c: 322: SetupAlarmTimeA();
 "322
-[e ( _SetupAlarmTimeB ..  ]
-[; ;Main.c: 323: SetupAlarmTimeC();
+[e ( _SetupAlarmTimeA ..  ]
+[; ;Main.c: 323: SetupAlarmTimeB();
 "323
-[e ( _SetupAlarmTimeC ..  ]
-[; ;Main.c: 324: SetupTimerInterruptRegisters();
+[e ( _SetupAlarmTimeB ..  ]
+[; ;Main.c: 324: SetupAlarmTimeC();
 "324
+[e ( _SetupAlarmTimeC ..  ]
+[; ;Main.c: 325: SetupTimerInterruptRegisters();
+"325
 [e ( _SetupTimerInterruptRegisters ..  ]
-[; ;Main.c: 326: while(1)
-"326
-[e :U 580 ]
-[; ;Main.c: 327: {
+[; ;Main.c: 327: while(1)
 "327
-{
-[; ;Main.c: 328: if(hour==hourA && minute==minuteA)
+[e :U 580 ]
+[; ;Main.c: 328: {
 "328
-[e $ ! && == -> _hour `i -> _hourA `i == -> _minute `i -> _minuteA `i 582  ]
-[; ;Main.c: 329: {
+{
+[; ;Main.c: 329: if(hour==hourA && minute==minuteA)
 "329
-{
-[; ;Main.c: 330: PORTA = 0b00000011;
+[e $ ! && == -> _hour `i -> _hourA `i == -> _minute `i -> _minuteA `i 582  ]
+[; ;Main.c: 330: {
 "330
-[e = _PORTA -> -> 3 `i `uc ]
+{
+[; ;Main.c: 331: PORTA = 0b00000011;
 "331
-}
-[; ;Main.c: 331: }
-[e $U 583  ]
+[e = _PORTA -> -> 3 `i `uc ]
 "332
-[e :U 582 ]
-[; ;Main.c: 332: else if(hour==hourB && minute==minuteB)
-[e $ ! && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i 584  ]
-[; ;Main.c: 333: {
+}
+[; ;Main.c: 332: }
+[e $U 583  ]
 "333
-{
-[; ;Main.c: 334: PORTA = 0b00000101;
+[e :U 582 ]
+[; ;Main.c: 333: else if(hour==hourB && minute==minuteB)
+[e $ ! && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i 584  ]
+[; ;Main.c: 334: {
 "334
-[e = _PORTA -> -> 5 `i `uc ]
-"335
-}
-[; ;Main.c: 335: }
-[e $U 585  ]
-"336
-[e :U 584 ]
-[; ;Main.c: 336: else if(hour==hourC && minute==minuteC)
-[e $ ! && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i 586  ]
-[; ;Main.c: 337: {
-"337
 {
-[; ;Main.c: 338: PORTA = 0b00001001;
-"338
-[e = _PORTA -> -> 9 `i `uc ]
-"339
+[; ;Main.c: 335: PORTA = 0b00000101;
+"335
+[e = _PORTA -> -> 5 `i `uc ]
+"336
 }
-[; ;Main.c: 339: } else
+[; ;Main.c: 336: }
+[e $U 585  ]
+"337
+[e :U 584 ]
+[; ;Main.c: 337: else if(hour==hourC && minute==minuteC)
+[e $ ! && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i 586  ]
+[; ;Main.c: 338: {
+"338
+{
+[; ;Main.c: 339: PORTA = 0b00001001;
+"339
+[e = _PORTA -> -> 9 `i `uc ]
+"340
+}
+[; ;Main.c: 340: } else
 [e $U 587  ]
 [e :U 586 ]
-[; ;Main.c: 340: {
-"340
-{
-[; ;Main.c: 341: PORTA = 0b00000000;
+[; ;Main.c: 341: {
 "341
-[e = _PORTA -> -> 0 `i `uc ]
+{
+[; ;Main.c: 342: PORTA = 0b00000000;
 "342
+[e = _PORTA -> -> 0 `i `uc ]
+"343
 }
 [e :U 587 ]
 [e :U 585 ]
 [e :U 583 ]
-"343
+"344
 }
 [e :U 579 ]
-"326
+"327
 [e $U 580  ]
 [e :U 581 ]
-[; ;Main.c: 342: }
 [; ;Main.c: 343: }
 [; ;Main.c: 344: }
-"344
+[; ;Main.c: 345: }
+"345
 [e :UE 578 ]
 }

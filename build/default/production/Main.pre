@@ -5537,6 +5537,7 @@ CMCON = 0x07;
 
 lcd_init();
 TRISA = 0b00000000;
+PORTA = 0b00000000;
 
 version();
 SetupTime();

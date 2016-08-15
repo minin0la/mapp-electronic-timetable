@@ -315,6 +315,7 @@ void main(void)   //------------ Main Program  ---------------------------------
     
 	lcd_init();
     TRISA = 0b00000000; //Set PORTAs as outputs
+    PORTA = 0b00000000;
 
     version();//Show version number
 	SetupTime(); //Get Time
