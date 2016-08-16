@@ -80,7 +80,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_init `(v ~T0 @X0 0 ef ]
 "3778 /opt/microchip/xc8/v1.38/include/pic18f4550.h
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"335 Main.c
+"355 Main.c
 [v _version `(i ~T0 @X0 0 ef ]
 "2577 /opt/microchip/xc8/v1.38/include/pic18f4550.h
 [s S193 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -5067,196 +5067,316 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.c: 313: {
 [e :U _Startup ]
 [f ]
-[; ;Main.c: 314: PORTA = 0b00000010;
 "314
-[e = _PORTA -> -> 2 `i `uc ]
-[; ;Main.c: 315: delay_ms(1000);
+[v _msgindex `uc ~T0 @X0 1 a ]
+[v _outchar `uc ~T0 @X0 1 a ]
+[v F4351 `uc ~T0 @X0 -> 0 `x s ]
+[i F4351
+:U ..
+-> 83 `c
+-> 121 `c
+-> 115 `c
+-> 116 `c
+-> 101 `c
+-> 109 `c
+-> 32 `c
+-> 67 `c
+-> 104 `c
+-> 101 `c
+-> 99 `c
+-> 107 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 0 `c
+..
+]
+[v _Startup `uc ~T0 @X0 21  a ]
+[; ;Main.c: 314: unsigned char msgindex, outchar;
+[; ;Main.c: 315: char Startup[ ] = "System Check        ";
 "315
-[e ( _delay_ms (1 -> -> 1000 `i `ui ]
-[; ;Main.c: 316: PORTA = 0b00000100;
-"316
-[e = _PORTA -> -> 4 `i `uc ]
-[; ;Main.c: 317: delay_ms(1000);
+[e = _Startup F4351 ]
+[; ;Main.c: 317: lcd_write_cmd(0x80);
 "317
-[e ( _delay_ms (1 -> -> 1000 `i `ui ]
-[; ;Main.c: 318: PORTA = 0b00001000;
-"318
-[e = _PORTA -> -> 8 `i `uc ]
-[; ;Main.c: 319: delay_ms(1000);
+[e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
+[; ;Main.c: 319: for (msgindex = 0; msgindex < 20; msgindex++)
 "319
-[e ( _delay_ms (1 -> -> 1000 `i `ui ]
-[; ;Main.c: 320: PORTA = 0b00001111;
+{
+[e = _msgindex -> -> 0 `i `uc ]
+[e $ < -> _msgindex `i -> 20 `i 579  ]
+[e $U 580  ]
 "320
-[e = _PORTA -> -> 15 `i `uc ]
-[; ;Main.c: 321: delay_ms(1000);
+[e :U 579 ]
+[; ;Main.c: 320: {
+{
+[; ;Main.c: 321: outchar = Startup[msgindex];
 "321
-[e ( _delay_ms (1 -> -> 1000 `i `ui ]
-[; ;Main.c: 322: PORTA = 0b00000000;
+[e = _outchar *U + &U _Startup * -> _msgindex `ux -> -> # *U &U _Startup `ui `ux ]
+[; ;Main.c: 322: lcd_write_data(outchar);
 "322
-[e = _PORTA -> -> 0 `i `uc ]
-[; ;Main.c: 323: AlarmAOff = 0;
+[e ( _lcd_write_data (1 _outchar ]
 "323
-[e = _AlarmAOff -> 0 `i ]
-[; ;Main.c: 324: AlarmBOff = 0;
-"324
-[e = _AlarmBOff -> 0 `i ]
-[; ;Main.c: 325: AlarmCOff = 0;
+}
+"319
+[e ++ _msgindex -> -> 1 `i `uc ]
+[e $ < -> _msgindex `i -> 20 `i 579  ]
+[e :U 580 ]
+"323
+}
+[; ;Main.c: 323: }
+[; ;Main.c: 325: PORTA = 0b00000010;
 "325
-[e = _AlarmCOff -> 0 `i ]
-[; ;Main.c: 326: }
+[e = _PORTA -> -> 2 `i `uc ]
+[; ;Main.c: 326: delay_ms(1000);
 "326
+[e ( _delay_ms (1 -> -> 1000 `i `ui ]
+[; ;Main.c: 327: PORTA = 0b00000100;
+"327
+[e = _PORTA -> -> 4 `i `uc ]
+[; ;Main.c: 328: delay_ms(1000);
+"328
+[e ( _delay_ms (1 -> -> 1000 `i `ui ]
+[; ;Main.c: 329: PORTA = 0b00001000;
+"329
+[e = _PORTA -> -> 8 `i `uc ]
+[; ;Main.c: 330: delay_ms(1000);
+"330
+[e ( _delay_ms (1 -> -> 1000 `i `ui ]
+[; ;Main.c: 331: PORTA = 0b00001111;
+"331
+[e = _PORTA -> -> 15 `i `uc ]
+[; ;Main.c: 332: delay_ms(1000);
+"332
+[e ( _delay_ms (1 -> -> 1000 `i `ui ]
+[; ;Main.c: 333: PORTA = 0b00000000;
+"333
+[e = _PORTA -> -> 0 `i `uc ]
+[; ;Main.c: 334: AlarmAOff = 0;
+"334
+[e = _AlarmAOff -> 0 `i ]
+[; ;Main.c: 335: AlarmBOff = 0;
+"335
+[e = _AlarmBOff -> 0 `i ]
+[; ;Main.c: 336: AlarmCOff = 0;
+"336
+[e = _AlarmCOff -> 0 `i ]
+[v F4353 `uc ~T0 @X0 -> 0 `x s ]
+[i F4353
+:U ..
+-> 68 `c
+-> 111 `c
+-> 110 `c
+-> 101 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 32 `c
+-> 0 `c
+..
+]
+"337
+[v _StartupDone `uc ~T0 @X0 21  a ]
+[; ;Main.c: 337: char StartupDone[ ] = "Done                ";
+[e = _StartupDone F4353 ]
+[; ;Main.c: 339: lcd_write_cmd(0x80);
+"339
+[e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
+[; ;Main.c: 341: for (msgindex = 0; msgindex < 20; msgindex++)
+"341
+{
+[e = _msgindex -> -> 0 `i `uc ]
+[e $ < -> _msgindex `i -> 20 `i 582  ]
+[e $U 583  ]
+"342
+[e :U 582 ]
+[; ;Main.c: 342: {
+{
+[; ;Main.c: 343: outchar = StartupDone[msgindex];
+"343
+[e = _outchar *U + &U _StartupDone * -> _msgindex `ux -> -> # *U &U _StartupDone `ui `ux ]
+[; ;Main.c: 344: lcd_write_data(outchar);
+"344
+[e ( _lcd_write_data (1 _outchar ]
+"345
+}
+"341
+[e ++ _msgindex -> -> 1 `i `uc ]
+[e $ < -> _msgindex `i -> 20 `i 582  ]
+[e :U 583 ]
+"345
+}
+[; ;Main.c: 345: }
+[; ;Main.c: 346: }
+"346
 [e :UE 578 ]
 }
-"327
+"347
 [v _main `(v ~T0 @X0 1 ef ]
-"328
+"348
 {
-[; ;Main.c: 327: void main(void)
-[; ;Main.c: 328: {
+[; ;Main.c: 347: void main(void)
+[; ;Main.c: 348: {
 [e :U _main ]
 [f ]
-[; ;Main.c: 329: ADCON1 = 0x0F;
-"329
-[e = _ADCON1 -> -> 15 `i `uc ]
-[; ;Main.c: 330: CMCON = 0x07;
-"330
-[e = _CMCON -> -> 7 `i `uc ]
-[; ;Main.c: 332: lcd_init();
-"332
-[e ( _lcd_init ..  ]
-[; ;Main.c: 333: TRISA = 0b00110000;
-"333
-[e = _TRISA -> -> 48 `i `uc ]
-[; ;Main.c: 335: version();
-"335
-[e ( _version ..  ]
-[; ;Main.c: 336: Startup();
-"336
-[e ( _Startup ..  ]
-[; ;Main.c: 337: SetupTime();
-"337
-[e ( _SetupTime ..  ]
-[; ;Main.c: 338: SetupAlarmTimeA();
-"338
-[e ( _SetupAlarmTimeA ..  ]
-[; ;Main.c: 339: SetupAlarmTimeB();
-"339
-[e ( _SetupAlarmTimeB ..  ]
-[; ;Main.c: 340: SetupAlarmTimeC();
-"340
-[e ( _SetupAlarmTimeC ..  ]
-[; ;Main.c: 341: SetupTimerInterruptRegisters();
-"341
-[e ( _SetupTimerInterruptRegisters ..  ]
-[; ;Main.c: 343: while(1)
-"343
-[e :U 581 ]
-[; ;Main.c: 344: {
-"344
-{
-[; ;Main.c: 345: if(hour==hourA && minute==minuteA && AlarmAOff == 0)
-"345
-[e $ ! && && == -> _hour `i -> _hourA `i == -> _minute `i -> _minuteA `i == _AlarmAOff -> 0 `i 583  ]
-[; ;Main.c: 346: {
-"346
-{
-[; ;Main.c: 347: PORTA = 0b00000011;
-"347
-[e = _PORTA -> -> 3 `i `uc ]
-[; ;Main.c: 348: if (PORTAbits.RA5 == 0)
-"348
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 584  ]
-[; ;Main.c: 349: {
+[; ;Main.c: 349: ADCON1 = 0x0F;
 "349
-{
-[; ;Main.c: 350: AlarmAOff = 1;
+[e = _ADCON1 -> -> 15 `i `uc ]
+[; ;Main.c: 350: CMCON = 0x07;
 "350
-[e = _AlarmAOff -> 1 `i ]
-"351
-}
-[e :U 584 ]
+[e = _CMCON -> -> 7 `i `uc ]
+[; ;Main.c: 352: lcd_init();
 "352
-}
-[; ;Main.c: 351: }
-[; ;Main.c: 352: }
-[e $U 585  ]
+[e ( _lcd_init ..  ]
+[; ;Main.c: 353: TRISA = 0b00110000;
 "353
-[e :U 583 ]
-[; ;Main.c: 353: else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
-[e $ ! && && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i == _AlarmBOff -> 0 `i 586  ]
-[; ;Main.c: 354: {
-"354
-{
-[; ;Main.c: 355: PORTA = 0b00000101;
+[e = _TRISA -> -> 48 `i `uc ]
+[; ;Main.c: 355: version();
 "355
-[e = _PORTA -> -> 5 `i `uc ]
-[; ;Main.c: 356: if (PORTAbits.RA5 == 0)
+[e ( _version ..  ]
+[; ;Main.c: 356: Startup();
 "356
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 587  ]
-[; ;Main.c: 357: {
+[e ( _Startup ..  ]
+[; ;Main.c: 357: SetupTime();
 "357
-{
-[; ;Main.c: 358: AlarmBOff = 1;
+[e ( _SetupTime ..  ]
+[; ;Main.c: 358: SetupAlarmTimeA();
 "358
-[e = _AlarmBOff -> 1 `i ]
+[e ( _SetupAlarmTimeA ..  ]
+[; ;Main.c: 359: SetupAlarmTimeB();
 "359
-}
-[e :U 587 ]
+[e ( _SetupAlarmTimeB ..  ]
+[; ;Main.c: 360: SetupAlarmTimeC();
 "360
-}
-[; ;Main.c: 359: }
-[; ;Main.c: 360: }
-[e $U 588  ]
+[e ( _SetupAlarmTimeC ..  ]
+[; ;Main.c: 361: SetupTimerInterruptRegisters();
 "361
-[e :U 586 ]
-[; ;Main.c: 361: else if(hour==hourC && minute==minuteC && AlarmCOff== 0)
-[e $ ! && && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i == _AlarmCOff -> 0 `i 589  ]
-[; ;Main.c: 362: {
-"362
-{
-[; ;Main.c: 363: PORTA = 0b00001001;
+[e ( _SetupTimerInterruptRegisters ..  ]
+[; ;Main.c: 363: while(1)
 "363
-[e = _PORTA -> -> 9 `i `uc ]
-[; ;Main.c: 364: if (PORTAbits.RA5 == 0)
+[e :U 587 ]
+[; ;Main.c: 364: {
 "364
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 590  ]
-[; ;Main.c: 365: {
-"365
 {
-[; ;Main.c: 366: AlarmCOff = 1;
+[; ;Main.c: 365: if(hour==hourA && minute==minuteA && AlarmAOff == 0)
+"365
+[e $ ! && && == -> _hour `i -> _hourA `i == -> _minute `i -> _minuteA `i == _AlarmAOff -> 0 `i 589  ]
+[; ;Main.c: 366: {
 "366
-[e = _AlarmCOff -> 1 `i ]
+{
+[; ;Main.c: 367: PORTA = 0b00000011;
 "367
+[e = _PORTA -> -> 3 `i `uc ]
+[; ;Main.c: 368: if (PORTAbits.RA5 == 0)
+"368
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 590  ]
+[; ;Main.c: 369: {
+"369
+{
+[; ;Main.c: 370: AlarmAOff = 1;
+"370
+[e = _AlarmAOff -> 1 `i ]
+"371
 }
 [e :U 590 ]
-"368
-}
-[; ;Main.c: 367: }
-[; ;Main.c: 368: }
-[e $U 591  ]
-"369
-[e :U 589 ]
-[; ;Main.c: 369: else
-[; ;Main.c: 370: {
-"370
-{
-[; ;Main.c: 371: PORTA = 0b00000000;
-"371
-[e = _PORTA -> -> 0 `i `uc ]
 "372
 }
-[e :U 591 ]
-[e :U 588 ]
-[e :U 585 ]
-"373
-}
-[e :U 580 ]
-"343
-[e $U 581  ]
-[e :U 582 ]
+[; ;Main.c: 371: }
 [; ;Main.c: 372: }
-[; ;Main.c: 373: }
-[; ;Main.c: 374: }
+[e $U 591  ]
+"373
+[e :U 589 ]
+[; ;Main.c: 373: else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
+[e $ ! && && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i == _AlarmBOff -> 0 `i 592  ]
+[; ;Main.c: 374: {
 "374
-[e :UE 579 ]
+{
+[; ;Main.c: 375: PORTA = 0b00000101;
+"375
+[e = _PORTA -> -> 5 `i `uc ]
+[; ;Main.c: 376: if (PORTAbits.RA5 == 0)
+"376
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 593  ]
+[; ;Main.c: 377: {
+"377
+{
+[; ;Main.c: 378: AlarmBOff = 1;
+"378
+[e = _AlarmBOff -> 1 `i ]
+"379
+}
+[e :U 593 ]
+"380
+}
+[; ;Main.c: 379: }
+[; ;Main.c: 380: }
+[e $U 594  ]
+"381
+[e :U 592 ]
+[; ;Main.c: 381: else if(hour==hourC && minute==minuteC && AlarmCOff== 0)
+[e $ ! && && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i == _AlarmCOff -> 0 `i 595  ]
+[; ;Main.c: 382: {
+"382
+{
+[; ;Main.c: 383: PORTA = 0b00001001;
+"383
+[e = _PORTA -> -> 9 `i `uc ]
+[; ;Main.c: 384: if (PORTAbits.RA5 == 0)
+"384
+[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 596  ]
+[; ;Main.c: 385: {
+"385
+{
+[; ;Main.c: 386: AlarmCOff = 1;
+"386
+[e = _AlarmCOff -> 1 `i ]
+"387
+}
+[e :U 596 ]
+"388
+}
+[; ;Main.c: 387: }
+[; ;Main.c: 388: }
+[e $U 597  ]
+"389
+[e :U 595 ]
+[; ;Main.c: 389: else
+[; ;Main.c: 390: {
+"390
+{
+[; ;Main.c: 391: PORTA = 0b00000000;
+"391
+[e = _PORTA -> -> 0 `i `uc ]
+"392
+}
+[e :U 597 ]
+[e :U 594 ]
+[e :U 591 ]
+"393
+}
+[e :U 586 ]
+"363
+[e $U 587  ]
+[e :U 588 ]
+[; ;Main.c: 392: }
+[; ;Main.c: 393: }
+[; ;Main.c: 394: }
+"394
+[e :UE 585 ]
 }

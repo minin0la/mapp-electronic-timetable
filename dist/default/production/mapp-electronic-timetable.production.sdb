@@ -60,7 +60,7 @@
 [v _SetupTimerInterruptRegisters SetupTimerInterruptRegisters `(v  1 e 1 0 ]
 "312
 [v _Startup Startup `(v  1 e 1 0 ]
-"327
+"347
 [v _main main `(v  1 e 1 0 ]
 "12 /home/minin0la/Documents/mapp-electronic-timetable/version.c
 [v _version version `(i  1 e 2 0 ]
@@ -253,33 +253,42 @@
 [v _AlarmAOff AlarmAOff `i  1 e 2 0 ]
 [v _AlarmBOff AlarmBOff `i  1 e 2 0 ]
 [v _AlarmCOff AlarmCOff `i  1 e 2 0 ]
-"327
+"347
 [v _main main `(v  1 e 1 0 ]
 {
-"374
+"394
 } 0
 "12 /home/minin0la/Documents/mapp-electronic-timetable/version.c
 [v _version version `(i  1 e 2 0 ]
 {
 "15
-[v version@Version Version `[22]uc  1 a 22 3 ]
+[v version@Version Version `[21]uc  1 a 21 2 ]
 "14
-[v version@msgindex msgindex `uc  1 a 1 26 ]
-[v version@outchar outchar `uc  1 a 1 25 ]
-[v version@F4277 F4277 `[22]uc  1 s 22 F4277 ]
+[v version@msgindex msgindex `uc  1 a 1 24 ]
+[v version@outchar outchar `uc  1 a 1 23 ]
+[v version@F4277 F4277 `[21]uc  1 s 21 F4277 ]
 "24
 } 0
 "83 /home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c
 [v _lcd_init lcd_init `(v  1 e 1 0 ]
 {
 "85
-[v lcd_init@i i `i  1 a 2 4 ]
+[v lcd_init@i i `i  1 a 2 3 ]
 "123
 } 0
 "312 /home/minin0la/Documents/mapp-electronic-timetable/Main.c
 [v _Startup Startup `(v  1 e 1 0 ]
 {
-"326
+"337
+[v Startup@StartupDone StartupDone `[21]uc  1 a 21 24 ]
+"314
+[v Startup@Startup Startup `[21]uc  1 a 21 3 ]
+[v Startup@msgindex msgindex `uc  1 a 1 46 ]
+[v Startup@outchar outchar `uc  1 a 1 45 ]
+[v Startup@F4351 F4351 `[21]uc  1 s 21 F4351 ]
+"336
+[v Startup@F4353 F4353 `[21]uc  1 s 21 F4353 ]
+"346
 } 0
 "276
 [v _SetupTimerInterruptRegisters SetupTimerInterruptRegisters `(v  1 e 1 0 ]
@@ -369,11 +378,11 @@
 {
 [v lcd_write_data@data data `uc  1 a 1 wreg ]
 "45
-[v lcd_write_data@temp1 temp1 `uc  1 a 1 2 ]
+[v lcd_write_data@temp1 temp1 `uc  1 a 1 1 ]
 "43
 [v lcd_write_data@data data `uc  1 a 1 wreg ]
 "47
-[v lcd_write_data@data data `uc  1 a 1 1 ]
+[v lcd_write_data@data data `uc  1 a 1 0 ]
 "68
 } 0
 "18
@@ -381,11 +390,11 @@
 {
 [v lcd_write_cmd@cmd cmd `uc  1 a 1 wreg ]
 "20
-[v lcd_write_cmd@temp2 temp2 `uc  1 a 1 2 ]
+[v lcd_write_cmd@temp2 temp2 `uc  1 a 1 1 ]
 "18
 [v lcd_write_cmd@cmd cmd `uc  1 a 1 wreg ]
 "21
-[v lcd_write_cmd@cmd cmd `uc  1 a 1 1 ]
+[v lcd_write_cmd@cmd cmd `uc  1 a 1 0 ]
 "39
 } 0
 "73
@@ -407,9 +416,9 @@
 [v _delay_ms delay_ms `(v  1 e 1 0 ]
 {
 "11
-[v delay_ms@j j `ui  1 a 2 2 ]
+[v delay_ms@j j `ui  1 a 2 1 ]
 "10
-[v delay_ms@i i `ui  1 p 2 0 ]
+[v delay_ms@i i `ui  1 p 2 28 ]
 "14
 } 0
 "36 /home/minin0la/Documents/mapp-electronic-timetable/Main.c
@@ -417,10 +426,10 @@
 {
 [v char_2_int@char1 char1 `uc  1 a 1 wreg ]
 "38
-[v char_2_int@int1 int1 `uc  1 a 1 1 ]
+[v char_2_int@int1 int1 `uc  1 a 1 29 ]
 "36
 [v char_2_int@char1 char1 `uc  1 a 1 wreg ]
-[v char_2_int@char1 char1 `uc  1 a 1 0 ]
+[v char_2_int@char1 char1 `uc  1 a 1 28 ]
 "54
 } 0
 "56

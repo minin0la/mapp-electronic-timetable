@@ -311,6 +311,17 @@ void SetupTimerInterruptRegisters()
 
 void Startup()
 {
+    unsigned char msgindex, outchar;
+	char Startup[ ] = "System Check        ";
+
+	lcd_write_cmd(0x80);
+
+	for (msgindex = 0; msgindex < 20; msgindex++)
+	{
+		outchar = Startup[msgindex];
+		lcd_write_data(outchar);
+	}
+    
     PORTA = 0b00000010;
     delay_ms(1000);
     PORTA = 0b00000100;
@@ -323,6 +334,15 @@ void Startup()
     AlarmAOff = 0;
     AlarmBOff = 0;
     AlarmCOff = 0;
+    char StartupDone[ ] = "Done                ";
+
+	lcd_write_cmd(0x80);
+
+	for (msgindex = 0; msgindex < 20; msgindex++)
+	{
+		outchar = StartupDone[msgindex];
+		lcd_write_data(outchar);
+	}
 }
 void main(void)   //------------ Main Program  ---------------------------------------------------------------
 {
