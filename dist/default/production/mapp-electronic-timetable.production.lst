@@ -1,7 +1,7 @@
 
 
 Microchip Technology PIC18 LITE Macro Assembler V1.38 build -256452561 
-                                                                                               Tue Aug 16 10:57:22 2016
+                                                                                               Tue Aug 16 11:02:02 2016
 
 Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010351
      1                           	processor	18F4550
@@ -210,7 +210,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    204  001DAC  20                 	db	32
    205  001DAD  31                 	db	49
    206  001DAE  2E                 	db	46
-   207  001DAF  34                 	db	52
+   207  001DAF  35                 	db	53
    208  001DB0  20                 	db	32
    209  001DB1  20                 	db	32
    210  001DB2  20                 	db	32
@@ -975,7 +975,7 @@ Microchip Technology Omniscient Code Generator v1.38 (Free mode) build 201607010
    969                           	opt stack 25
    970                           
    971                           ;version.c: 14: unsigned char msgindex, outchar;
-   972                           ;version.c: 15: char Version[ ] = "ETT Version 1.4     ";
+   972                           ;version.c: 15: char Version[ ] = "ETT Version 1.5     ";
    973                           
    974                           ;incstack = 0
    975  001C62  EE21  F000         	lfsr	2,version@F4277
@@ -4758,7 +4758,7 @@ CODE                 0      0       0       0        0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V1.38 build -256452561 
-Symbol Table                                                                                   Tue Aug 16 10:57:22 2016
+Symbol Table                                                                                   Tue Aug 16 11:02:02 2016
 
        ??_SetupTimerInterruptRegisters 001D                                     l33 1CC8  
                                    l36 1CD4                           ___awdiv@sign 0006  
