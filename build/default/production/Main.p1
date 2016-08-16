@@ -5280,82 +5280,83 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.c: 366: {
 "366
 {
-[; ;Main.c: 367: PORTA = 0b00000011;
-"367
-[e = _PORTA -> -> 3 `i `uc ]
-[; ;Main.c: 368: if (PORTAbits.RA5 == 0)
+[; ;Main.c: 368: PORTAbits.RA0 = 1;
 "368
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 590  ]
-[; ;Main.c: 369: {
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 369: PORTAbits.RA1 = 1;
 "369
-{
-[; ;Main.c: 370: AlarmAOff = 1;
+[e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
+[; ;Main.c: 370: while (PORTAbits.RA5 == 1);
 "370
-[e = _AlarmAOff -> 1 `i ]
-"371
-}
+[e $U 590  ]
+[e :U 591 ]
 [e :U 590 ]
+[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 591  ]
+[e :U 592 ]
+[; ;Main.c: 371: AlarmAOff = 1;
+"371
+[e = _AlarmAOff -> 1 `i ]
 "372
 }
-[; ;Main.c: 371: }
 [; ;Main.c: 372: }
-[e $U 591  ]
+[e $U 593  ]
 "373
 [e :U 589 ]
 [; ;Main.c: 373: else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
-[e $ ! && && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i == _AlarmBOff -> 0 `i 592  ]
+[e $ ! && && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i == _AlarmBOff -> 0 `i 594  ]
 [; ;Main.c: 374: {
 "374
 {
-[; ;Main.c: 375: PORTA = 0b00000101;
-"375
-[e = _PORTA -> -> 5 `i `uc ]
-[; ;Main.c: 376: if (PORTAbits.RA5 == 0)
+[; ;Main.c: 376: PORTAbits.RA0 = 1;
 "376
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 593  ]
-[; ;Main.c: 377: {
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 377: PORTAbits.RA2 = 1;
 "377
-{
-[; ;Main.c: 378: AlarmBOff = 1;
+[e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
+[; ;Main.c: 378: while (PORTAbits.RA5 == 1)
 "378
-[e = _AlarmBOff -> 1 `i ]
+[e $U 595  ]
+[e :U 596 ]
+[; ;Main.c: 379: AlarmBOff = 1;
 "379
-}
-[e :U 593 ]
+[e = _AlarmBOff -> 1 `i ]
+[e :U 595 ]
+"378
+[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 596  ]
+[e :U 597 ]
 "380
 }
-[; ;Main.c: 379: }
 [; ;Main.c: 380: }
-[e $U 594  ]
+[e $U 598  ]
 "381
-[e :U 592 ]
+[e :U 594 ]
 [; ;Main.c: 381: else if(hour==hourC && minute==minuteC && AlarmCOff== 0)
-[e $ ! && && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i == _AlarmCOff -> 0 `i 595  ]
+[e $ ! && && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i == _AlarmCOff -> 0 `i 599  ]
 [; ;Main.c: 382: {
 "382
 {
-[; ;Main.c: 383: PORTA = 0b00001001;
-"383
-[e = _PORTA -> -> 9 `i `uc ]
-[; ;Main.c: 384: if (PORTAbits.RA5 == 0)
+[; ;Main.c: 384: PORTAbits.RA0 = 1;
 "384
-[e $ ! == -> . . _PORTAbits 0 5 `i -> 0 `i 596  ]
-[; ;Main.c: 385: {
+[e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
+[; ;Main.c: 385: PORTAbits.RA3 = 1;
 "385
-{
-[; ;Main.c: 386: AlarmCOff = 1;
+[e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
+[; ;Main.c: 386: while (PORTAbits.RA5 == 1);
 "386
-[e = _AlarmCOff -> 1 `i ]
+[e $U 600  ]
+[e :U 601 ]
+[e :U 600 ]
+[e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 601  ]
+[e :U 602 ]
+[; ;Main.c: 387: AlarmCOff = 1;
 "387
-}
-[e :U 596 ]
+[e = _AlarmCOff -> 1 `i ]
 "388
 }
-[; ;Main.c: 387: }
 [; ;Main.c: 388: }
-[e $U 597  ]
+[e $U 603  ]
 "389
-[e :U 595 ]
+[e :U 599 ]
 [; ;Main.c: 389: else
 [; ;Main.c: 390: {
 "390
@@ -5365,9 +5366,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [e = _PORTA -> -> 0 `i `uc ]
 "392
 }
-[e :U 597 ]
-[e :U 594 ]
-[e :U 591 ]
+[e :U 603 ]
+[e :U 598 ]
+[e :U 593 ]
 "393
 }
 [e :U 586 ]

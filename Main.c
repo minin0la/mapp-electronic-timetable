@@ -364,27 +364,27 @@ void main(void)   //------------ Main Program  ---------------------------------
 	{
 		if(hour==hourA && minute==minuteA && AlarmAOff == 0)
         {
-            PORTA = 0b00000011; //On Buzzer RA0 and LED RA1
-            if (PORTAbits.RA5 == 0) //when mute is pressed
-            {
-                AlarmAOff = 1;
-            }
+            //On Buzzer RA0 and LED RA1
+            PORTAbits.RA0 = 1;
+            PORTAbits.RA1 = 1;
+            while (PORTAbits.RA5 == 1); //when mute is pressed
+            AlarmAOff = 1;
         }
 		else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
         {
-            PORTA = 0b00000101; //On Buzzer RA0 and LED RA2
-            if (PORTAbits.RA5 == 0) //when mute is pressed
-            {
-                AlarmBOff = 1;
-            }
+            //On Buzzer RA0 and LED RA2
+            PORTAbits.RA0 = 1;
+            PORTAbits.RA2 = 1;
+            while (PORTAbits.RA5 == 1) //when mute is pressed
+            AlarmBOff = 1;
         }
 		else if(hour==hourC && minute==minuteC && AlarmCOff== 0)
         {
-            PORTA = 0b00001001; //On Buzzer RA0 and LED RA3
-            if (PORTAbits.RA5 == 0) //when mute is pressed
-            {
-                AlarmCOff = 1;
-            }
+            //On Buzzer RA0 and LED RA3
+            PORTAbits.RA0 = 1;
+            PORTAbits.RA3 = 1;
+            while (PORTAbits.RA5 == 1); //when mute is pressed
+            AlarmCOff = 1;
         }
         else
 		{

@@ -12,7 +12,7 @@
 void version(void) //Program to show program version
 {
 	unsigned char msgindex, outchar;
-	char Version[ ] = "ETT Version 1.4     ";
+	char Version[ ] = "ETT Version 1.5     ";
 
 	lcd_write_cmd(0x80);
 
