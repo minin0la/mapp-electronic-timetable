@@ -60,7 +60,7 @@
 [v _SetupTimerInterruptRegisters SetupTimerInterruptRegisters `(v  1 e 1 0 ]
 "312
 [v _Startup Startup `(v  1 e 1 0 ]
-"347
+"344
 [v _main main `(v  1 e 1 0 ]
 "12 /home/minin0la/Documents/mapp-electronic-timetable/version.c
 [v _version version `(i  1 e 2 0 ]
@@ -252,11 +252,12 @@
 "14
 [v _AlarmAOff AlarmAOff `i  1 e 2 0 ]
 [v _AlarmBOff AlarmBOff `i  1 e 2 0 ]
+[v _AlarmC2Off AlarmC2Off `i  1 e 2 0 ]
 [v _AlarmCOff AlarmCOff `i  1 e 2 0 ]
-"347
+"344
 [v _main main `(v  1 e 1 0 ]
 {
-"394
+"391
 } 0
 "12 /home/minin0la/Documents/mapp-electronic-timetable/version.c
 [v _version version `(i  1 e 2 0 ]
@@ -279,16 +280,16 @@
 "312 /home/minin0la/Documents/mapp-electronic-timetable/Main.c
 [v _Startup Startup `(v  1 e 1 0 ]
 {
-"337
+"329
 [v Startup@StartupDone StartupDone `[21]uc  1 a 21 24 ]
 "314
 [v Startup@Startup Startup `[21]uc  1 a 21 3 ]
 [v Startup@msgindex msgindex `uc  1 a 1 46 ]
 [v Startup@outchar outchar `uc  1 a 1 45 ]
-[v Startup@F4351 F4351 `[21]uc  1 s 21 F4351 ]
-"336
-[v Startup@F4353 F4353 `[21]uc  1 s 21 F4353 ]
-"346
+[v Startup@F4352 F4352 `[21]uc  1 s 21 F4352 ]
+"327
+[v Startup@F4354 F4354 `[21]uc  1 s 21 F4354 ]
+"343
 } 0
 "276
 [v _SetupTimerInterruptRegisters SetupTimerInterruptRegisters `(v  1 e 1 0 ]
@@ -313,7 +314,7 @@
 "110
 [v SetupTime@outchar outchar `uc  1 a 1 40 ]
 "111
-[v SetupTime@F4315 F4315 `[21]uc  1 s 21 F4315 ]
+[v SetupTime@F4316 F4316 `[21]uc  1 s 21 F4316 ]
 "154
 } 0
 "236
@@ -332,7 +333,7 @@
 "238
 [v SetupAlarmTimeC@outchar outchar `uc  1 a 1 40 ]
 "239
-[v SetupAlarmTimeC@F4345 F4345 `[21]uc  1 s 21 F4345 ]
+[v SetupAlarmTimeC@F4346 F4346 `[21]uc  1 s 21 F4346 ]
 "275
 } 0
 "196
@@ -351,7 +352,7 @@
 "198
 [v SetupAlarmTimeB@outchar outchar `uc  1 a 1 40 ]
 "199
-[v SetupAlarmTimeB@F4335 F4335 `[21]uc  1 s 21 F4335 ]
+[v SetupAlarmTimeB@F4336 F4336 `[21]uc  1 s 21 F4336 ]
 "235
 } 0
 "156
@@ -370,7 +371,7 @@
 "158
 [v SetupAlarmTimeA@outchar outchar `uc  1 a 1 40 ]
 "159
-[v SetupAlarmTimeA@F4325 F4325 `[21]uc  1 s 21 F4325 ]
+[v SetupAlarmTimeA@F4326 F4326 `[21]uc  1 s 21 F4326 ]
 "195
 } 0
 "43 /home/minin0la/Documents/mapp-electronic-timetable/lcd_utilities.c

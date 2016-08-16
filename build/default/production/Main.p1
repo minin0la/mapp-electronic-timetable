@@ -80,7 +80,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _lcd_init `(v ~T0 @X0 0 ef ]
 "3778 /opt/microchip/xc8/v1.38/include/pic18f4550.h
 [v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
-"355 Main.c
+"352 Main.c
 [v _version `(i ~T0 @X0 0 ef ]
 "2577 /opt/microchip/xc8/v1.38/include/pic18f4550.h
 [s S193 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -4114,8 +4114,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "14
 [v _AlarmAOff `i ~T0 @X0 1 e ]
 [v _AlarmBOff `i ~T0 @X0 1 e ]
+[v _AlarmC2Off `i ~T0 @X0 1 e ]
 [v _AlarmCOff `i ~T0 @X0 1 e ]
-[; ;Main.c: 14: int AlarmAOff, AlarmBOff, AlarmCOff;
+[; ;Main.c: 14: int AlarmAOff, AlarmBOff, AlarmC2Off, AlarmCOff;
 "16
 [v _int_2_char `(uc ~T0 @X0 1 ef1`uc ]
 "17
@@ -4318,9 +4319,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 "54
 [e :UE 542 ]
 }
-[v F4297 `(v ~T0 @X0 1 tf ]
+[v F4298 `(v ~T0 @X0 1 tf ]
 "56
-[v _ISR_Timer0_Int `IF4297 ~T0 @X0 1 e ]
+[v _ISR_Timer0_Int `IF4298 ~T0 @X0 1 e ]
 "57
 {
 [; ;Main.c: 56: void interrupt ISR_Timer0_Int()
@@ -4479,8 +4480,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _minute1 `uc ~T0 @X0 1 a ]
 [v _second10 `uc ~T0 @X0 1 a ]
 [v _second1 `uc ~T0 @X0 1 a ]
-[v F4315 `uc ~T0 @X0 -> 0 `x s ]
-[i F4315
+[v F4316 `uc ~T0 @X0 -> 0 `x s ]
+[i F4316
 :U ..
 -> 83 `c
 -> 101 `c
@@ -4510,7 +4511,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.c: 110: unsigned char msgindex, outchar, ctemp;
 [; ;Main.c: 111: unsigned char hour10, hour1, minute10, minute1, second10, second1;
 [; ;Main.c: 112: char Message[ ] = "Set time hhmmss:    ";
-[e = _Message F4315 ]
+[e = _Message F4316 ]
 [; ;Main.c: 114: lcd_write_cmd(0x80);
 "114
 [e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
@@ -4632,8 +4633,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _hour1 `uc ~T0 @X0 1 a ]
 [v _minute10 `uc ~T0 @X0 1 a ]
 [v _minute1 `uc ~T0 @X0 1 a ]
-[v F4325 `uc ~T0 @X0 -> 0 `x s ]
-[i F4325
+[v F4326 `uc ~T0 @X0 -> 0 `x s ]
+[i F4326
 :U ..
 -> 83 `c
 -> 117 `c
@@ -4663,7 +4664,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.c: 158: unsigned char msgindex, outchar, ctemp;
 [; ;Main.c: 159: unsigned char hour10, hour1, minute10, minute1;
 [; ;Main.c: 160: char Message[ ] = "Subject A Time hhmm:";
-[e = _Message F4325 ]
+[e = _Message F4326 ]
 [; ;Main.c: 162: PORTA = 0b00000010;
 "162
 [e = _PORTA -> -> 2 `i `uc ]
@@ -4767,8 +4768,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _hour1 `uc ~T0 @X0 1 a ]
 [v _minute10 `uc ~T0 @X0 1 a ]
 [v _minute1 `uc ~T0 @X0 1 a ]
-[v F4335 `uc ~T0 @X0 -> 0 `x s ]
-[i F4335
+[v F4336 `uc ~T0 @X0 -> 0 `x s ]
+[i F4336
 :U ..
 -> 83 `c
 -> 117 `c
@@ -4798,7 +4799,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.c: 198: unsigned char msgindex, outchar, ctemp;
 [; ;Main.c: 199: unsigned char hour10, hour1, minute10, minute1;
 [; ;Main.c: 200: char Message[ ] = "Subject B Time hhmm:";
-[e = _Message F4335 ]
+[e = _Message F4336 ]
 [; ;Main.c: 202: PORTA = 0b00000100;
 "202
 [e = _PORTA -> -> 4 `i `uc ]
@@ -4902,8 +4903,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _hour1 `uc ~T0 @X0 1 a ]
 [v _minute10 `uc ~T0 @X0 1 a ]
 [v _minute1 `uc ~T0 @X0 1 a ]
-[v F4345 `uc ~T0 @X0 -> 0 `x s ]
-[i F4345
+[v F4346 `uc ~T0 @X0 -> 0 `x s ]
+[i F4346
 :U ..
 -> 83 `c
 -> 117 `c
@@ -4933,7 +4934,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.c: 238: unsigned char msgindex, outchar, ctemp;
 [; ;Main.c: 239: unsigned char hour10, hour1, minute10, minute1;
 [; ;Main.c: 240: char Message[ ] = "Subject C Time hhmm:";
-[e = _Message F4345 ]
+[e = _Message F4346 ]
 [; ;Main.c: 242: PORTA = 0b00001000;
 "242
 [e = _PORTA -> -> 8 `i `uc ]
@@ -5070,8 +5071,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "314
 [v _msgindex `uc ~T0 @X0 1 a ]
 [v _outchar `uc ~T0 @X0 1 a ]
-[v F4351 `uc ~T0 @X0 -> 0 `x s ]
-[i F4351
+[v F4352 `uc ~T0 @X0 -> 0 `x s ]
+[i F4352
 :U ..
 -> 83 `c
 -> 121 `c
@@ -5100,7 +5101,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;Main.c: 314: unsigned char msgindex, outchar;
 [; ;Main.c: 315: char Startup[ ] = "System Check        ";
 "315
-[e = _Startup F4351 ]
+[e = _Startup F4352 ]
 [; ;Main.c: 317: lcd_write_cmd(0x80);
 "317
 [e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
@@ -5129,45 +5130,31 @@ Version 3.2 HI-TECH Software Intermediate Code
 "323
 }
 [; ;Main.c: 323: }
-[; ;Main.c: 325: PORTA = 0b00000010;
+[; ;Main.c: 325: PORTA = 0b00001111;
 "325
-[e = _PORTA -> -> 2 `i `uc ]
+[e = _PORTA -> -> 15 `i `uc ]
 [; ;Main.c: 326: delay_ms(1000);
 "326
 [e ( _delay_ms (1 -> -> 1000 `i `ui ]
-[; ;Main.c: 327: PORTA = 0b00000100;
+[; ;Main.c: 327: PORTA = 0b00000000;
 "327
-[e = _PORTA -> -> 4 `i `uc ]
-[; ;Main.c: 328: delay_ms(1000);
-"328
-[e ( _delay_ms (1 -> -> 1000 `i `ui ]
-[; ;Main.c: 329: PORTA = 0b00001000;
-"329
-[e = _PORTA -> -> 8 `i `uc ]
-[; ;Main.c: 330: delay_ms(1000);
-"330
-[e ( _delay_ms (1 -> -> 1000 `i `ui ]
-[; ;Main.c: 331: PORTA = 0b00001111;
-"331
-[e = _PORTA -> -> 15 `i `uc ]
-[; ;Main.c: 332: delay_ms(1000);
-"332
-[e ( _delay_ms (1 -> -> 1000 `i `ui ]
-[; ;Main.c: 333: PORTA = 0b00000000;
-"333
 [e = _PORTA -> -> 0 `i `uc ]
-[; ;Main.c: 334: AlarmAOff = 0;
-"334
-[e = _AlarmAOff -> 0 `i ]
-[; ;Main.c: 335: AlarmBOff = 0;
-"335
-[e = _AlarmBOff -> 0 `i ]
-[; ;Main.c: 336: AlarmCOff = 0;
-"336
-[e = _AlarmCOff -> 0 `i ]
-[v F4353 `uc ~T0 @X0 -> 0 `x s ]
-[i F4353
+[v F4354 `uc ~T0 @X0 -> 0 `x s ]
+[i F4354
 :U ..
+-> 83 `c
+-> 121 `c
+-> 115 `c
+-> 116 `c
+-> 101 `c
+-> 109 `c
+-> 32 `c
+-> 67 `c
+-> 104 `c
+-> 101 `c
+-> 99 `c
+-> 107 `c
+-> 32 `c
 -> 68 `c
 -> 111 `c
 -> 110 `c
@@ -5175,209 +5162,207 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 32 `c
 -> 32 `c
 -> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
--> 32 `c
 -> 0 `c
 ..
 ]
-"337
+"329
 [v _StartupDone `uc ~T0 @X0 21  a ]
-[; ;Main.c: 337: char StartupDone[ ] = "Done                ";
-[e = _StartupDone F4353 ]
-[; ;Main.c: 339: lcd_write_cmd(0x80);
-"339
+[; ;Main.c: 329: char StartupDone[ ] = "System Check Done   ";
+[e = _StartupDone F4354 ]
+[; ;Main.c: 331: lcd_write_cmd(0x80);
+"331
 [e ( _lcd_write_cmd (1 -> -> 128 `i `uc ]
-[; ;Main.c: 341: for (msgindex = 0; msgindex < 20; msgindex++)
-"341
+[; ;Main.c: 333: for (msgindex = 0; msgindex < 20; msgindex++)
+"333
 {
 [e = _msgindex -> -> 0 `i `uc ]
 [e $ < -> _msgindex `i -> 20 `i 582  ]
 [e $U 583  ]
-"342
+"334
 [e :U 582 ]
-[; ;Main.c: 342: {
+[; ;Main.c: 334: {
 {
-[; ;Main.c: 343: outchar = StartupDone[msgindex];
-"343
+[; ;Main.c: 335: outchar = StartupDone[msgindex];
+"335
 [e = _outchar *U + &U _StartupDone * -> _msgindex `ux -> -> # *U &U _StartupDone `ui `ux ]
-[; ;Main.c: 344: lcd_write_data(outchar);
-"344
+[; ;Main.c: 336: lcd_write_data(outchar);
+"336
 [e ( _lcd_write_data (1 _outchar ]
-"345
+"337
 }
-"341
+"333
 [e ++ _msgindex -> -> 1 `i `uc ]
 [e $ < -> _msgindex `i -> 20 `i 582  ]
 [e :U 583 ]
-"345
+"337
 }
-[; ;Main.c: 345: }
-[; ;Main.c: 346: }
-"346
+[; ;Main.c: 337: }
+[; ;Main.c: 339: AlarmAOff = 0;
+"339
+[e = _AlarmAOff -> 0 `i ]
+[; ;Main.c: 340: AlarmBOff = 0;
+"340
+[e = _AlarmBOff -> 0 `i ]
+[; ;Main.c: 341: AlarmC2Off = 0;
+"341
+[e = _AlarmC2Off -> 0 `i ]
+[; ;Main.c: 342: AlarmCOff = 0;
+"342
+[e = _AlarmCOff -> 0 `i ]
+[; ;Main.c: 343: }
+"343
 [e :UE 578 ]
 }
-"347
+"344
 [v _main `(v ~T0 @X0 1 ef ]
-"348
+"345
 {
-[; ;Main.c: 347: void main(void)
-[; ;Main.c: 348: {
+[; ;Main.c: 344: void main(void)
+[; ;Main.c: 345: {
 [e :U _main ]
 [f ]
-[; ;Main.c: 349: ADCON1 = 0x0F;
-"349
+[; ;Main.c: 346: ADCON1 = 0x0F;
+"346
 [e = _ADCON1 -> -> 15 `i `uc ]
-[; ;Main.c: 350: CMCON = 0x07;
-"350
+[; ;Main.c: 347: CMCON = 0x07;
+"347
 [e = _CMCON -> -> 7 `i `uc ]
-[; ;Main.c: 352: lcd_init();
-"352
+[; ;Main.c: 349: lcd_init();
+"349
 [e ( _lcd_init ..  ]
-[; ;Main.c: 353: TRISA = 0b00110000;
-"353
+[; ;Main.c: 350: TRISA = 0b00110000;
+"350
 [e = _TRISA -> -> 48 `i `uc ]
-[; ;Main.c: 355: version();
-"355
+[; ;Main.c: 352: version();
+"352
 [e ( _version ..  ]
-[; ;Main.c: 356: Startup();
-"356
+[; ;Main.c: 353: Startup();
+"353
 [e ( _Startup ..  ]
-[; ;Main.c: 357: SetupTime();
-"357
+[; ;Main.c: 354: SetupTime();
+"354
 [e ( _SetupTime ..  ]
-[; ;Main.c: 358: SetupAlarmTimeA();
-"358
+[; ;Main.c: 355: SetupAlarmTimeA();
+"355
 [e ( _SetupAlarmTimeA ..  ]
-[; ;Main.c: 359: SetupAlarmTimeB();
-"359
+[; ;Main.c: 356: SetupAlarmTimeB();
+"356
 [e ( _SetupAlarmTimeB ..  ]
-[; ;Main.c: 360: SetupAlarmTimeC();
-"360
+[; ;Main.c: 357: SetupAlarmTimeC();
+"357
 [e ( _SetupAlarmTimeC ..  ]
-[; ;Main.c: 361: SetupTimerInterruptRegisters();
-"361
+[; ;Main.c: 358: SetupTimerInterruptRegisters();
+"358
 [e ( _SetupTimerInterruptRegisters ..  ]
-[; ;Main.c: 363: while(1)
-"363
+[; ;Main.c: 360: while(1)
+"360
 [e :U 587 ]
-[; ;Main.c: 364: {
-"364
+[; ;Main.c: 361: {
+"361
 {
-[; ;Main.c: 365: if(hour==hourA && minute==minuteA && AlarmAOff == 0)
-"365
+[; ;Main.c: 362: if(hour==hourA && minute==minuteA && AlarmAOff == 0)
+"362
 [e $ ! && && == -> _hour `i -> _hourA `i == -> _minute `i -> _minuteA `i == _AlarmAOff -> 0 `i 589  ]
-[; ;Main.c: 366: {
-"366
+[; ;Main.c: 363: {
+"363
 {
-[; ;Main.c: 368: PORTAbits.RA0 = 1;
-"368
+[; ;Main.c: 365: PORTAbits.RA0 = 1;
+"365
 [e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 369: PORTAbits.RA1 = 1;
-"369
+[; ;Main.c: 366: PORTAbits.RA1 = 1;
+"366
 [e = . . _PORTAbits 0 1 -> -> 1 `i `uc ]
-[; ;Main.c: 370: while (PORTAbits.RA5 == 1);
-"370
+[; ;Main.c: 367: while (PORTAbits.RA5 == 1);
+"367
 [e $U 590  ]
 [e :U 591 ]
 [e :U 590 ]
 [e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 591  ]
 [e :U 592 ]
-[; ;Main.c: 371: AlarmAOff = 1;
-"371
+[; ;Main.c: 368: AlarmAOff = 1;
+"368
 [e = _AlarmAOff -> 1 `i ]
-"372
+"369
 }
-[; ;Main.c: 372: }
+[; ;Main.c: 369: }
 [e $U 593  ]
-"373
+"370
 [e :U 589 ]
-[; ;Main.c: 373: else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
+[; ;Main.c: 370: else if(hour==hourB && minute==minuteB && AlarmBOff == 0)
 [e $ ! && && == -> _hour `i -> _hourB `i == -> _minute `i -> _minuteB `i == _AlarmBOff -> 0 `i 594  ]
-[; ;Main.c: 374: {
-"374
+[; ;Main.c: 371: {
+"371
 {
-[; ;Main.c: 376: PORTAbits.RA0 = 1;
-"376
+[; ;Main.c: 373: PORTAbits.RA0 = 1;
+"373
 [e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 377: PORTAbits.RA2 = 1;
-"377
+[; ;Main.c: 374: PORTAbits.RA2 = 1;
+"374
 [e = . . _PORTAbits 0 2 -> -> 1 `i `uc ]
-[; ;Main.c: 378: while (PORTAbits.RA5 == 1)
-"378
+[; ;Main.c: 375: while (PORTAbits.RA5 == 1);
+"375
 [e $U 595  ]
 [e :U 596 ]
-[; ;Main.c: 379: AlarmBOff = 1;
-"379
-[e = _AlarmBOff -> 1 `i ]
 [e :U 595 ]
-"378
 [e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 596  ]
 [e :U 597 ]
-"380
+[; ;Main.c: 376: AlarmBOff = 1;
+"376
+[e = _AlarmBOff -> 1 `i ]
+"377
 }
-[; ;Main.c: 380: }
+[; ;Main.c: 377: }
 [e $U 598  ]
-"381
+"378
 [e :U 594 ]
-[; ;Main.c: 381: else if(hour==hourC && minute==minuteC && AlarmCOff== 0)
-[e $ ! && && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i == _AlarmCOff -> 0 `i 599  ]
-[; ;Main.c: 382: {
-"382
+[; ;Main.c: 378: else if(hour==hourC && minute==minuteC && AlarmC2Off == 0)
+[e $ ! && && == -> _hour `i -> _hourC `i == -> _minute `i -> _minuteC `i == _AlarmC2Off -> 0 `i 599  ]
+[; ;Main.c: 379: {
+"379
 {
-[; ;Main.c: 384: PORTAbits.RA0 = 1;
-"384
+[; ;Main.c: 381: PORTAbits.RA0 = 1;
+"381
 [e = . . _PORTAbits 0 0 -> -> 1 `i `uc ]
-[; ;Main.c: 385: PORTAbits.RA3 = 1;
-"385
+[; ;Main.c: 382: PORTAbits.RA3 = 1;
+"382
 [e = . . _PORTAbits 0 3 -> -> 1 `i `uc ]
-[; ;Main.c: 386: while (PORTAbits.RA5 == 1);
-"386
+[; ;Main.c: 383: while (PORTAbits.RA5 == 1);
+"383
 [e $U 600  ]
 [e :U 601 ]
 [e :U 600 ]
 [e $ == -> . . _PORTAbits 0 5 `i -> 1 `i 601  ]
 [e :U 602 ]
-[; ;Main.c: 387: AlarmCOff = 1;
-"387
-[e = _AlarmCOff -> 1 `i ]
-"388
+[; ;Main.c: 384: AlarmC2Off = 1;
+"384
+[e = _AlarmC2Off -> 1 `i ]
+"385
 }
-[; ;Main.c: 388: }
+[; ;Main.c: 385: }
 [e $U 603  ]
-"389
+"386
 [e :U 599 ]
-[; ;Main.c: 389: else
-[; ;Main.c: 390: {
-"390
+[; ;Main.c: 386: else
+[; ;Main.c: 387: {
+"387
 {
-[; ;Main.c: 391: PORTA = 0b00000000;
-"391
+[; ;Main.c: 388: PORTA = 0b00000000;
+"388
 [e = _PORTA -> -> 0 `i `uc ]
-"392
+"389
 }
 [e :U 603 ]
 [e :U 598 ]
 [e :U 593 ]
-"393
+"390
 }
 [e :U 586 ]
-"363
+"360
 [e $U 587  ]
 [e :U 588 ]
-[; ;Main.c: 392: }
-[; ;Main.c: 393: }
-[; ;Main.c: 394: }
-"394
+[; ;Main.c: 389: }
+[; ;Main.c: 390: }
+[; ;Main.c: 391: }
+"391
 [e :UE 585 ]
 }

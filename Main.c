@@ -11,7 +11,7 @@
 #include "keypad.h"
 
 unsigned char hour, minute, second, hourA, minuteA, hourB, minuteB, hourC, minuteC;
-int AlarmAOff, AlarmBOff, AlarmCOff;
+int AlarmAOff, AlarmBOff, AlarmC2Off, AlarmCOff;
 
 char int_2_char (unsigned char int1)
 {
@@ -322,19 +322,11 @@ void Startup()
 		lcd_write_data(outchar);
 	}
     
-    PORTA = 0b00000010;
-    delay_ms(1000);
-    PORTA = 0b00000100;
-    delay_ms(1000);
-    PORTA = 0b00001000;
-    delay_ms(1000);
     PORTA = 0b00001111;
     delay_ms(1000);
     PORTA = 0b00000000;
-    AlarmAOff = 0;
-    AlarmBOff = 0;
-    AlarmCOff = 0;
-    char StartupDone[ ] = "Done                ";
+    
+    char StartupDone[ ] = "System Check Done   ";
 
 	lcd_write_cmd(0x80);
 
@@ -343,6 +335,11 @@ void Startup()
 		outchar = StartupDone[msgindex];
 		lcd_write_data(outchar);
 	}
+    
+    AlarmAOff = 0;
+    AlarmBOff = 0;
+    AlarmC2Off = 0;
+    AlarmCOff = 0;
 }
 void main(void)   //------------ Main Program  ---------------------------------------------------------------
 {
@@ -375,16 +372,16 @@ void main(void)   //------------ Main Program  ---------------------------------
             //On Buzzer RA0 and LED RA2
             PORTAbits.RA0 = 1;
             PORTAbits.RA2 = 1;
-            while (PORTAbits.RA5 == 1) //when mute is pressed
+            while (PORTAbits.RA5 == 1); //when mute is pressed
             AlarmBOff = 1;
         }
-		else if(hour==hourC && minute==minuteC && AlarmCOff== 0)
+		else if(hour==hourC && minute==minuteC && AlarmC2Off == 0)
         {
             //On Buzzer RA0 and LED RA3
             PORTAbits.RA0 = 1;
             PORTAbits.RA3 = 1;
             while (PORTAbits.RA5 == 1); //when mute is pressed
-            AlarmCOff = 1;
+            AlarmC2Off = 1;
         }
         else
 		{
