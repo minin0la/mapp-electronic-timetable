@@ -4026,8 +4026,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 -> 32 `c
 -> 49 `c
 -> 46 `c
--> 51 `c
--> 97 `c
+-> 52 `c
 -> 32 `c
 -> 32 `c
 -> 32 `c
@@ -4037,9 +4036,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 ..
 ]
 "15
-[v _Version `uc ~T0 @X0 22  a ]
+[v _Version `uc ~T0 @X0 21  a ]
 [; ;version.c: 14: unsigned char msgindex, outchar;
-[; ;version.c: 15: char Version[ ] = "ETT Version 1.3a     ";
+[; ;version.c: 15: char Version[ ] = "ETT Version 1.4     ";
 [e = _Version F4277 ]
 [; ;version.c: 17: lcd_write_cmd(0x80);
 "17
